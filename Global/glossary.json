@@ -1,0 +1,5 @@
+{
+      "API": "Application Programming Interface – a way for programs to talk to each other.",
+      "JWT": "JSON Web Token – a compact, URL-safe token format for authentication.",
+      "CSRF token": "Cross-Site Request Forgery token – a secret value used to protect against forged requests."
+    }
