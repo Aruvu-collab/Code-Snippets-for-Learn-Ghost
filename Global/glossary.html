@@ -1,0 +1,42 @@
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.5; }
+    .dict-term { border-bottom: 1px dotted #007acc; cursor: help; }
+  </style>
+</head>
+
+<!-- 1. Tooltip engine -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+
+<!-- 2. Your glue code -->
+<script>
+(async () => {
+  // 1. Load the dictionary
+  const res   = await fetch('https://raw.githubusercontent.com/micahchoo/timeline-builder/refs/heads/main/glossary.json');
+  const dict  = await res.json();
+
+  const esc   = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(
+      Object.keys(dict).sort((a,b)=>b.length-a.length).map(esc).join('|'),
+      'gi');
+
+    // 3. Walk text nodes and wrap matches -------------------------------------
+    const walker = document.createTreeWalker(
+      document.body, NodeFilter.SHOW_TEXT, null, false);
+    const nodes = [];
+    let n; while (n = walker.nextNode()) nodes.push(n);
+
+    nodes.forEach(node => {
+      if (!regex.test(node.textContent)) return;
+      const wrapper = document.createElement('span');
+      wrapper.innerHTML = node.textContent.replace(regex, m => {
+        const key = Object.keys(dict).find(k => k.toLowerCase() === m.toLowerCase());
+        return `<span class="dict-term" data-tippy-content="${dict[key]}">${m}</span>`;
+      });
+      node.replaceWith(wrapper);
+    });
+
+    // 4. Activate tooltips -----------------------------------------------------
+    tippy('.dict-term', { allowHTML: true, placement: 'top' });
+  })();
+  </script>
