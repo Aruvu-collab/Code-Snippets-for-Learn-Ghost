@@ -1,0 +1,655 @@
+{
+  "scale": "human",
+  "events": [
+    {
+      "text": {
+        "headline": "Maternal archives of songs",
+        "text": "This primer course will involve working with women to document birth practices, lullabies, remedies, taboos, and learn how to produce narratives and is offered by Eshwari & Supriya"
+      },
+      "start_date": {
+        "year": 2025,
+        "month": 10,
+        "day": 6
+      },
+      "end_date": {
+        "year": 2025,
+        "month": 11,
+        "day": 2
+      },
+      "group": "Wellbeing of Craft Practices",
+      "unique_id": "maternal-archives-of-songs",
+      "background": {
+        "color": "#d9ead3"
+      }
+    },
+    {
+      "text": {
+        "headline": "Artefact as Method",
+        "text": "This primer course will be about learning by making artefacts as a research method and is offered by Abhiram & Shreyas"
+      },
+      "start_date": {
+        "year": 2025,
+        "month": 10,
+        "day": 6
+      },
+      "end_date": {
+        "year": 2025,
+        "month": 11,
+        "day": 2
+      },
+      "group": "Community Wellbeing",
+      "unique_id": "artefact-as-method",
+      "background": {
+        "color": "#d9ead3"
+      }
+    },
+    {
+      "text": {
+        "headline": "Map as a tool to understand socioecological phenomena in the place",
+        "text": "This workshop by Adhavan & Harsha will attempt to introduce tools, methods and software to use maps as tools to document and understand  socio-ecological phenomena associated with a place or an ecosystemwill attempt to introduce tools, methods and software to use maps as tools to document and understand  socio-ecological phenomena associated with a place or an ecosystem"
+      },
+      "start_date": {
+        "year": 2025,
+        "month": 10,
+        "day": 27
+      },
+      "end_date": {
+        "year": 2025,
+        "month": 11,
+        "day": 9
+      },
+      "group": "Sensitive Ecologies",
+      "unique_id": "map-as-a-tool-to-understand-socioecological-phenomena-in-the-place",
+      "background": {
+        "color": "#c9daf8"
+      }
+    },
+    {
+      "text": {
+        "headline": "Interaction between craft communities",
+        "text": "This workshop by Eshwari & Supriya will work through the interdependence between communities and their practices and how they co-exist. This will rely on the knowledge that some of these crafts and communities are disappearing and what future can be imagined."
+      },
+      "start_date": {
+        "year": 2025,
+        "month": 10,
+        "day": 27
+      },
+      "end_date": {
+        "year": 2025,
+        "month": 11,
+        "day": 9
+      },
+      "group": "Wellbeing of Craft Practices",
+      "unique_id": "interaction-between-craft-communities",
+      "background": {
+        "color": "#c9daf8"
+      }
+    },
+    {
+      "text": {
+        "headline": "Assembling narratives in the plural world",
+        "text": "This elective course by Archit & Shreyas will explore how artefacts embedded in a place are containers of shared narratives among communities. In this unit we will assemble narratives through cultural artefacts to initiate a public dialogue."
+      },
+      "start_date": {
+        "year": 2025,
+        "month": 10,
+        "day": 20
+      },
+      "end_date": {
+        "year": 2025,
+        "month": 11,
+        "day": 16
+      },
+      "group": "Syncretic Cultures & Practices",
+      "unique_id": "assembling-narratives-in-the-plural-world",
+      "background": {
+        "color": "#d9d2e9"
+      }
+    },
+    {
+      "text": {
+        "headline": "Sacred sites: Culture and Environment",
+        "text": "This elective course by Abhishek & Shreyas will explore how artefacts embedded in a place are containers of shared narratives among communities. In this unit we will assemble narratives through cultural artefacts to initiate a public dialogue."
+      },
+      "start_date": {
+        "year": 2025,
+        "month": 10,
+        "day": 20
+      },
+      "end_date": {
+        "year": 2025,
+        "month": 11,
+        "day": 16
+      },
+      "group": "Syncretic Cultures & Practices",
+      "unique_id": "sacred-sites:-culture-and-environment",
+      "background": {
+        "color": "#d9d2e9"
+      }
+    },
+    {
+      "text": {
+        "headline": "Culinary practices, nutrition and wellbeing",
+        "text": "This travelling studio by Sangeetha & Vidya will explore multiple sites of food production situated in Kundapura, like the agricultural fields, fish markets and ports, cashew & areca orchards. Being from a place which produces diverse food, how are food practices in different communities and how the production and consumption has a impact on the wellbeing of the communities"
+      },
+      "start_date": {
+        "year": 2025,
+        "month": 10,
+        "day": 6
+      },
+      "end_date": {
+        "year": 2025,
+        "month": 10,
+        "day": 26
+      },
+      "group": "Community Wellbeing",
+      "unique_id": "culinary-practices,-nutrition-and-wellbeing",
+      "background": {
+        "color": "#46bdc6"
+      }
+    },
+    {
+      "text": {
+        "headline": "What Shapes our Health? Mapping to understand place-based SDoH",
+        "text": "This makeathon by Naveen, Sangeetha, Vidya & Adhavan, set in specific places in Kundapura Taluk, focuses on mapping the specific, local manifestations of Social Determinants of Health to open up for their implications for understanding community health & wellbeing."
+      },
+      "start_date": {
+        "year": 2025,
+        "month": 11,
+        "day": 10
+      },
+      "end_date": {
+        "year": 2025,
+        "month": 11,
+        "day": 16
+      },
+      "group": "Community Wellbeing",
+      "unique_id": "what-shapes-our-health?-mapping-to-understand-place-based-sdoh",
+      "background": {
+        "color": "#f6b26b"
+      }
+    },
+    {
+      "text": {
+        "headline": "Rhythms of the place",
+        "text": "This makeathon by Archit, Eeshita & Shreyas will be about listening to a place, recording it and sampling it. This will also be an introduction to sampling as a method."
+      },
+      "start_date": {
+        "year": 2025,
+        "month": 11,
+        "day": 10
+      },
+      "end_date": {
+        "year": 2025,
+        "month": 11,
+        "day": 16
+      },
+      "group": "Sensitive Ecologies",
+      "unique_id": "rhythms-of-the-place",
+      "background": {
+        "color": "#f6b26b"
+      }
+    },
+    {
+      "text": {
+        "headline": "Community health systems",
+        "text": "This primer course will introduce the formal & informal health systems that exist in Kundapura and Bidar (as specific cases), and how people navigate across these systems to manage their health and wellbeing and is offered by Naveen, Abhiram & Vidya"
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 1,
+        "day": 2
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 1,
+        "day": 29
+      },
+      "group": "Community Wellbeing",
+      "unique_id": "community-health-systems",
+      "background": {
+        "color": "#d9ead3"
+      }
+    },
+    {
+      "text": {
+        "headline": "Human-Digital Histories",
+        "text": "This primer course will unpack how historicizing technologies and the political & cultural production of their imagination is crucial to orient to gain a critical stance on tech. and is offered by Naveen & Adhavan"
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 2,
+        "day": 6
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 3,
+        "day": 5
+      },
+      "group": "Reimagining Technology",
+      "unique_id": "human-digital-histories",
+      "background": {
+        "color": "#d9ead3"
+      }
+    },
+    {
+      "text": {
+        "headline": "Understanding women’s collective, labour and participation in local governance systems",
+        "text": "This workshop by Sangeetha & Vidya will explore women’s role and labour in Sanjeevinis sanghas, panchayat, krishi kendra and other PRIs have been crucial in development and wellbeing of the people and place."
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 1,
+        "day": 16
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 1,
+        "day": 29
+      },
+      "group": "Community Wellbeing",
+      "unique_id": "understanding-women’s-collective,-labour-and-participation-in-local-governance-systems",
+      "background": {
+        "color": "#c9daf8"
+      }
+    },
+    {
+      "text": {
+        "headline": "Calligraphy and correspondence",
+        "text": "This workshop by Eshwari & Supriya will be about learning the nastaliq script from local calligraphers and use the script to visualize folklore, songs, or ideas"
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 2,
+        "day": 27
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 3,
+        "day": 12
+      },
+      "group": "Wellbeing of Craft Practices",
+      "unique_id": "calligraphy-and-correspondence",
+      "background": {
+        "color": "#c9daf8"
+      }
+    },
+    {
+      "text": {
+        "headline": "Speculative Design: Anticipating Consequences",
+        "text": "This elective course by Naveen & Shreyas will explore how to weave tightly the critical and the creative in early design process by drawing from Speculative & Critical design methods."
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 2,
+        "day": 13
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 3,
+        "day": 12
+      },
+      "group": "Reimagining Technology",
+      "unique_id": "speculative-design:-anticipating-consequences-",
+      "background": {
+        "color": "#d9d2e9"
+      }
+    },
+    {
+      "text": {
+        "headline": "Participatory Mapping with People, Bidar and the internet: Tools and Technologies",
+        "text": "This elective course by Adhavan & Harsha will explore how public maps and knowledge of places may often be centralised and made with intents not from the people. Learners will work with community collaborators and tools to answer the question of subverting and reimagining maps and the representation of knowledge of places."
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 1,
+        "day": 9
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 2,
+        "day": 5
+      },
+      "group": "Reimagining Technology",
+      "unique_id": "participatory-mapping-with-people,-bidar-and-the-internet:-tools-and-technologies",
+      "background": {
+        "color": "#d9d2e9"
+      }
+    },
+    {
+      "text": {
+        "headline": "Place as Archive - Syncretic Cultures",
+        "text": "This elective course by Shreyas will will reimagine the idea of an archive as something that's alive and evolving. This track will directly contribute to Bidar Heritage Centre Archives, our long-term infrastructuring engagement"
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 2,
+        "day": 13
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 3,
+        "day": 12
+      },
+      "group": "Syncretic Cultures & Practices",
+      "unique_id": "place-as-archive---syncretic-cultures",
+      "background": {
+        "color": "#46bdc6"
+      }
+    },
+    {
+      "text": {
+        "headline": "Alternative Glossaries for water conservation",
+        "text": "This makeathon by Adhavan & Harsha explores Climate Change studies and policies related to Climate Change are mostly top down thing. Looking from the lens communities or ground up approach brings different forms of words and approaches."
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 3,
+        "day": 13
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 3,
+        "day": 19
+      },
+      "group": "Sensitive Ecologies",
+      "unique_id": "alternative-glossaries-for-water-conservation",
+      "background": {
+        "color": "#f6b26b"
+      }
+    },
+    {
+      "text": {
+        "headline": "Jatre as a communal practice",
+        "text": "This travelling studio by Shreyas will be about Jatre. Jatre are a moment for large public gatherings that intertwines cultural practices, religious festivals and local economy. In this travelling studio series we will learn from culturally rooted practice of Jatre in Bidar region"
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 2,
+        "day": 6
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 2,
+        "day": 26
+      },
+      "group": "Syncretic Cultures & Practices",
+      "unique_id": "jatre-as-a-communal-practice",
+      "background": {
+        "color": "#f6b26b"
+      }
+    },
+    {
+      "text": {
+        "headline": "Living Crafts, Craft Livelihoods, and Wellbeing",
+        "text": "This practicum by Archit, Supriya & Shreyas, is situated within a community of craft practitioners — bidri / lambani — the practicum explores and makes visible the interconnections between the living histories of the craft practice, livelihoods and the wellbeing of the community."
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 1,
+        "day": 16
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 3,
+        "day": 12
+      },
+      "group": "Wellbeing of Craft Practices",
+      "unique_id": "living-crafts,-craft-livelihoods,-and-wellbeing",
+      "background": {
+        "color": "#f6b26b"
+      }
+    },
+    {
+      "text": {
+        "headline": "Data Politics",
+        "text": "This primer course will be about understanding data practices and how it affects communities? How is data/knowledge/media/archives built and maintained in communities? Tangible media/data as ownership? Ethics, governance and ownership and is offered by Abhiram & Shreyas"
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 5,
+        "day": 1
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 5,
+        "day": 28
+      },
+      "group": "Reimagining Technology",
+      "unique_id": "data-politics",
+      "background": {
+        "color": "#d9ead3"
+      }
+    },
+    {
+      "text": {
+        "headline": "Sketching Interactions",
+        "text": "This primer course will understand, through experiencing, how sketching across media aids an exploration of a range of possible outcomes of interacting meaningfully with digital technology and is offered by Naveen"
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 5,
+        "day": 1
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 5,
+        "day": 28
+      },
+      "group": "Reimagining Technology",
+      "unique_id": "sketching-interactions",
+      "background": {
+        "color": "#d9ead3"
+      }
+    },
+    {
+      "text": {
+        "headline": "Experimenting With Interactivity",
+        "text": "This primer course will understand,XXXXXXXXXXXXXand is offered by Naveen"
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 6,
+        "day": 5
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 7,
+        "day": 2
+      },
+      "group": "Reimagining Technology",
+      "unique_id": "experimenting-with-interactivity",
+      "background": {
+        "color": "#c9daf8"
+      }
+    },
+    {
+      "text": {
+        "headline": "Syncretic cultures in Dakkhani Architectural Heritage",
+        "text": "This travelling studio by Shreyas & Vinay will be about XXXXXXXXXXXXXX"
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 6,
+        "day": 5
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 7,
+        "day": 16
+      },
+      "group": "Syncretic Cultures & Practices",
+      "unique_id": "syncretic-cultures-in-dakkhani-architectural-heritage",
+      "background": {
+        "color": "#c9daf8"
+      }
+    },
+    {
+      "text": {
+        "headline": "Mapping Community Systems of Wellbeing",
+        "text": "This elective course by Abhiram, Vidya & Naveen will undertake a geo-spatial mapping of formal & informal systems of community health and wellbeing, annotated with stories of lived experiences that highlight the practices of negotiation & navigation"
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 5,
+        "day": 15
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 7,
+        "day": 28
+      },
+      "group": "Community Wellbeing",
+      "unique_id": "mapping-community-systems-of-wellbeing",
+      "background": {
+        "color": "#d9d2e9"
+      }
+    },
+    {
+      "text": {
+        "headline": "Rural Series: Pastoralism and land",
+        "text": "A travel based learning of Pastoral migration, and it’s unique knowledge and exchanges shared with the local land, migratory routes and places offered by Abhishek & Harsha"
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 6,
+        "day": 5
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 7,
+        "day": 16
+      },
+      "group": "Syncretic Cultures & Practices",
+      "unique_id": "rural-series:-pastoralism-and-land",
+      "background": {
+        "color": "#d9d2e9"
+      }
+    },
+    {
+      "text": {
+        "headline": "Seeking Begumpura",
+        "text": "This practicum by Archit & Naveen, brings together STS, Anti-Caste visions and actions, and Speculative and Service-System design together to develop a critical-creative practice of service / experience design."
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 5,
+        "day": 15
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 7,
+        "day": 9
+      },
+      "group": "Community Wellbeing",
+      "unique_id": "seeking-begumpura",
+      "background": {
+        "color": "#f6b26b"
+      }
+    },
+    {
+      "text": {
+        "headline": "Whose Land and Whose Development?",
+        "text": "This practicum by Abhishek & Harsha, will explore shrinking Grasslands, Commons & wildlife habitat, animal-wildlife conflicts, pastoralism getting affected in all this with green energy projects such as large-scale solar farms. Understanding the nexus the social factors and politics and policies framework behind it. Karanja- Submergence of land for water irrigation project- who benefitted and who lost."
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 5,
+        "day": 15
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 7,
+        "day": 9
+      },
+      "group": "Sensitive Ecologies",
+      "unique_id": "whose-land-and-whose-development?-",
+      "background": {
+        "color": "#f6b26b"
+      }
+    },
+    {
+      "text": {
+        "headline": "Micro Histories and Alternative Presents of Visual Cultures of Bidar",
+        "text": "This Core Pathway by Naveen, will Map & Understand the living practices of Visual Cultures in Bidar and their production. And collaboratively exploring possible alternative presents (and futures) of the practices."
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 5,
+        "day": 8
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 7,
+        "day": 16
+      },
+      "group": "Reimagining Technology"
+    }
+  ],
+  "eras": [
+    {
+      "text": {
+        "headline": "Trimester 1",
+        "text": "These are all the courses that will run from September 1 to November 23rd"
+      },
+      "start_date": {
+        "year": 2025,
+        "month": 9,
+        "day": 1
+      },
+      "end_date": {
+        "year": 2025,
+        "month": 11,
+        "day": 23
+      },
+      "unique_id": "trimester-1"
+    },
+    {
+      "text": {
+        "headline": "Trimester 2",
+        "text": "These are all the courses that will run from Jan 2nd to March 26th"
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 1,
+        "day": 2
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 3,
+        "day": 26
+      },
+      "unique_id": "trimester-2"
+    },
+    {
+      "text": {
+        "headline": "Trimester 3",
+        "text": "These are all the courses that will run from Jan 2nd to March 26th"
+      },
+      "start_date": {
+        "year": 2026,
+        "month": 5,
+        "day": 1
+      },
+      "end_date": {
+        "year": 2026,
+        "month": 7,
+        "day": 23
+      },
+      "unique_id": "trimester-3"
+    }
+  ],
+  "title": {
+    "text": {
+      "headline": "Living Labs Institute Course Calendar",
+      "text": "This timeline contains our course calendar over the next year divided into trimesters"
+    },
+    "media": {
+      "url": "https://img.notionusercontent.com/s3/prod-files-secure%2Fcbaeba0d-0cb6-41e6-8ac2-ab7e57771ecf%2F0e5414a4-35ee-4cd0-9416-448ec686af6c%2F20.jpg/size/w=2000?exp=1756453539&sig=Bnz5F_21lRQLAilrwb500Vqids6yWmj2tn_C-bgWcz4&id=25cf2a1a-5b73-8024-a7e7-cc886f0aa570&table=block"
+    },
+    "background": {
+      "color": "#04223f"
+    },
+    "unique_id": "timeline-title"
+  }
+}
