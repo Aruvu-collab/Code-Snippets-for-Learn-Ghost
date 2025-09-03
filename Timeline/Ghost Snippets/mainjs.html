@@ -1,0 +1,13 @@
+   <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" language="javascript" src="https://raw.githubusercontent.com/micahchoo/timeline-builder/refs/heads/main/2025-2026_timeline.json"></script>
+    <script type="text/javascript">
+        $.getJSON("https://raw.githubusercontent.com/micahchoo/timeline-builder/refs/heads/main/2025-2026_timeline.json", function (data) {
+            var timeline_json = data;
+        window.timeline = new TL.Timeline('timeline-embed', timeline_json, {
+            zoom_sequence: [2, 3, 5, 8]
+        });
+    });
+    </script>
