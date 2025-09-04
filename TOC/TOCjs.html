@@ -1,0 +1,45 @@
+<script>
+// Only run on this specific page
+if (window.location.pathname === '/schools/') {
+    document.addEventListener('DOMContentLoaded', function() {
+        // Find the position where you want to insert TOC
+        const targetElement = document.querySelector('.gh-content p:first-child'); // Adjust selector as needed
+        
+        // Create TOC
+        const headings = document.querySelectorAll('.gh-content h1, .gh-content h2, .gh-content h3, .gh-content h4');
+        
+        if (headings.length > 0) {
+            const tocContainer = document.createElement('div');
+            tocContainer.className = 'toc-container';
+            
+            const tocList = document.createElement('ul');
+            tocList.className = 'toc-list';
+            
+            headings.forEach(function(heading, index) {
+                // Create anchor ID if it doesn't exist
+                if (!heading.id) {
+                    heading.id = 'heading-' + index;
+                }
+                
+                const listItem = document.createElement('li');
+                listItem.className = 'toc-item toc-' + heading.tagName.toLowerCase();
+                
+                const link = document.createElement('a');
+                link.href = '#' + heading.id;
+                link.textContent = heading.textContent;
+                link.className = 'toc-link';
+                
+                listItem.appendChild(link);
+                tocList.appendChild(listItem);
+            });
+            
+            tocContainer.appendChild(tocList);
+            
+            // Insert TOC at desired position
+            if (targetElement) {
+                targetElement.parentNode.insertBefore(tocContainer, targetElement);
+            }
+        }
+    });
+}
+</script>
