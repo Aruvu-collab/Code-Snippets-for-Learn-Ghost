@@ -1,5 +1,6 @@
 {
       "API": "Application Programming Interface – a way for programs to talk to each other.",
       "JWT": "JSON Web Token – a compact, URL-safe token format for authentication.",
-      "CSRF token": "Cross-Site Request Forgery token – a secret value used to protect against forged requests."
+      "CSRF token": "Cross-Site Request Forgery token – a secret value used to protect against forged requests.",
+      "Experiential Learning": "A hands-on approach to education where learners actively engage with their environment and learn through direct experience rather than through lecture or theory alone."
     }

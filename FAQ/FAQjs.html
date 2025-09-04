@@ -4,19 +4,19 @@ const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/Aruvu-collab/Code-Snip
 
 // Markdown parser function
 function parseMarkdownFAQ(markdown) {
-  const lines = markdown.split('\n').filter(line => line.trim());
+  const lines = markdown.split('\n');
   const sections = [];
   let currentSection = null;
   let currentQuestion = null;
-  let currentAnswer = '';
+  let currentAnswerLines = [];
 
   lines.forEach(line => {
     if (line.startsWith('# ')) {
-      // New section
+      // New section - save previous question if exists
       if (currentSection && currentQuestion) {
         currentSection.questions.push({
           question: currentQuestion,
-          answer: currentAnswer.trim()
+          answer: processAnswerLines(currentAnswerLines)
         });
       }
       currentSection = {
@@ -25,20 +25,20 @@ function parseMarkdownFAQ(markdown) {
       };
       sections.push(currentSection);
       currentQuestion = null;
-      currentAnswer = '';
+      currentAnswerLines = [];
     } else if (line.startsWith('## ')) {
-      // New question
+      // New question - save previous question if exists
       if (currentQuestion && currentSection) {
         currentSection.questions.push({
           question: currentQuestion,
-          answer: currentAnswer.trim()
+          answer: processAnswerLines(currentAnswerLines)
         });
       }
       currentQuestion = line.substring(3).trim();
-      currentAnswer = '';
-    } else if (line.trim() && currentQuestion) {
-      // Answer content
-      currentAnswer += line + ' ';
+      currentAnswerLines = [];
+    } else if (currentQuestion !== null) {
+      // Answer content (including empty lines for paragraphs)
+      currentAnswerLines.push(line);
     }
   });
 
@@ -46,11 +46,72 @@ function parseMarkdownFAQ(markdown) {
   if (currentSection && currentQuestion) {
     currentSection.questions.push({
       question: currentQuestion,
-      answer: currentAnswer.trim()
+      answer: processAnswerLines(currentAnswerLines)
     });
   }
 
   return sections;
+}
+
+// Process answer lines to preserve formatting
+function processAnswerLines(lines) {
+  let html = '';
+  let currentParagraph = '';
+  let inList = false;
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    
+    if (line === '') {
+      // Empty line - end current paragraph
+      if (currentParagraph.trim()) {
+        if (inList) {
+          html += '</ul>';
+          inList = false;
+        }
+        html += `<p>${currentParagraph.trim()}</p>`;
+        currentParagraph = '';
+      }
+    } else if (line.startsWith('- ')) {
+      // List item
+      if (currentParagraph.trim()) {
+        html += `<p>${currentParagraph.trim()}</p>`;
+        currentParagraph = '';
+      }
+      if (!inList) {
+        html += '<ul>';
+        inList = true;
+      }
+      // Process markdown in list items (bold, italic, etc.)
+      const listContent = processInlineMarkdown(line.substring(2).trim());
+      html += `<li>${listContent}</li>`;
+    } else {
+      // Regular line - add to current paragraph
+      if (inList) {
+        html += '</ul>';
+        inList = false;
+      }
+      currentParagraph += (currentParagraph ? ' ' : '') + line;
+    }
+  }
+  
+  // Handle remaining content
+  if (inList) {
+    html += '</ul>';
+  }
+  if (currentParagraph.trim()) {
+    html += `<p>${currentParagraph.trim()}</p>`;
+  }
+  
+  return html.trim();
+}
+
+// Process inline markdown (bold, italic, code)
+function processInlineMarkdown(text) {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Bold
+    .replace(/\*(.*?)\*/g, '<em>$1</em>')              // Italic
+    .replace(/`(.*?)`/g, '<code>$1</code>');           // Code
 }
 
 // Generate HTML from parsed data
