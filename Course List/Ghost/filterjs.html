@@ -1,196 +1,243 @@
- <script>
-        // Configuration
-        const CONFIG = {
-            GHOST_URL: 'https://learn.livinglabs.network',
-            API_KEY: 'd43ba92c8b1434af08d837c579',
-            API_VERSION: 'v3', // Working version confirmed by API tester
-            MAX_RETRIES: 3,
-            RETRY_DELAY: 1000,
-            DEBUG_MODE: true // Set to false in production
-        };
-
-        // Display name mapping for internal tag keywords (updated based on your actual tags)
-        const KEY_DISPLAY_NAMES = {
-            'context': 'Context',
+<script>
+    // Comprehensive Configuration
+    const CONFIG = {
+        // API Configuration
+        GHOST_URL: 'https://learn.livinglabs.network',
+        API_KEY: 'd43ba92c8b1434af08d837c579',
+        API_VERSION: 'v3',
+        MAX_RETRIES: 3,
+        RETRY_DELAY: 1000,
+        
+        // Debug and Performance
+        DEBUG_MODE: true, // Set to false in production
+        CACHE_ENABLED: true,
+        
+        // Content Configuration
+        COURSE_TAG_SLUGS: ['course', 'hash-course'], // Possible course tag variations
+        REQUIRED_TAGS: ['active'], // Tags that must be present (in addition to course tag)
+        
+        // Filter Configuration
+        ALLOWED_FILTER_KEYWORDS: [
+        //  'level', 
+            'duration',
+        //  'instructor',
+        //  'mode',
+            'concentration',
+            'module',
+        //  'trimester',
+            'year',
+        //  'collaborator',
+            'place',
+            'context'
+            // Add or remove keywords as needed
+        ],
+        
+        // Display name mapping for internal tag keywords
+        KEY_DISPLAY_NAMES: {
+            'context': 'Micro-Context',
             'duration': 'Duration', 
             'instructor': 'Instructor',
             'level': 'Level',
-            'mode': 'Mode',
-            'learning-module': 'Learning Module',
+            'mode': 'Learning Mode',
+            'module': 'Learning Module',
             'concentration': 'Concentration',
-            'date': 'Date',
-            'learning-mode': 'Learning Mode',
-            'micro-context': 'Micro-Context',
-            'offered-designed-by': 'Offered / Designed by',
+            'context': 'Micro-Context',
             'trimester': 'Trimester',
-            'year-offered': 'Year offered',
-            'school': 'School'
-        };
+            'year': 'Year offered',
+            'concentration': 'School of Concentration',
+            'place': 'Place of Learning'
+        },
+        
+        // API Query Configuration
+        POSTS_PER_PAGE: 100,
+        MAX_POSTS_DISPLAY: 50,
+        REQUIRED_POST_FIELDS: 'id,title,url,excerpt,feature_image',
+        INCLUDE_RELATIONS: 'tags',
+        
+        // UI Configuration
+        DEFAULT_EXCERPT: 'Explore this course to learn more about the subject matter and requirements.',
+        FALLBACK_IMAGE_GRADIENT: 'linear-gradient(135deg, #3498db 0%, #9b59b6 100%)',
+        
+        // Messages
+        MESSAGES: {
+            NO_TAGS: 'No internal tags found for filtering. Please create tags like #keyword-value in Ghost admin.',
+            NO_COURSE_TAG: 'No course tag found. Please create a "course" or "#course" tag in Ghost admin.',
+            NO_COURSES: 'No courses found. Make sure your posts are tagged with "course" or "#course".',
+            NO_MATCHES: 'No courses match the selected filters. Try different filter combinations.',
+            LOADING: 'Loading courses...',
+            LOADING_FILTERS: 'Loading filters...',
+            ERROR_LOADING: 'Error loading courses. Please check your connection and try again.',
+            ERROR_INIT: 'Failed to load the course filter system',
+            ERROR_REFRESH: 'Error loading filters. Please refresh the page.'
+        }
+    };
 
-        // State management
-        const state = {
-            allTags: [],
-            internalTags: [],
-            courseTag: null,
-            activeFilters: {},
-            isLoading: false,
-            cache: new Map()
-        };
+    // State management
+    const state = {
+        allTags: [],
+        internalTags: [],
+        courseTag: null,
+        activeFilters: {},
+        isLoading: false,
+        cache: CONFIG.CACHE_ENABLED ? new Map() : null
+    };
 
-        /* ----------------- Enhanced API Helper with Version Detection ----------------- */
-        async function apiCall(endpoint, params = '', retryCount = 0) {
-            // Normalize URL to avoid double slashes
-            const baseUrl = CONFIG.GHOST_URL.endsWith('/') ? CONFIG.GHOST_URL.slice(0, -1) : CONFIG.GHOST_URL;
-            
-            // Helper function to make a single API request
-            async function makeRequest(page = 1, currentRetryCount = 0) {
-                const pageParam = params ? `${params}&page=${page}&limit=100` : `&page=${page}&limit=100`;
-                const url = `${baseUrl}/ghost/api/${CONFIG.API_VERSION}/content/${endpoint}?key=${CONFIG.API_KEY}${pageParam}`;
-                console.log(url);
-                
-                try {
-                    debugLog(`Making API call: ${url}`);
-                    
-                    const response = await fetch(url);
-                    
-                    if (!response.ok) {
-                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-                    }
-                    
-                    const data = await response.json();
-                    debugLog(`API call successful, got ${Object.keys(data)[0]} data`);
-                    return data;
-                    
-                } catch (error) {
-                    console.error(`API call failed (attempt ${currentRetryCount + 1}):`, error);
-                    
-                    if (currentRetryCount < CONFIG.MAX_RETRIES) {
-                        await sleep(CONFIG.RETRY_DELAY * (currentRetryCount + 1));
-                        return makeRequest(page, currentRetryCount + 1);
-                    }
-                    
-                    throw error;
-                }
-            }
+    /* ----------------- Enhanced API Helper with Version Detection ----------------- */
+    async function apiCall(endpoint, params = '', retryCount = 0) {
+        // Normalize URL to avoid double slashes
+        const baseUrl = CONFIG.GHOST_URL.endsWith('/') ? CONFIG.GHOST_URL.slice(0, -1) : CONFIG.GHOST_URL;
+        
+        // Helper function to make a single API request
+        async function makeRequest(page = 1, currentRetryCount = 0) {
+            const pageParam = params ? `${params}&page=${page}&limit=${CONFIG.POSTS_PER_PAGE}` : `&page=${page}&limit=${CONFIG.POSTS_PER_PAGE}`;
+            const url = `${baseUrl}/ghost/api/${CONFIG.API_VERSION}/content/${endpoint}?key=${CONFIG.API_KEY}${pageParam}`;
+            console.log(url);
             
             try {
-                // Make the first request to get total count
-                const firstResponse = await makeRequest(1, retryCount);
-                const totalCount = firstResponse.meta.pagination.total;
-                const dataKey = Object.keys(firstResponse)[0]; // Get the data key (e.g., 'posts', 'pages', etc.)
+                debugLog(`Making API call: ${url}`);
                 
-                // If total count is 100 or less, return the first response
-                if (totalCount <= 100) {
-                    return firstResponse;
+                const response = await fetch(url);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                 }
                 
-                // Calculate total pages needed
-                const totalPages = Math.ceil(totalCount / 100);
-                debugLog(`Total records: ${totalCount}, Total pages needed: ${totalPages}`);
-                
-                // Start with the data from the first request
-                let allData = [...firstResponse[dataKey]];
-                
-                // Make requests for remaining pages
-                const pagePromises = [];
-                for (let page = 2; page <= totalPages; page++) {
-                    pagePromises.push(makeRequest(page, 0));
-                }
-                
-                // Wait for all additional requests to complete
-                const additionalResponses = await Promise.all(pagePromises);
-                
-                // Append all additional data
-                for (const response of additionalResponses) {
-                    allData = allData.concat(response[dataKey]);
-                }
-                
-                // Return combined result with updated pagination info
-                return {
-                    ...firstResponse,
-                    [dataKey]: allData,
-                    meta: {
-                        ...firstResponse.meta,
-                        pagination: {
-                            ...firstResponse.meta.pagination,
-                            page: 1,
-                            limit: allData.length,
-                            pages: 1,
-                            total: totalCount,
-                            prev: null,
-                            next: null
-                        }
-                    }
-                };
+                const data = await response.json();
+                debugLog(`API call successful, got ${Object.keys(data)[0]} data`);
+                return data;
                 
             } catch (error) {
-                console.error(`Paginated API call failed:`, error);
+                console.error(`API call failed (attempt ${currentRetryCount + 1}):`, error);
+                
+                if (currentRetryCount < CONFIG.MAX_RETRIES) {
+                    await sleep(CONFIG.RETRY_DELAY * (currentRetryCount + 1));
+                    return makeRequest(page, currentRetryCount + 1);
+                }
+                
                 throw error;
             }
         }
-
-        function sleep(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
-        }
-
-        const byId = id => document.getElementById(id);
-
-        /* ----------------- Debug Functions ----------------- */
-        function debugLog(message, data = null) {
-            if (CONFIG.DEBUG_MODE) {
-                console.log(`[DEBUG] ${message}`, data || '');
-            }
-        }
-
-        function showDebugInfo(info) {
-            if (CONFIG.DEBUG_MODE) {
-                const debugDiv = byId('debugInfo');
-                debugDiv.style.display = 'block';
-                debugDiv.innerHTML = `<strong>Debug Info:</strong> ${info}<br><strong>API Version:</strong> ${CONFIG.API_VERSION}`;
-            }
-        }
-
-        /* ----------------- Enhanced Error Handling ----------------- */
-        function showError(message) {
-            const errorContainer = byId('errorContainer');
-            errorContainer.innerHTML = `<div class="error-message">${message}</div>`;
-        }
-
-        function clearError() {
-            const errorContainer = byId('errorContainer');
-            errorContainer.innerHTML = '';
-        }
-
-        /* ----------------- Internal Tags Only Parsing ----------------- */
-        function parseInternalTags(tags) {
-            const keywords = {};
-            const internalTags = [];
-            let courseTagFound = null;
+        
+        try {
+            // Make the first request to get total count
+            const firstResponse = await makeRequest(1, retryCount);
+            const totalCount = firstResponse.meta.pagination.total;
+            const dataKey = Object.keys(firstResponse)[0]; // Get the data key (e.g., 'posts', 'pages', etc.)
             
-            debugLog('Starting tag parsing...');
-            debugLog('Total tags to process:', tags.length);
+            // If total count is within one page, return the first response
+            if (totalCount <= CONFIG.POSTS_PER_PAGE) {
+                return firstResponse;
+            }
             
-            tags.forEach(tag => {
-                // Check for course tag (can be internal #course -> hash-course OR regular course)
-                // If no explicit course tag exists, we'll treat all posts as potential courses
-                if (tag.slug === 'course' || tag.slug === 'hash-course') {
-                    courseTagFound = tag;
-                    debugLog('Found explicit course tag:', tag.slug);
-                    return;
+            // Calculate total pages needed
+            const totalPages = Math.ceil(totalCount / CONFIG.POSTS_PER_PAGE);
+            debugLog(`Total records: ${totalCount}, Total pages needed: ${totalPages}`);
+            
+            // Start with the data from the first request
+            let allData = [...firstResponse[dataKey]];
+            
+            // Make requests for remaining pages
+            const pagePromises = [];
+            for (let page = 2; page <= totalPages; page++) {
+                pagePromises.push(makeRequest(page, 0));
+            }
+            
+            // Wait for all additional requests to complete
+            const additionalResponses = await Promise.all(pagePromises);
+            
+            // Append all additional data
+            for (const response of additionalResponses) {
+                allData = allData.concat(response[dataKey]);
+            }
+            
+            // Return combined result with updated pagination info
+            return {
+                ...firstResponse,
+                [dataKey]: allData,
+                meta: {
+                    ...firstResponse.meta,
+                    pagination: {
+                        ...firstResponse.meta.pagination,
+                        page: 1,
+                        limit: allData.length,
+                        pages: 1,
+                        total: totalCount,
+                        prev: null,
+                        next: null
+                    }
                 }
+            };
+            
+        } catch (error) {
+            console.error(`Paginated API call failed:`, error);
+            throw error;
+        }
+    }
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    const byId = id => document.getElementById(id);
+
+    /* ----------------- Debug Functions ----------------- */
+    function debugLog(message, data = null) {
+        if (CONFIG.DEBUG_MODE) {
+            console.log(`[DEBUG] ${message}`, data || '');
+        }
+    }
+
+    function showDebugInfo(info) {
+        if (CONFIG.DEBUG_MODE) {
+            const debugDiv = byId('debugInfo');
+            debugDiv.style.display = 'block';
+            debugDiv.innerHTML = `<strong>Debug Info:</strong> ${info}<br><strong>API Version:</strong> ${CONFIG.API_VERSION}`;
+        }
+    }
+
+    /* ----------------- Enhanced Error Handling ----------------- */
+    function showError(message) {
+        const errorContainer = byId('errorContainer');
+        errorContainer.innerHTML = `<div class="error-message">${message}</div>`;
+    }
+
+    function clearError() {
+        const errorContainer = byId('errorContainer');
+        errorContainer.innerHTML = '';
+    }
+
+    /* ----------------- Internal Tags Only Parsing (With Keyword Filtering) ----------------- */
+    function parseInternalTags(tags) {
+        const keywords = {};
+        const internalTags = [];
+        let courseTagFound = null;
+        
+        debugLog('Starting tag parsing...');
+        debugLog('Total tags to process:', tags.length);
+        debugLog('Allowed filter keywords:', CONFIG.ALLOWED_FILTER_KEYWORDS);
+        
+        tags.forEach(tag => {
+            // Check for course tag (can be any of the configured variations)
+            if (CONFIG.COURSE_TAG_SLUGS.includes(tag.slug)) {
+                courseTagFound = tag;
+                debugLog('Found explicit course tag:', tag.slug);
+                return;
+            }
+            
+            // Only process internal tags (hash- prefix) for filtering
+            if (tag.slug.startsWith('hash-')) {
+                internalTags.push(tag);
                 
-                // Only process internal tags (hash- prefix) for filtering
-                if (tag.slug.startsWith('hash-')) {
-                    internalTags.push(tag);
+                const withoutHash = tag.slug.replace('hash-', '');
+                const parts = withoutHash.split('-');
+                
+                // Must have at least keyword-value pattern
+                if (parts.length >= 2) {
+                    const keyword = parts[0];
+                    const value = parts.slice(1).join('-');
                     
-                    const withoutHash = tag.slug.replace('hash-', '');
-                    const parts = withoutHash.split('-');
-                    
-                    // Must have at least keyword-value pattern
-                    if (parts.length >= 2) {
-                        const keyword = parts[0];
-                        const value = parts.slice(1).join('-');
-                        
+                    // Check if keyword is in allowed list
+                    if (CONFIG.ALLOWED_FILTER_KEYWORDS.includes(keyword)) {
                         debugLog(`Parsed internal tag: ${tag.slug} -> keyword: ${keyword}, value: ${value}`);
                         
                         if (!keywords[keyword]) {
@@ -198,436 +245,463 @@
                         }
                         keywords[keyword].add(value);
                     } else {
-                        debugLog(`Skipped malformed internal tag: ${tag.slug}`);
+                        debugLog(`Skipped filtered-out keyword: ${keyword} from tag: ${tag.slug}`);
                     }
                 } else {
-                    debugLog(`Skipped regular tag: ${tag.slug}`);
+                    debugLog(`Skipped malformed internal tag: ${tag.slug}`);
                 }
+            } else {
+                debugLog(`Skipped regular tag: ${tag.slug}`);
+            }
+        });
+
+        // Convert Sets to sorted arrays
+        Object.keys(keywords).forEach(key => {
+            const values = Array.from(keywords[key]).sort();
+            if (values.length > 0) {
+                keywords[key] = values;
+            } else {
+                delete keywords[key];
+            }
+        });
+
+        debugLog('Parsed keywords:', keywords);
+        debugLog('Internal tags found:', internalTags.length);
+        debugLog('Course tag found:', courseTagFound ? courseTagFound.slug : 'none');
+
+        // Store in state
+        state.internalTags = internalTags;
+        state.courseTag = courseTagFound;
+
+        showDebugInfo(`Found ${internalTags.length} internal tags, ${Object.keys(keywords).length} keyword categories, course tag: ${courseTagFound ? courseTagFound.slug : 'none'}`);
+
+        return keywords;
+    }
+
+    /* ----------------- Enhanced Filter Creation ----------------- */
+    function createKeywordFilters(keywords) {
+        const container = byId('keywordFilters');
+        
+        if (Object.keys(keywords).length === 0) {
+            container.innerHTML = `<div class="no-posts">${CONFIG.MESSAGES.NO_TAGS}</div>`;
+            return;
+        }
+        
+        container.innerHTML = '';
+
+        Object.keys(keywords).sort().forEach(keyword => {
+            const group = document.createElement('div');
+            group.className = 'filter-group';
+
+            const label = document.createElement('label');
+            label.className = 'filter-label';
+            label.textContent = CONFIG.KEY_DISPLAY_NAMES[keyword] || formatDisplayName(keyword);
+            label.setAttribute('for', `${keyword}Select`);
+
+            const select = document.createElement('select');
+            select.id = `${keyword}Select`;
+            select.setAttribute('data-keyword', keyword);
+
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.textContent = `Any ${CONFIG.KEY_DISPLAY_NAMES[keyword] || formatDisplayName(keyword)}`;
+            select.appendChild(defaultOption);
+
+            keywords[keyword].forEach(value => {
+                const option = document.createElement('option');
+                option.value = value;
+                option.textContent = formatDisplayName(value);
+                select.appendChild(option);
             });
 
-            // Convert Sets to sorted arrays
-            Object.keys(keywords).forEach(key => {
-                const values = Array.from(keywords[key]).sort();
-                if (values.length > 0) {
-                    keywords[key] = values;
-                } else {
-                    delete keywords[key];
-                }
-            });
+            select.addEventListener('change', handleFilterChange);
 
-            debugLog('Parsed keywords:', keywords);
-            debugLog('Internal tags found:', internalTags.length);
-            debugLog('Course tag found:', courseTagFound ? courseTagFound.slug : 'none');
+            group.appendChild(label);
+            group.appendChild(select);
+            container.appendChild(group);
+        });
 
-            // Store in state
-            state.internalTags = internalTags;
-            state.courseTag = courseTagFound;
+        debugLog('Created filter dropdowns for keywords:', Object.keys(keywords));
+    }
 
-            showDebugInfo(`Found ${internalTags.length} internal tags, ${Object.keys(keywords).length} keyword categories, course tag: ${courseTagFound ? courseTagFound.slug : 'none'}`);
+    function formatDisplayName(str) {
+        return str.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    }
 
-            return keywords;
+    /* ----------------- Enhanced Filter Handling (Course-Only) ----------------- */
+    async function handleFilterChange() {
+        if (state.isLoading) return;
+        
+        clearError();
+        
+        // Collect active keyword filters only (no course filter UI)
+        state.activeFilters = {};
+        
+        // Get keyword filters
+        const keywordSelects = document.querySelectorAll('[data-keyword]');
+        keywordSelects.forEach(select => {
+            const keyword = select.getAttribute('data-keyword');
+            const value = select.value;
+            if (value) {
+                state.activeFilters[keyword] = value;
+            }
+        });
+
+        debugLog('Active filters (courses only):', state.activeFilters);
+
+        updateActiveFiltersDisplay();
+        await fetchCourses();
+    }
+
+    /* ----------------- Enhanced Active Filters Display ----------------- */
+    function updateActiveFiltersDisplay() {
+        const container = byId('activeFilters');
+        const clearBtn = byId('clearFilters');
+        
+        if (Object.keys(state.activeFilters).length === 0) {
+            container.style.display = 'none';
+            clearBtn.style.display = 'none';
+            return;
         }
 
-        /* ----------------- Enhanced Filter Creation ----------------- */
-        function createKeywordFilters(keywords) {
-            const container = byId('keywordFilters');
+        container.style.display = 'flex';
+        clearBtn.style.display = 'block';
+        container.innerHTML = '';
+
+        Object.entries(state.activeFilters).forEach(([key, value]) => {
+            const tag = document.createElement('div');
+            tag.className = 'filter-tag';
             
-            if (Object.keys(keywords).length === 0) {
-                container.innerHTML = '<div class="no-posts">No internal tags found for filtering. Make sure you have tags like #keyword-value in Ghost admin.</div>';
+            const displayKey = CONFIG.KEY_DISPLAY_NAMES[key] || formatDisplayName(key);
+            const displayValue = formatDisplayName(value);
+            
+            tag.innerHTML = `
+                ${displayKey}: ${displayValue}
+                <span class="remove" onclick="removeFilter('${key}')">×</span>
+            `;
+            container.appendChild(tag);
+        });
+    }
+
+    /* ----------------- Remove Filter Function (Updated) ----------------- */
+    window.removeFilter = function(filterKey) {
+        delete state.activeFilters[filterKey];
+        
+        const select = document.querySelector(`[data-keyword="${filterKey}"]`);
+        if (select) select.value = '';
+        
+        updateActiveFiltersDisplay();
+        fetchCourses();
+    }
+
+    /* ----------------- Clear All Filters Function (Updated) ----------------- */
+    window.clearAllFilters = function() {
+        state.activeFilters = {};
+        
+        const keywordSelects = document.querySelectorAll('[data-keyword]');
+        keywordSelects.forEach(select => select.value = '');
+        
+        updateActiveFiltersDisplay();
+        fetchCourses();
+    }
+
+    /* ----------------- Fetch Courses Only (Always Filtered by Course Tag) ----------------- */
+    async function fetchCourses() {
+        const container = byId('postList');
+        
+        if (!state.courseTag) {
+            container.innerHTML = `<div class="no-posts">${CONFIG.MESSAGES.NO_COURSE_TAG}</div>`;
+            return;
+        }
+
+        state.isLoading = true;
+        container.innerHTML = `<div class="loading">${CONFIG.MESSAGES.LOADING}</div>`;
+
+        try {
+            // Build filter string: always include course tag + required tags + any additional filters
+            const filterParts = [`tag:${state.courseTag.slug}`];
+            
+            // Add required tags
+            CONFIG.REQUIRED_TAGS.forEach(requiredTag => {
+                filterParts.push(`tag:${requiredTag}`);
+            });
+            
+            // Add additional keyword filters
+            Object.entries(state.activeFilters).forEach(([key, value]) => {
+                filterParts.push(`tag:hash-${key}-${value}`);
+            });
+
+            const filterString = filterParts.join('+');
+            const cacheKey = filterString;
+
+            debugLog('Course filter string:', filterString);
+
+            // Check cache first
+            if (CONFIG.CACHE_ENABLED && state.cache && state.cache.has(cacheKey)) {
+                displayPosts(state.cache.get(cacheKey));
+                state.isLoading = false;
                 return;
             }
+
+            // Make API call - always filtered by course tag
+            const params = `&filter=${encodeURIComponent(filterString)}&limit=${CONFIG.MAX_POSTS_DISPLAY}&fields=${CONFIG.REQUIRED_POST_FIELDS}&include=${CONFIG.INCLUDE_RELATIONS}`;
+            const data = await apiCall('posts', params);
+
+            // Cache the results
+            if (CONFIG.CACHE_ENABLED && state.cache) {
+                state.cache.set(cacheKey, data.posts || []);
+            }
             
-            container.innerHTML = '';
+            displayPosts(data.posts || []);
+            
+        } catch (error) {
+            console.error('Error fetching courses:', error);
+            showError(CONFIG.MESSAGES.ERROR_LOADING);
+            container.innerHTML = `<div class="no-posts">${CONFIG.MESSAGES.ERROR_LOADING}</div>`;
+        } finally {
+            state.isLoading = false;
+        }
+    }
 
-            Object.keys(keywords).sort().forEach(keyword => {
-                const group = document.createElement('div');
-                group.className = 'filter-group';
+    function buildInternalTagFilters() {
+        const filterParts = [];
+        
+        Object.entries(state.activeFilters).forEach(([key, value]) => {
+            if (key === 'course') {
+                // Course can be either internal (hash-course) or regular (course)
+                if (state.courseTag) {
+                    filterParts.push(`tag:${state.courseTag.slug}`);
+                }
+                // If value is 'all', don't add any course filter
+                else if (value !== 'all') {
+                    // This shouldn't happen, but just in case
+                    filterParts.push(`tag:${value}`);
+                }
+            } else {
+                // All other filters must be internal tags
+                filterParts.push(`tag:hash-${key}-${value}`);
+            }
+        });
+        
+        debugLog('Built filter parts:', filterParts);
+        return filterParts;
+    }
 
-                const label = document.createElement('label');
-                label.className = 'filter-label';
-                label.textContent = KEY_DISPLAY_NAMES[keyword] || formatDisplayName(keyword);
-                label.setAttribute('for', `${keyword}Select`);
-
-                const select = document.createElement('select');
-                select.id = `${keyword}Select`;
-                select.setAttribute('data-keyword', keyword);
-
-                const defaultOption = document.createElement('option');
-                defaultOption.value = '';
-                defaultOption.textContent = `Any ${KEY_DISPLAY_NAMES[keyword] || formatDisplayName(keyword)}`;
-                select.appendChild(defaultOption);
-
-                keywords[keyword].forEach(value => {
-                    const option = document.createElement('option');
-                    option.value = value;
-                    option.textContent = formatDisplayName(value);
-                    select.appendChild(option);
-                });
-
-                select.addEventListener('change', handleFilterChange);
-
-                group.appendChild(label);
-                group.appendChild(select);
-                container.appendChild(group);
-            });
-
-            debugLog('Created filter dropdowns for keywords:', Object.keys(keywords));
+    function displayPosts(posts) {
+        const container = byId('postList');
+        
+        if (!posts.length) {
+            const filterCount = Object.keys(state.activeFilters).length;
+            const message = filterCount > 0 
+                ? CONFIG.MESSAGES.NO_MATCHES
+                : CONFIG.MESSAGES.NO_COURSES;
+            container.innerHTML = `<div class="no-posts">${message}</div>`;
+            return;
         }
 
-        function formatDisplayName(str) {
-            return str.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-        }
+        debugLog('Displaying courses:', posts.length);
 
-        /* ----------------- Enhanced Filter Handling (Course-Only) ----------------- */
-        async function handleFilterChange() {
-            if (state.isLoading) return;
-            
+        const grid = document.createElement('div');
+        grid.className = 'posts-grid';
+
+        posts.forEach(post => {
+            const card = createPostCard(post);
+            grid.appendChild(card);
+        });
+
+        container.innerHTML = '';
+        container.appendChild(grid);
+    }
+
+    function createPostCard(post) {
+        const card = document.createElement('div');
+        card.className = 'post-card';
+        card.onclick = () => window.open(post.url, '_blank');
+
+        const imageSection = document.createElement('div');
+        imageSection.className = 'post-image';
+        imageSection.appendChild(createPostImage(post));
+
+        const content = document.createElement('div');
+        content.className = 'post-content';
+
+        const title = document.createElement('h3');
+        title.className = 'post-title';
+        title.textContent = post.title;
+
+        const excerpt = document.createElement('p');
+        excerpt.className = 'post-excerpt';
+        excerpt.textContent = post.excerpt || CONFIG.DEFAULT_EXCERPT;
+
+        const tagsContainer = createInternalTagsContainer(post.tags);
+        const meta = createPostMeta(post);
+
+        content.appendChild(title);
+        content.appendChild(excerpt);
+        if (tagsContainer.children.length > 0) {
+            content.appendChild(tagsContainer);
+        }
+        content.appendChild(meta);
+
+        card.appendChild(imageSection);
+        card.appendChild(content);
+        
+        return card;
+    }
+
+    function createPostImage(post) {
+        if (post.feature_image) {
+            const img = document.createElement('img');
+            img.src = post.feature_image;
+            img.alt = post.title;
+            img.onerror = function() {
+                this.parentNode.innerHTML = createFallbackImage(post.title);
+            };
+            return img;
+        } else {
+            const fallback = document.createElement('div');
+            fallback.innerHTML = createFallbackImage(post.title);
+            return fallback.firstChild;
+        }
+    }
+
+    function createFallbackImage(title) {
+        return `<div style="background: ${CONFIG.FALLBACK_IMAGE_GRADIENT}; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">${title.charAt(0).toUpperCase()}</div>`;
+    }
+
+    function createInternalTagsContainer(tags) {
+        const container = document.createElement('div');
+        container.className = 'post-tags';
+        
+        if (!tags) return container;
+
+        // Only show internal tags that are used for filtering
+        tags.forEach(tag => {
+            if (tag.slug.startsWith('hash-')) {
+                const tagInfo = parseInternalTagInfo(tag.slug);
+                if (tagInfo && CONFIG.ALLOWED_FILTER_KEYWORDS.includes(tagInfo.keyword)) {
+                    const tagEl = document.createElement('span');
+                    tagEl.className = 'post-tag';
+                    const displayName = CONFIG.KEY_DISPLAY_NAMES[tagInfo.keyword] || formatDisplayName(tagInfo.keyword);
+                    tagEl.textContent = `${displayName}: ${formatDisplayName(tagInfo.value)}`;
+                    container.appendChild(tagEl);
+                }
+            }
+        });
+
+        return container;
+    }
+
+    function parseInternalTagInfo(slug) {
+        if (slug.startsWith('hash-')) {
+            const withoutPrefix = slug.replace('hash-', '');
+            const parts = withoutPrefix.split('-');
+            if (parts.length >= 2) {
+                return {
+                    keyword: parts[0],
+                    value: parts.slice(1).join('-')
+                };
+            }
+        }
+        return null;
+    }
+
+    function createPostMeta(post) {
+        const meta = document.createElement('div');
+        meta.className = 'post-meta';
+
+        const readMore = document.createElement('a');
+        readMore.href = post.url;
+        readMore.className = 'read-more';
+        readMore.textContent = 'View Course';
+        readMore.target = '_blank';
+        readMore.onclick = e => e.stopPropagation();
+
+        meta.appendChild(readMore);
+        return meta;
+    }
+
+    /* ----------------- Enhanced Initialization ----------------- */
+    async function initialize() {
+        try {
             clearError();
             
-            // Collect active keyword filters only (no course filter UI)
-            state.activeFilters = {};
+            debugLog('Initializing course filter system...');
+            debugLog('Configuration:', CONFIG);
             
-            // Get keyword filters
+            // Show loading state
+            byId('keywordFilters').innerHTML = `<div class="loading">${CONFIG.MESSAGES.LOADING_FILTERS}</div>`;
+            
+            // Fetch all tags with enhanced error handling
+            const { tags } = await apiCall('tags', '&limit=all');
+            
+            if (!tags || tags.length === 0) {
+                throw new Error('No tags found in Ghost');
+            }
+            
+            state.allTags = tags;
+            debugLog(`Loaded ${tags.length} total tags`);
+
+            // Parse internal tags only (with keyword filtering)
+            const keywords = parseInternalTags(tags);
+            debugLog('Available filtered keywords:', Object.keys(keywords));
+            
+            if (Object.keys(keywords).length === 0) {
+                showError(CONFIG.MESSAGES.NO_TAGS);
+            }
+            
+            createKeywordFilters(keywords);
+
+            // Add event listeners for keyword filters only
             const keywordSelects = document.querySelectorAll('[data-keyword]');
             keywordSelects.forEach(select => {
-                const keyword = select.getAttribute('data-keyword');
-                const value = select.value;
-                if (value) {
-                    state.activeFilters[keyword] = value;
-                }
+                select.addEventListener('change', handleFilterChange);
             });
 
-            debugLog('Active filters (courses only):', state.activeFilters);
-
-            updateActiveFiltersDisplay();
+            // Load initial courses (all courses without additional filters)
             await fetchCourses();
-        }
 
-        /* ----------------- Enhanced Active Filters Display ----------------- */
-        function updateActiveFiltersDisplay() {
-            const container = byId('activeFilters');
-            const clearBtn = byId('clearFilters');
+            debugLog('Initialization complete');
             
-            if (Object.keys(state.activeFilters).length === 0) {
-                container.style.display = 'none';
-                clearBtn.style.display = 'none';
-                return;
+        } catch (error) {
+            console.error('Error initializing:', error);
+            showError(`${CONFIG.MESSAGES.ERROR_INIT}: ${error.message}. Please refresh the page to try again.`);
+            byId('keywordFilters').innerHTML = `<div class="no-posts">${CONFIG.MESSAGES.ERROR_REFRESH}</div>`;
+        }
+    }
+
+    // Initialize when page loads
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initialize);
+    } else {
+        initialize();
+    }
+
+    // Add debug helpers for development
+    window.ghostDebug = {
+        state,
+        config: CONFIG,
+        apiCall,
+        clearCache: () => {
+            if (CONFIG.CACHE_ENABLED && state.cache) {
+                state.cache.clear();
+                debugLog('Cache cleared');
             }
-
-            container.style.display = 'flex';
-            clearBtn.style.display = 'block';
-            container.innerHTML = '';
-
-            Object.entries(state.activeFilters).forEach(([key, value]) => {
-                const tag = document.createElement('div');
-                tag.className = 'filter-tag';
-                
-                const displayKey = KEY_DISPLAY_NAMES[key] || formatDisplayName(key);
-                const displayValue = formatDisplayName(value);
-                
-                tag.innerHTML = `
-                    ${displayKey}: ${displayValue}
-                    <span class="remove" onclick="removeFilter('${key}')">×</span>
-                `;
-                container.appendChild(tag);
-            });
-        }
-
-        /* ----------------- Remove Filter Function (Updated) ----------------- */
-        window.removeFilter = function(filterKey) {
-            delete state.activeFilters[filterKey];
-            
-            const select = document.querySelector(`[data-keyword="${filterKey}"]`);
-            if (select) select.value = '';
-            
-            updateActiveFiltersDisplay();
-            fetchCourses();
-        }
-
-        /* ----------------- Clear All Filters Function (Updated) ----------------- */
-        window.clearAllFilters = function() {
-            state.activeFilters = {};
-            
-            const keywordSelects = document.querySelectorAll('[data-keyword]');
-            keywordSelects.forEach(select => select.value = '');
-            
-            updateActiveFiltersDisplay();
-            fetchCourses();
-        }
-
-        /* ----------------- Fetch Courses Only (Always Filtered by Course Tag) ----------------- */
-        async function fetchCourses() {
-            const container = byId('postList');
-            
-            if (!state.courseTag) {
-                container.innerHTML = '<div class="no-posts">No course tag found. Please create a "course" or "#course" tag in Ghost admin.</div>';
-                return;
+        },
+        toggleDebug: () => {
+            CONFIG.DEBUG_MODE = !CONFIG.DEBUG_MODE;
+            byId('debugInfo').style.display = CONFIG.DEBUG_MODE ? 'block' : 'none';
+            debugLog(`Debug mode ${CONFIG.DEBUG_MODE ? 'enabled' : 'disabled'}`);
+        },
+        toggleCache: () => {
+            CONFIG.CACHE_ENABLED = !CONFIG.CACHE_ENABLED;
+            if (!CONFIG.CACHE_ENABLED && state.cache) {
+                state.cache.clear();
+                state.cache = null;
+            } else if (CONFIG.CACHE_ENABLED && !state.cache) {
+                state.cache = new Map();
             }
-
-            state.isLoading = true;
-            container.innerHTML = '<div class="loading">Loading courses...</div>';
-
-            try {
-                // Build filter string: always include course tag + any additional filters
-                const filterParts = [`tag:${state.courseTag.slug}+tag:active`];
-                
-                // Add additional keyword filters
-                Object.entries(state.activeFilters).forEach(([key, value]) => {
-                    filterParts.push(`tag:hash-${key}-${value}`);
-                });
-
-                const filterString = filterParts.join('+');
-                const cacheKey = filterString;
-
-                debugLog('Course filter string:', filterString);
-
-                // Check cache first
-                if (state.cache.has(cacheKey)) {
-                    displayPosts(state.cache.get(cacheKey));
-                    state.isLoading = false;
-                    return;
-                }
-
-                // Make API call - always filtered by course tag
-                const params = `&filter=${encodeURIComponent(filterString)}&limit=50&fields=id,title,url,excerpt,feature_image&include=tags`;
-                const data = await apiCall('posts', params);
-
-                // Cache the results
-                state.cache.set(cacheKey, data.posts || []);
-                
-                displayPosts(data.posts || []);
-                
-            } catch (error) {
-                console.error('Error fetching courses:', error);
-                showError('Error loading courses. Please check your connection and try again.');
-                container.innerHTML = '<div class="no-posts">Error loading courses. Please try again.</div>';
-            } finally {
-                state.isLoading = false;
-            }
+            debugLog(`Cache ${CONFIG.CACHE_ENABLED ? 'enabled' : 'disabled'}`);
         }
-
-        function buildInternalTagFilters() {
-            const filterParts = [];
-            
-            Object.entries(state.activeFilters).forEach(([key, value]) => {
-                if (key === 'course') {
-                    // Course can be either internal (hash-course) or regular (course)
-                    if (state.courseTag) {
-                        filterParts.push(`tag:${state.courseTag.slug}`);
-                    }
-                    // If value is 'all', don't add any course filter
-                    else if (value !== 'all') {
-                        // This shouldn't happen, but just in case
-                        filterParts.push(`tag:${value}`);
-                    }
-                } else {
-                    // All other filters must be internal tags
-                    filterParts.push(`tag:hash-${key}-${value}`);
-                }
-            });
-            
-            debugLog('Built filter parts:', filterParts);
-            return filterParts;
-        }
-
-        function displayPosts(posts) {
-            const container = byId('postList');
-            
-            if (!posts.length) {
-                const filterCount = Object.keys(state.activeFilters).length;
-                const message = filterCount > 0 
-                    ? 'No courses match the selected filters. Try different filter combinations.'
-                    : 'No courses found. Make sure your posts are tagged with "course" or "#course".';
-                container.innerHTML = `<div class="no-posts">${message}</div>`;
-                return;
-            }
-
-            debugLog('Displaying courses:', posts.length);
-
-            const grid = document.createElement('div');
-            grid.className = 'posts-grid';
-
-            posts.forEach(post => {
-                const card = createPostCard(post);
-                grid.appendChild(card);
-            });
-
-            container.innerHTML = '';
-            container.appendChild(grid);
-        }
-
-        function createPostCard(post) {
-            const card = document.createElement('div');
-            card.className = 'post-card';
-            card.onclick = () => window.open(post.url, '_blank');
-
-            const imageSection = document.createElement('div');
-            imageSection.className = 'post-image';
-            imageSection.appendChild(createPostImage(post));
-
-            const content = document.createElement('div');
-            content.className = 'post-content';
-
-            const title = document.createElement('h3');
-            title.className = 'post-title';
-            title.textContent = post.title;
-
-            const excerpt = document.createElement('p');
-            excerpt.className = 'post-excerpt';
-            excerpt.textContent = post.excerpt || 'Explore this course to learn more about the subject matter and requirements.';
-
-            const tagsContainer = createInternalTagsContainer(post.tags);
-            const meta = createPostMeta(post);
-
-            content.appendChild(title);
-            content.appendChild(excerpt);
-            if (tagsContainer.children.length > 0) {
-                content.appendChild(tagsContainer);
-            }
-            content.appendChild(meta);
-
-            card.appendChild(imageSection);
-            card.appendChild(content);
-            
-            return card;
-        }
-
-        function createPostImage(post) {
-            if (post.feature_image) {
-                const img = document.createElement('img');
-                img.src = post.feature_image;
-                img.alt = post.title;
-                img.onerror = function() {
-                    this.parentNode.innerHTML = createFallbackImage(post.title);
-                };
-                return img;
-            } else {
-                const fallback = document.createElement('div');
-                fallback.innerHTML = createFallbackImage(post.title);
-                return fallback.firstChild;
-            }
-        }
-
-        function createFallbackImage(title) {
-            return `<div style="background: linear-gradient(135deg, #3498db 0%, #9b59b6 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">${title.charAt(0).toUpperCase()}</div>`;
-        }
-
-        function createInternalTagsContainer(tags) {
-            const container = document.createElement('div');
-            container.className = 'post-tags';
-            
-            if (!tags) return container;
-
-            // Only show internal tags that are used for filtering
-            tags.forEach(tag => {
-                if (tag.slug.startsWith('hash-')) {
-                    const tagInfo = parseInternalTagInfo(tag.slug);
-                    if (tagInfo) {
-                        const tagEl = document.createElement('span');
-                        tagEl.className = 'post-tag';
-                        const displayName = KEY_DISPLAY_NAMES[tagInfo.keyword] || formatDisplayName(tagInfo.keyword);
-                        tagEl.textContent = `${displayName}: ${formatDisplayName(tagInfo.value)}`;
-                        container.appendChild(tagEl);
-                    }
-                }
-            });
-
-            return container;
-        }
-
-        function parseInternalTagInfo(slug) {
-            if (slug.startsWith('hash-')) {
-                const withoutPrefix = slug.replace('hash-', '');
-                const parts = withoutPrefix.split('-');
-                if (parts.length >= 2) {
-                    return {
-                        keyword: parts[0],
-                        value: parts.slice(1).join('-')
-                    };
-                }
-            }
-            return null;
-        }
-
-        function createPostMeta(post) {
-            const meta = document.createElement('div');
-            meta.className = 'post-meta';
-
-            const readMore = document.createElement('a');
-            readMore.href = post.url;
-            readMore.className = 'read-more';
-            readMore.textContent = 'View Course';
-            readMore.target = '_blank';
-            readMore.onclick = e => e.stopPropagation();
-
-            meta.appendChild(readMore);
-            return meta;
-        }
-
-        /* ----------------- Enhanced Initialization ----------------- */
-        async function initialize() {
-            try {
-                clearError();
-                
-                debugLog('Initializing course filter system...');
-                
-                // Fetch all tags with enhanced error handling
-                const { tags } = await apiCall('tags', '&limit=all');
-                
-                if (!tags || tags.length === 0) {
-                    throw new Error('No tags found in Ghost');
-                }
-                
-                state.allTags = tags;
-                debugLog(`Loaded ${tags.length} total tags`);
-
-                // Parse internal tags only
-                const keywords = parseInternalTags(tags);
-                debugLog('Available internal tag keywords:', Object.keys(keywords));
-                
-                if (Object.keys(keywords).length === 0) {
-                    showError('No internal tags found for filtering. Please create tags like #keyword-value in Ghost admin.');
-                }
-                
-                createKeywordFilters(keywords);
-
-                // Don't set any default course filter since we removed the UI
-                // The system will always filter by course tag automatically
-
-                // Add event listeners for keyword filters only
-                const keywordSelects = document.querySelectorAll('[data-keyword]');
-                keywordSelects.forEach(select => {
-                    select.addEventListener('change', handleFilterChange);
-                });
-
-                // Load initial courses (all courses without additional filters)
-                await fetchCourses();
-
-                debugLog('Initialization complete');
-                
-            } catch (error) {
-                console.error('Error initializing:', error);
-                showError(`Failed to load the course filter system: ${error.message}. Please refresh the page to try again.`);
-                byId('keywordFilters').innerHTML = '<div class="no-posts">Error loading filters. Please refresh the page.</div>';
-            }
-        }
-
-        // Initialize when page loads
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initialize);
-        } else {
-            initialize();
-        }
-
-        // Add debug helpers for development
-        window.ghostDebug = {
-            state,
-            config: CONFIG,
-            apiCall,
-            clearCache: () => state.cache.clear(),
-            toggleDebug: () => {
-                CONFIG.DEBUG_MODE = !CONFIG.DEBUG_MODE;
-                byId('debugInfo').style.display = CONFIG.DEBUG_MODE ? 'block' : 'none';
-            }
-        };
-    </script>
+    };
+</script>
