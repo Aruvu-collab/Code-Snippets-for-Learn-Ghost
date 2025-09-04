@@ -1,0 +1,141 @@
+<script>
+// Configuration
+const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/yourusername/yourrepo/main/faq.md';
+
+// Markdown parser function
+function parseMarkdownFAQ(markdown) {
+  const lines = markdown.split('\n').filter(line => line.trim());
+  const sections = [];
+  let currentSection = null;
+  let currentQuestion = null;
+  let currentAnswer = '';
+
+  lines.forEach(line => {
+    if (line.startsWith('# ')) {
+      // New section
+      if (currentSection && currentQuestion) {
+        currentSection.questions.push({
+          question: currentQuestion,
+          answer: currentAnswer.trim()
+        });
+      }
+      currentSection = {
+        title: line.substring(2).trim(),
+        questions: []
+      };
+      sections.push(currentSection);
+      currentQuestion = null;
+      currentAnswer = '';
+    } else if (line.startsWith('## ')) {
+      // New question
+      if (currentQuestion && currentSection) {
+        currentSection.questions.push({
+          question: currentQuestion,
+          answer: currentAnswer.trim()
+        });
+      }
+      currentQuestion = line.substring(3).trim();
+      currentAnswer = '';
+    } else if (line.trim() && currentQuestion) {
+      // Answer content
+      currentAnswer += line + ' ';
+    }
+  });
+
+  // Add the last question
+  if (currentSection && currentQuestion) {
+    currentSection.questions.push({
+      question: currentQuestion,
+      answer: currentAnswer.trim()
+    });
+  }
+
+  return sections;
+}
+
+// Generate HTML from parsed data
+function generateFAQHTML(sections) {
+  let html = '';
+  
+  sections.forEach(section => {
+    html += `<div class="section-header">${section.title}</div>`;
+    
+    section.questions.forEach(qa => {
+      html += `
+        <div class="faq-item">
+          <div class="faq-question">
+            ${qa.question}
+            <span class="arrow">▶</span>
+          </div>
+          <div class="faq-answer">
+            ${qa.answer}
+          </div>
+        </div>
+      `;
+    });
+  });
+  
+  return html;
+}
+
+// Add click handlers
+function addFAQInteractivity() {
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    const arrow = item.querySelector('.arrow');
+
+    question.addEventListener('click', () => {
+      const isOpen = answer.classList.contains('open');
+
+      // Close all open answers
+      document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.arrow').forEach(a => a.classList.remove('open'));
+
+      // Toggle current item
+      if (!isOpen) {
+        answer.classList.add('open');
+        arrow.classList.add('open');
+      }
+    });
+  });
+}
+
+// Load and render FAQ
+async function loadFAQ() {
+  const faqContent = document.getElementById('faq-content');
+  const faqLoading = document.getElementById('faq-loading');
+
+  try {
+    const response = await fetch(GITHUB_RAW_URL);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const markdown = await response.text();
+    const sections = parseMarkdownFAQ(markdown);
+    const html = generateFAQHTML(sections);
+    
+    faqContent.innerHTML = html;
+    faqLoading.style.display = 'none';
+    faqContent.style.display = 'block';
+    
+    // Add interactivity
+    addFAQInteractivity();
+    
+  } catch (error) {
+    console.error('Error loading FAQ:', error);
+    faqLoading.innerHTML = 'Error loading FAQ. Please try again later.';
+  }
+}
+
+// Initialize when DOM is loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', loadFAQ);
+} else {
+  loadFAQ();
+}
+</script>
