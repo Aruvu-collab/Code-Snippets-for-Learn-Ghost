@@ -1,5 +1,3 @@
-_Last Update: 3/9_
-
 # Discovery of Courses (Discovery)
 
 ## Are there any interesting courses that I can take?
@@ -101,3 +99,5 @@ Questions can be asked through the communication channels established for each c
 ## Are there shared notes?
 
 Yes, there are shared notes and collaborative documentation spaces. Many courses include collective archives where all learners contribute their notes, reflections, and documentation.
+
+_Last Update: 3/9_
