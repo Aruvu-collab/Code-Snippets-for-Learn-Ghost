@@ -20,32 +20,72 @@
 <!-- 2. Your glue code -->
 <script>
 (async () => {
-  // 1. Load the dictionary
-  const res   = await fetch('https://raw.githubusercontent.com/micahchoo/timeline-builder/refs/heads/main/glossary.json');
-  const dict  = await res.json();
+// 1. Load the dictionary
+const res = await fetch('https://raw.githubusercontent.com/Aruvu-collab/Code-Snippets-for-Learn-Ghost/refs/heads/main/Global/glossary.json');
+const dict = await res.json();
 
-  const esc   = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const regex = new RegExp(
-      Object.keys(dict).sort((a,b)=>b.length-a.length).map(esc).join('|'),
-      'gi');
+// 2. Helper function to escape regex special characters
+const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-    // 3. Walk text nodes and wrap matches -------------------------------------
-    const walker = document.createTreeWalker(
-      document.body, NodeFilter.SHOW_TEXT, null, false);
-    const nodes = [];
-    let n; while (n = walker.nextNode()) nodes.push(n);
+// 3. Helper function to generate regex pattern for a term
+const generatePattern = (term) => {
+  // Replace hyphens and spaces with flexible separators
+  const flexibleTerm = esc(term)
+    .replace(/[\s\-]+/g, '[\\s\\-]*') // Allow 0 or more spaces/hyphens between words
+    .replace(/([a-z])([A-Z])/g, '$1[\\s\\-]*$2'); // Handle camelCase transitions
+  
+  // Add optional plural 's' for terms that could be pluralized
+  const canBePlural = /(?:learning|outcome|material|experience|centre|facilitator|mentor|cohort|axiom)$/i.test(term);
+  const pluralPattern = canBePlural ? 's?' : '';
+  
+  return `${flexibleTerm}${pluralPattern}`;
+};
 
-    nodes.forEach(node => {
-      if (!regex.test(node.textContent)) return;
-      const wrapper = document.createElement('span');
-      wrapper.innerHTML = node.textContent.replace(regex, m => {
-        const key = Object.keys(dict).find(k => k.toLowerCase() === m.toLowerCase());
-        return `<span class="dict-term" data-tippy-content="${dict[key]}">${m}</span>`;
-      });
-      node.replaceWith(wrapper);
+// 4. Create patterns for all dictionary terms
+const patterns = Object.keys(dict)
+  .sort((a, b) => b.length - a.length) // Longer terms first to avoid partial matches
+  .map(generatePattern);
+
+// 5. Create the final regex with word boundaries
+const regex = new RegExp(
+  '\\b(?:' + patterns.join('|') + ')\\b',
+  'gi'
+);
+
+// 6. Walk text nodes and wrap matches
+const walker = document.createTreeWalker(
+  document.body, NodeFilter.SHOW_TEXT, null, false
+);
+const nodes = [];
+let n; 
+while (n = walker.nextNode()) nodes.push(n);
+
+nodes.forEach(node => {
+  if (!regex.test(node.textContent)) return;
+  
+  // Reset regex for replacement
+  regex.lastIndex = 0;
+  
+  const wrapper = document.createElement('span');
+  wrapper.innerHTML = node.textContent.replace(regex, match => {
+    // Find the original dictionary key that matches
+    const normalizedMatch = match.toLowerCase().replace(/[\s\-]+/g, ' ');
+    
+    const key = Object.keys(dict).find(k => {
+      const normalizedKey = k.toLowerCase().replace(/[\s\-]+/g, ' ');
+      return normalizedKey === normalizedMatch;
     });
+    
+    if (key) {
+      return `<span class="dict-term" data-tippy-content="${dict[key]}">${match}</span>`;
+    }
+    return match;
+  });
+  
+  node.replaceWith(wrapper);
+});
 
-    // 4. Activate tooltips -----------------------------------------------------
-    tippy('.dict-term', { allowHTML: true, placement: 'top' });
-  })();
+// 7. Activate tooltips
+tippy('.dict-term', { allowHTML: true, placement: 'top' });
+})();
   </script>
