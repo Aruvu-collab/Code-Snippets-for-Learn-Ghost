@@ -1,34 +1,15 @@
-   <script>
+    <script>
     (function() {
-        // Find the active filter config element
-        const filterConfigs = document.querySelectorAll('[id^="filter-config"]');
-        let filterConfig = null;
-        
-        for (const config of filterConfigs) {
-            if (config.style.display !== 'none') {
-                filterConfig = config;
-                break;
-            }
-        }
-        
-        // If no visible config found, use the first one
-        if (!filterConfig && filterConfigs.length > 0) {
-            filterConfig = filterConfigs[0];
-        }
-        
-        if (!filterConfig) return;
-
         const CONFIG = {
             GHOST_URL: 'https://learn.livinglabs.network',
             API_KEY: 'd43ba92c8b1434af08d837c579',
             API_VERSION: 'v3'
         };
 
-        let currentPage = 1;
-        let hasMore = true;
-        let filterQuery = '';
+        // Store state for each filter instance
+        const instances = new Map();
 
-        function buildFilterQuery() {
+        function buildFilterQuery(filterConfig) {
             const tags = filterConfig.getAttribute('data-tags');
             const requiredTags = filterConfig.getAttribute('data-required-tags');
             const optionalTags = filterConfig.getAttribute('data-optional-tags');
@@ -40,10 +21,8 @@
                 const tagList = tags.split(',').map(tag => tag.trim()).filter(tag => tag);
 
                 if (logic === 'and') {
-                    // All tags must be present (use + for AND)
                     filters.push(tagList.map(tag => `tag:${tag}`).join('+'));
                 } else if (logic === 'or') {
-                    // Any tag can be present (use , for OR)
                     filters.push(tagList.map(tag => `tag:${tag}`).join(','));
                 }
             }
@@ -52,7 +31,6 @@
                 const required = requiredTags.split(',').map(tag => tag.trim()).filter(tag => tag);
                 const optional = optionalTags.split(',').map(tag => tag.trim()).filter(tag => tag);
                 
-                // Required tags (AND) + any of the optional tags (OR)
                 const requiredFilter = required.map(tag => `tag:${tag}`).join('+');
                 const optionalFilter = optional.map(tag => `tag:${tag}`).join(',');
                 
@@ -68,7 +46,7 @@
             return filters.join('+');
         }
 
-        async function fetchPosts(page = 1) {
+        async function fetchPosts(filterQuery, page = 1) {
             const baseUrl = CONFIG.GHOST_URL.endsWith('/') ? CONFIG.GHOST_URL.slice(0, -1) : CONFIG.GHOST_URL;
             const url = `${baseUrl}/ghost/api/${CONFIG.API_VERSION}/content/posts/?key=${CONFIG.API_KEY}&filter=${encodeURIComponent(filterQuery)}&limit=15&page=${page}&fields=id,title,url,excerpt,feature_image,published_at&include=tags,authors`;
             
@@ -97,8 +75,8 @@
             return card;
         }
 
-        function displayPosts(posts, append = false) {
-            const container = document.getElementById('posts-container');
+        function displayPosts(posts, containerId, append = false) {
+            const container = document.getElementById(containerId);
             
             if (!append) {
                 container.innerHTML = '';
@@ -115,49 +93,76 @@
             });
         }
 
-        async function loadMore() {
-            if (!hasMore) return;
-            
-            try {
-                currentPage++;
-                const data = await fetchPosts(currentPage);
-                displayPosts(data.posts, true);
+        function createLoadMoreHandler(instanceId) {
+            return async function() {
+                const instance = instances.get(instanceId);
+                if (!instance.hasMore) return;
                 
-                hasMore = currentPage < data.meta.pagination.pages;
-                document.getElementById('load-more').style.display = hasMore ? 'block' : 'none';
-            } catch (error) {
-                console.error('Error loading more posts:', error);
-            }
+                try {
+                    instance.currentPage++;
+                    const data = await fetchPosts(instance.filterQuery, instance.currentPage);
+                    displayPosts(data.posts, instance.containerId, true);
+                    
+                    instance.hasMore = instance.currentPage < data.meta.pagination.pages;
+                    document.getElementById(instance.loadMoreId).style.display = instance.hasMore ? 'block' : 'none';
+                } catch (error) {
+                    console.error('Error loading more posts:', error);
+                }
+            };
         }
 
-        async function init() {
+        async function initializeFilter(filterConfig, containerId, loadMoreId) {
             try {
-                // Build filter query based on configuration
-                filterQuery = buildFilterQuery();
+                const filterQuery = buildFilterQuery(filterConfig);
                 
                 if (!filterQuery) {
                     throw new Error('No tags specified in filter configuration');
                 }
 
-                console.log('Filter query:', filterQuery);
+                // Create instance state
+                const instanceId = filterConfig.id;
+                instances.set(instanceId, {
+                    filterQuery,
+                    containerId,
+                    loadMoreId,
+                    currentPage: 1,
+                    hasMore: true
+                });
+
+                console.log(`Filter query for ${instanceId}:`, filterQuery);
                 
                 // Load initial posts
-                const data = await fetchPosts(1);
-                displayPosts(data.posts);
+                const data = await fetchPosts(filterQuery, 1);
+                displayPosts(data.posts, containerId);
                 
                 // Setup load more button
-                hasMore = data.meta.pagination.pages > 1;
-                const loadMoreBtn = document.getElementById('load-more');
+                const instance = instances.get(instanceId);
+                instance.hasMore = data.meta.pagination.pages > 1;
+                const loadMoreBtn = document.getElementById(loadMoreId);
                 if (loadMoreBtn) {
-                    loadMoreBtn.style.display = hasMore ? 'block' : 'none';
-                    loadMoreBtn.onclick = loadMore;
+                    loadMoreBtn.style.display = instance.hasMore ? 'block' : 'none';
+                    loadMoreBtn.onclick = createLoadMoreHandler(instanceId);
                 }
                 
             } catch (error) {
-                console.error('Error initializing:', error);
-                const container = document.getElementById('posts-container');
+                console.error(`Error initializing filter ${filterConfig.id}:`, error);
+                const container = document.getElementById(containerId);
                 if (container) {
                     container.innerHTML = '<div class="error">Error loading posts. Please check the console for details.</div>';
+                }
+            }
+        }
+
+        async function init() {
+            // Initialize all filter sections
+            const filterConfigs = [
+                { config: document.getElementById('filter-config-1'), container: 'posts-container-1', loadMore: 'load-more-1' },
+                { config: document.getElementById('filter-config-2'), container: 'posts-container-2', loadMore: 'load-more-2' }
+            ];
+
+            for (const { config, container, loadMore } of filterConfigs) {
+                if (config) {
+                    await initializeFilter(config, container, loadMore);
                 }
             }
         }
