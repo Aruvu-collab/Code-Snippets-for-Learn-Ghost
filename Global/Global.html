@@ -1,10 +1,19 @@
+  <!-- 1. Styles for Glossary highlight, hide next and prev post -->
   <style>
     body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.5; }
-    .dict-term { border-bottom: 1px dotted #007acc; cursor: help; }
+    .dict-term {   background: rgba(235, 255, 45, 0.7);
+  background: linear-gradient(
+    305deg,
+    rgba(235, 255, 45, 0.6) 0%,
+    rgba(235, 255, 45, 0.4) 79%,
+    rgba(235, 255, 45, 0.8) 89%
+  );
+  border-radius: 52px 12px 7px 8px; }
+    .gh-article-footer{ display: none; }
   </style>
-</head>
 
-<!-- 1. Tooltip engine -->
+
+<!-- 1. Glossary Tooltip engine -->
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
 
