@@ -12,6 +12,10 @@ collections:
     permalink: /school/{slug}/
     filter: tag:school
     template: index
+  /facilitators/:
+    permalink: /facilitators/{slug}/
+    filter: tag:facilitator
+    template: index
   # /:
   #   permalink: /{slug}/
   #   template: index
