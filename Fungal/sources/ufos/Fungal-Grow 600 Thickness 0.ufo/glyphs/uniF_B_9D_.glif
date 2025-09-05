@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFB9D" format="1">
+  <advance width="1131"/>
+  <unicode hex="FB9D"/>
+  <outline>
+    <component base="uniFB95"/>
+    <component base="arabic_2dots" xOffset="75" yOffset="1700"/>
+    <contour>
+      <point x="275" y="1900" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="300" y="-150" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uniFB95</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_2dots</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

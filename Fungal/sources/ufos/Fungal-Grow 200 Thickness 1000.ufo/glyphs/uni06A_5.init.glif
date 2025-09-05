@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni06A5.init" format="1">
+  <advance width="979"/>
+  <outline>
+    <component base="uni06A1.init"/>
+    <component base="arabic_3dots_a" xOffset="300" yOffset="-300"/>
+    <contour>
+      <point x="500" y="1100" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="500" y="-600" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uni06A1.init</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_3dots_a</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFBD8" format="1">
+  <advance width="1058"/>
+  <unicode hex="FBD8"/>
+  <outline>
+    <component base="uniFEEE"/>
+    <component base="uni064F" xOffset="-92" yOffset="-552"/>
+    <contour>
+      <point x="500" y="1350" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="500" y="-500" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uniFEEE</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>uni064F</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

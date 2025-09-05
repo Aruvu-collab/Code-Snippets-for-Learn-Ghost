@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Itilde" format="1">
+  <advance width="604"/>
+  <unicode hex="0128"/>
+  <outline>
+    <component base="Tilde" xOffset="814" yOffset="373"/>
+    <component base="I"/>
+    <contour>
+      <point x="303" y="0" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="303" y="0" type="move" name="cedilla"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>Tilde</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>I</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

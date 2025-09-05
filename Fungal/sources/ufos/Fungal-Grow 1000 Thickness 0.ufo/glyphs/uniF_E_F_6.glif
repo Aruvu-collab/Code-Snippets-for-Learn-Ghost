@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFEF6" format="1">
+  <advance width="1222"/>
+  <unicode hex="FEF6"/>
+  <outline>
+    <component base="uniFEFC"/>
+    <component base="uni0653" xOffset="-362" yOffset="300"/>
+    <contour>
+      <point x="150" y="1800" type="move" name="Ligature rtl-above"/>
+    </contour>
+    <contour>
+      <point x="200" y="-150" type="move" name="Ligature rtl-below"/>
+    </contour>
+  </outline>
+</glyph>

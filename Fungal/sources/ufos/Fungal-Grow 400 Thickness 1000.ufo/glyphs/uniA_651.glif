@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniA651" format="1">
+  <advance width="1856"/>
+  <unicode hex="A651"/>
+  <outline>
+    <component base="uni044A"/>
+    <component base="dotlessi" xOffset="1297"/>
+    <contour>
+      <point x="1036" y="1147" type="move" name="above"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uni044A</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>dotlessi</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

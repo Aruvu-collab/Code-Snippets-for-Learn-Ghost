@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni06B4.init" format="1">
+  <advance width="975"/>
+  <outline>
+    <component base="uniFB94"/>
+    <component base="arabic_3dots" xOffset="75" yOffset="1700"/>
+    <contour>
+      <point x="275" y="2150" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="300" y="-150" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uniFB94</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_3dots</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Doublegrave" format="1">
+  <advance width="0"/>
+  <outline>
+    <contour>
+      <point x="-761" y="1526" type="line"/>
+      <point x="-565" y="1262" type="line"/>
+      <point x="-718" y="1262" type="line"/>
+      <point x="-946" y="1526" type="line"/>
+    </contour>
+    <contour>
+      <point x="-426" y="1526" type="line"/>
+      <point x="-230" y="1262" type="line"/>
+      <point x="-383" y="1262" type="line"/>
+      <point x="-611" y="1526" type="line"/>
+    </contour>
+    <contour>
+      <point x="-512" y="1147" type="move" name="_above"/>
+    </contour>
+    <contour>
+      <point x="-512" y="1147" type="move" name="_above-mark"/>
+    </contour>
+    <contour>
+      <point x="-512" y="1528" type="move" name="above-mark"/>
+    </contour>
+  </outline>
+</glyph>

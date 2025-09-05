@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFEDD" format="1">
+  <advance width="1488"/>
+  <unicode hex="FEDD"/>
+  <outline>
+    <component base="uni0644"/>
+    <contour>
+      <point x="650" y="1300" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="700" y="-450" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni07DB.medi" format="1">
+  <advance width="1339"/>
+  <outline>
+    <contour>
+      <point x="-20" y="0" type="line"/>
+      <point x="-20" y="147" type="line"/>
+      <point x="186" y="147" type="line"/>
+      <point x="186" y="881" type="line"/>
+      <point x="1153" y="881" type="line"/>
+      <point x="1153" y="147" type="line"/>
+      <point x="1359" y="147" type="line"/>
+      <point x="1359" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="371" y="734" type="line"/>
+      <point x="371" y="147" type="line"/>
+      <point x="968" y="147" type="line"/>
+      <point x="968" y="734" type="line"/>
+    </contour>
+    <contour>
+      <point x="669" y="1522" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="669" y="0" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+</glyph>

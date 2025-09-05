@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFB73" format="1">
+  <advance width="1322"/>
+  <unicode hex="FB73"/>
+  <outline>
+    <component base="arabic_2dots_a" xOffset="675" yOffset="125"/>
+    <component base="uniFEA2"/>
+    <contour>
+      <point x="650" y="1000" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="812" y="-600" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>arabic_2dots_a</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>uniFEA2</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

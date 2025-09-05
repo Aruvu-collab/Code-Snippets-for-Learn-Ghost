@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni2A0C.display" format="1">
+  <advance width="3838"/>
+  <outline>
+    <component base="integral.display"/>
+    <component base="integral.display" xOffset="1553"/>
+    <component base="integral.display" xOffset="2329"/>
+    <component base="integral.display" xOffset="776"/>
+  </outline>
+</glyph>

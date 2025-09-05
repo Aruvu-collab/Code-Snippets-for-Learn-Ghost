@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="filledrect" format="1">
+  <advance width="1935"/>
+  <unicode hex="25AC"/>
+  <outline>
+    <contour>
+      <point x="1749" y="154" type="line"/>
+      <point x="186" y="154" type="line"/>
+      <point x="186" y="910" type="line"/>
+      <point x="1749" y="910" type="line"/>
+    </contour>
+  </outline>
+</glyph>

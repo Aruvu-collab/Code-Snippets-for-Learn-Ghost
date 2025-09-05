@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="z" format="1">
+  <advance width="1075"/>
+  <unicode hex="007A"/>
+  <outline>
+    <contour>
+      <point x="113" y="1120" type="line"/>
+      <point x="987" y="1120" type="line"/>
+      <point x="987" y="952" type="line"/>
+      <point x="295" y="147" type="line"/>
+      <point x="987" y="147" type="line"/>
+      <point x="987" y="0" type="line"/>
+      <point x="88" y="0" type="line"/>
+      <point x="88" y="168" type="line"/>
+      <point x="780" y="973" type="line"/>
+      <point x="113" y="973" type="line"/>
+      <point x="113" y="1120" type="line"/>
+    </contour>
+    <component base="blob1" xScale="0" xyScale="1.2886" yScale="0" yxScale="-1.2886" xOffset="501" yOffset="714"/>
+    <component base="blob2" xScale="0" xyScale="1" yScale="0" yxScale="-1" xOffset="12" yOffset="512"/>
+    <component base="blob3" xScale="0" xyScale="1" yScale="0" yxScale="-1" xOffset="-402" yOffset="277"/>
+    <component base="blob4" xScale="0" xyScale="0.8783" yScale="0" yxScale="-0.8783" xOffset="-769" yOffset="81"/>
+    <component base="blob5" xScale="0" xyScale="1" yScale="0" yxScale="-1" xOffset="-1111" yOffset="283"/>
+    <component base="blob6" xScale="0" xyScale="1.1539" yScale="0" yxScale="-1.1539" xOffset="-1646" yOffset="236"/>
+    <component base="blob7" xScale="0" xyScale="0.9753" yScale="0" yxScale="-0.9753" xOffset="-2025" yOffset="530"/>
+    <component base="blob8" xScale="0" xyScale="0.7047" yScale="0" yxScale="-0.7047" xOffset="-2353" yOffset="761"/>
+    <component base="blob9" xScale="0" xyScale="0.4869" yScale="0" yxScale="-0.4869" xOffset="-2639" yOffset="749"/>
+    <contour>
+      <point x="535" y="1147" type="move" name="above"/>
+    </contour>
+    <contour>
+      <point x="535" y="0" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="535" y="0" type="move" name="cedilla"/>
+    </contour>
+    <contour>
+      <point x="0" y="1520" type="move" name="half"/>
+    </contour>
+    <contour>
+      <point x="535" y="0" type="move" name="ogonek"/>
+    </contour>
+  </outline>
+</glyph>

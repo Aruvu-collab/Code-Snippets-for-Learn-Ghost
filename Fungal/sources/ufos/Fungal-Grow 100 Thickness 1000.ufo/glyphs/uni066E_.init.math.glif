@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni066E.init.math" format="1">
+  <advance width="820"/>
+  <outline>
+    <contour>
+      <point x="549" y="86" type="qcurve" smooth="yes"/>
+      <point x="477" y="0"/>
+      <point x="320" y="0" type="qcurve" smooth="yes"/>
+      <point x="-20" y="0" type="line"/>
+      <point x="-20" y="184" type="line"/>
+      <point x="265" y="184" type="line" smooth="yes"/>
+      <point x="364" y="184"/>
+      <point x="408" y="228" type="qcurve" smooth="yes"/>
+      <point x="457" y="277"/>
+      <point x="457" y="383" type="qcurve" smooth="yes"/>
+      <point x="457" y="600" type="line"/>
+      <point x="641" y="600" type="line"/>
+      <point x="641" y="383" type="line" smooth="yes"/>
+      <point x="641" y="196"/>
+    </contour>
+  </outline>
+</glyph>

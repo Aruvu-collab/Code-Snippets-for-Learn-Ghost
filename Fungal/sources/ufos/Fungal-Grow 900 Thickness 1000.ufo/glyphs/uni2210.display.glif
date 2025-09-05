@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni2210.display" format="1">
+  <advance width="2192"/>
+  <outline>
+    <contour>
+      <point x="221" y="-556" type="line"/>
+      <point x="221" y="2083" type="line"/>
+      <point x="559" y="2083" type="line"/>
+      <point x="559" y="-266" type="line"/>
+      <point x="1631" y="-266" type="line"/>
+      <point x="1631" y="2083" type="line"/>
+      <point x="1970" y="2083" type="line"/>
+      <point x="1970" y="-556" type="line"/>
+    </contour>
+  </outline>
+</glyph>

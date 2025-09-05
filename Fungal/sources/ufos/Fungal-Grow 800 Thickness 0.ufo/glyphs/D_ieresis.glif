@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Dieresis" format="1">
+  <advance width="0"/>
+  <outline>
+    <contour>
+      <point x="-418" y="1497" type="line"/>
+      <point x="-215" y="1497" type="line"/>
+      <point x="-215" y="1294" type="line"/>
+      <point x="-418" y="1294" type="line"/>
+    </contour>
+    <contour>
+      <point x="-809" y="1497" type="line"/>
+      <point x="-606" y="1497" type="line"/>
+      <point x="-606" y="1294" type="line"/>
+      <point x="-809" y="1294" type="line"/>
+    </contour>
+    <contour>
+      <point x="-512" y="1147" type="move" name="_above"/>
+    </contour>
+    <contour>
+      <point x="-512" y="1147" type="move" name="_above-mark"/>
+    </contour>
+    <contour>
+      <point x="-512" y="1528" type="move" name="above-mark"/>
+    </contour>
+  </outline>
+</glyph>

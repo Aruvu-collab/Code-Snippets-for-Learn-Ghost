@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="period" format="1">
+  <advance width="651"/>
+  <unicode hex="002E"/>
+  <outline>
+    <contour>
+      <point x="219" y="254" type="line"/>
+      <point x="430" y="254" type="line"/>
+      <point x="430" y="0" type="line"/>
+      <point x="219" y="0" type="line"/>
+    </contour>
+    <component base="blob1" xScale="1.2886" yScale="-1.2886" xOffset="653" yOffset="147"/>
+    <component base="blob2" yScale="-1" xOffset="1067" yOffset="391"/>
+    <component base="blob3" yScale="-1" xOffset="1492" yOffset="264"/>
+    <component base="blob4" xScale="0.6152" yScale="-0.6152" xOffset="1816" yOffset="445"/>
+    <component base="blob5" yScale="-1" xOffset="2141" yOffset="617"/>
+    <component base="blob6" xScale="1.1539" yScale="-1.1539" xOffset="2496" yOffset="999"/>
+    <component base="blob7" xScale="0.5898" yScale="-0.5898" xOffset="2546" yOffset="1364"/>
+    <component base="blob8" xScale="0.7047" yScale="-0.7047" xOffset="2380" yOffset="1636"/>
+    <component base="blob9" xScale="0.4869" yScale="-0.4869" xOffset="2258" yOffset="1896"/>
+  </outline>
+</glyph>

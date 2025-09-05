@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="colon" format="1">
+  <advance width="690"/>
+  <unicode hex="003A"/>
+  <outline>
+    <contour>
+      <point x="240" y="254" type="line"/>
+      <point x="451" y="254" type="line"/>
+      <point x="451" y="0" type="line"/>
+      <point x="240" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="240" y="1059" type="line"/>
+      <point x="451" y="1059" type="line"/>
+      <point x="451" y="805" type="line"/>
+      <point x="240" y="805" type="line"/>
+    </contour>
+    <component base="blob2" xScale="1.3325" yScale="1.3325" xOffset="1155" yOffset="2322"/>
+    <component base="blob3" xScale="1.1474" yScale="1.1474" xOffset="1703" yOffset="3307"/>
+    <component base="blob4" xScale="1.4867" yScale="1.4867" xOffset="2363" yOffset="4193"/>
+    <component base="blob5" xScale="1.3417" yScale="1.3417" xOffset="3389" yOffset="4653"/>
+    <component base="blob8" xScale="1.0328" yScale="1.0328" xOffset="4451" yOffset="7760"/>
+    <component base="blob1" xScale="1.2766" yScale="1.2766" xOffset="872" yOffset="1773"/>
+    <component base="blob2" xScale="1.2687" yScale="1.2687" xOffset="523" yOffset="1241"/>
+    <component base="blob2" xScale="1.0617" yScale="1.0617" xOffset="417" yOffset="755"/>
+    <component base="blob3" xScale="0.8862" yScale="0.8862" xOffset="329" yOffset="326"/>
+    <component base="blob5" xScale="1.476" yScale="1.476" xOffset="3794" yOffset="5165"/>
+    <component base="blob6" xScale="1.2029" yScale="1.2029" xOffset="3728" yOffset="6336"/>
+    <component base="blob7" xScale="1.4452" yScale="1.4452" xOffset="3541" yOffset="6918"/>
+    <component base="blob8" xScale="1.3703" yScale="1.3703" xOffset="3962" yOffset="7425"/>
+    <component base="blob9" xScale="0.8011" yScale="0.8011" xOffset="4769" yOffset="7962"/>
+    <component base="blob9" xScale="0.5587" yScale="0.5587" xOffset="5030" yOffset="8174"/>
+    <component base="blob2" xScale="1.398" yScale="1.398" xOffset="1515" yOffset="2766"/>
+    <component base="blob4" xScale="1.0077" yScale="1.0077" xOffset="1970" yOffset="3723"/>
+    <component base="blob4" xScale="1.2111" yScale="1.2111" xOffset="2875" yOffset="4333"/>
+    <component base="blob6" xScale="1.3211" yScale="1.3211" xOffset="3980" yOffset="5774"/>
+    <component base="blob3" xScale="0.8567" yScale="0.8567" xOffset="475" yOffset="-14"/>
+    <component base="blob4" xScale="0.527" yScale="0.527" xOffset="711" yOffset="-167"/>
+  </outline>
+</glyph>

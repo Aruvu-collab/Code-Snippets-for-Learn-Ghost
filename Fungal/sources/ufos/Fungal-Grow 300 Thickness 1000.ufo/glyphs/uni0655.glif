@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni0655" format="1">
+  <advance width="0"/>
+  <unicode hex="0655"/>
+  <outline>
+    <component base="uni0674" xOffset="213" yOffset="-1830"/>
+    <contour>
+      <point x="512" y="0" type="move" name="_Ligature rtl-below"/>
+    </contour>
+    <contour>
+      <point x="512" y="0" type="move" name="_rtl-below"/>
+    </contour>
+    <contour>
+      <point x="512" y="0" type="move" name="_rtl-below-mark"/>
+    </contour>
+    <contour>
+      <point x="512" y="-525" type="move" name="rtl-below-mark"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uni0674</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

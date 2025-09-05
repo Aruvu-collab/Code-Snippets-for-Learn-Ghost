@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni152E" format="1">
+  <advance width="1284"/>
+  <unicode hex="152E"/>
+  <outline>
+    <component base="Dotaccent" xOffset="821" yOffset="372"/>
+    <component base="uni152D"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>Dotaccent</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>uni152D</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

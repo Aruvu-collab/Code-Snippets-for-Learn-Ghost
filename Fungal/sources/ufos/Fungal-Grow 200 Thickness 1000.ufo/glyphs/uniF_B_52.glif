@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFB52" format="1">
+  <advance width="1928"/>
+  <unicode hex="FB52"/>
+  <outline>
+    <component base="arabic_2dots_a" xOffset="825" yOffset="-250"/>
+    <component base="uni066E"/>
+    <contour>
+      <point x="900" y="1000" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="900" y="-600" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>arabic_2dots_a</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>uni066E</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

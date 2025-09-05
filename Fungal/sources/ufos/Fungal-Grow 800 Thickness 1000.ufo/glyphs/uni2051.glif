@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni2051" format="1">
+  <advance width="1024"/>
+  <unicode hex="2051"/>
+  <outline>
+    <component base="asterisk" yOffset="-600"/>
+    <component base="asterisk" yOffset="383"/>
+  </outline>
+</glyph>

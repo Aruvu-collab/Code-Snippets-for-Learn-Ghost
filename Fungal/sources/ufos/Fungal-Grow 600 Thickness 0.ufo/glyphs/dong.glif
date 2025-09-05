@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="dong" format="1">
+  <advance width="1300"/>
+  <unicode hex="20AB"/>
+  <outline>
+    <component base="dcroat"/>
+    <component base="uni02CD" xOffset="138"/>
+  </outline>
+</glyph>

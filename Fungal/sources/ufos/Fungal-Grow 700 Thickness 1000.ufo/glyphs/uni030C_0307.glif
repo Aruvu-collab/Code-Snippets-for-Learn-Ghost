@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni030C0307" format="1">
+  <advance width="1400"/>
+  <outline>
+    <component base="Caron" xOffset="1212" yOffset="373"/>
+    <component base="Dotaccent" xOffset="1212" yOffset="636"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>Caron</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>Dotaccent</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

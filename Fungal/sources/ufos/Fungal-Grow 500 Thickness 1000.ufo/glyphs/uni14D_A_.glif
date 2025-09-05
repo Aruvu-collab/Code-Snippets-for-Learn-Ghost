@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni14DA" format="1">
+  <advance width="1744"/>
+  <unicode hex="14DA"/>
+  <outline>
+    <contour>
+      <point x="579" y="757" type="line"/>
+      <point x="481" y="757"/>
+      <point x="283" y="611"/>
+      <point x="283" y="446" type="qcurve" smooth="yes"/>
+      <point x="283" y="315"/>
+      <point x="436" y="170"/>
+      <point x="579" y="170" type="qcurve" smooth="yes"/>
+      <point x="1625" y="170" type="line"/>
+      <point x="1625" y="0" type="line"/>
+      <point x="579" y="0" type="line" smooth="yes"/>
+      <point x="329" y="0"/>
+      <point x="70" y="225"/>
+      <point x="70" y="446" type="qcurve" smooth="yes"/>
+      <point x="70" y="682"/>
+      <point x="343" y="922"/>
+      <point x="579" y="922" type="qcurve"/>
+    </contour>
+  </outline>
+</glyph>

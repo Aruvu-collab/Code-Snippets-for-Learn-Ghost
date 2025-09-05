@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni03030301" format="1">
+  <advance width="1400"/>
+  <outline>
+    <component base="Acute" xOffset="1344" yOffset="612"/>
+    <component base="Tilde" xOffset="1216" yOffset="348"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>Acute</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>Tilde</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

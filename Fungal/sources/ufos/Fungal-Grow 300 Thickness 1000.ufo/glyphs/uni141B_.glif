@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni141B" format="1">
+  <advance width="1575"/>
+  <unicode hex="141B"/>
+  <outline>
+    <component base="Dotaccent" xOffset="831" yOffset="48"/>
+    <component base="uni140B"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>Dotaccent</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>uni140B</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

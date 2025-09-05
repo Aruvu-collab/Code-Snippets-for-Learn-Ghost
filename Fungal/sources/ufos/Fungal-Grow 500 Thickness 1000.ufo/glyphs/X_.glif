@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="X" format="1">
+  <advance width="1403"/>
+  <unicode hex="0058"/>
+  <outline>
+    <contour>
+      <point x="129" y="1493" type="line"/>
+      <point x="346" y="1493" type="line"/>
+      <point x="717" y="938" type="line"/>
+      <point x="1090" y="1493" type="line"/>
+      <point x="1307" y="1493" type="line"/>
+      <point x="827" y="776" type="line"/>
+      <point x="1339" y="0" type="line"/>
+      <point x="1122" y="0" type="line"/>
+      <point x="702" y="635" type="line"/>
+      <point x="279" y="0" type="line"/>
+      <point x="61" y="0" type="line"/>
+      <point x="594" y="797" type="line"/>
+      <point x="129" y="1493" type="line"/>
+    </contour>
+    <component base="blob1" xScale="0" xyScale="1.2886" yScale="0" yxScale="-1.2886" xOffset="-57" yOffset="-46"/>
+    <component base="blob2" xScale="0" xyScale="1.1881" yScale="0" yxScale="-1.1881" xOffset="-558" yOffset="-379"/>
+    <component base="blob3" xScale="0" xyScale="1" yScale="0" yxScale="-1" xOffset="-740" yOffset="-901"/>
+    <component base="blob4" xScale="0" xyScale="1.0515" yScale="0" yxScale="-1.0515" xOffset="-812" yOffset="-1377"/>
+    <component base="blob5" xScale="0" xyScale="1" yScale="0" yxScale="-1" xOffset="-1029" yOffset="-1828"/>
+    <component base="blob6" xScale="0" xyScale="1.1539" yScale="0" yxScale="-1.1539" xOffset="-1429" yOffset="-2138"/>
+    <component base="blob7" xScale="0" xyScale="0.9753" yScale="0" yxScale="-0.9753" xOffset="-1942" yOffset="-2261"/>
+    <component base="blob8" xScale="0" xyScale="0.8835" yScale="0" yxScale="-0.8835" xOffset="-2370" yOffset="-2082"/>
+    <component base="blob9" xScale="0" xyScale="0.6783" yScale="0" yxScale="-0.6783" xOffset="-2629" yOffset="-1795"/>
+    <component base="blob2" xScale="0" xyScale="1.1881" yScale="0" yxScale="-1.1881" xOffset="449" yOffset="237"/>
+    <component base="blob3" xScale="0" xyScale="1" yScale="0" yxScale="-1" xOffset="707" yOffset="673"/>
+    <component base="blob4" xScale="0" xyScale="1.0515" yScale="0" yxScale="-1.0515" xOffset="535" yOffset="1156"/>
+    <component base="blob5" xScale="0" xyScale="1" yScale="0" yxScale="-1" xOffset="251" yOffset="1570"/>
+    <component base="blob6" xScale="0" xyScale="1.1539" yScale="0" yxScale="-1.1539" xOffset="529" yOffset="2012"/>
+    <component base="blob7" xScale="0" xyScale="0.9753" yScale="0" yxScale="-0.9753" xOffset="1038" yOffset="2149"/>
+    <component base="blob8" xScale="0" xyScale="0.8835" yScale="0" yxScale="-0.8835" xOffset="1453" yOffset="1950"/>
+    <component base="blob9" xScale="0" xyScale="0.6783" yScale="0" yxScale="-0.6783" xOffset="1755" yOffset="2130"/>
+    <contour>
+      <point x="717" y="1520" type="move" name="above"/>
+    </contour>
+    <contour>
+      <point x="717" y="0" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="0" y="1520" type="move" name="half"/>
+    </contour>
+  </outline>
+</glyph>

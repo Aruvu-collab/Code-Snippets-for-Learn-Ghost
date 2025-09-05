@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Acute" format="1">
+  <advance width="0"/>
+  <outline>
+    <contour>
+      <point x="-457" y="1526" type="line"/>
+      <point x="-272" y="1526" type="line"/>
+      <point x="-500" y="1262" type="line"/>
+      <point x="-653" y="1262" type="line"/>
+    </contour>
+    <contour>
+      <point x="-512" y="1147" type="move" name="_above"/>
+    </contour>
+    <contour>
+      <point x="-512" y="1147" type="move" name="_above-mark"/>
+    </contour>
+  </outline>
+</glyph>

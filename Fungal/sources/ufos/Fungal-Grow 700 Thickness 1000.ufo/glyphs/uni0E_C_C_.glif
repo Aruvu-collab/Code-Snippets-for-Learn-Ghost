@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni0ECC" format="1">
+  <advance width="0"/>
+  <unicode hex="0ECC"/>
+  <outline>
+    <component base="uni0EBC" yOffset="1872"/>
+    <contour>
+      <point x="0" y="1150" type="move" name="_lao-above"/>
+    </contour>
+    <contour>
+      <point x="-660" y="1150" type="move" name="_lao-above-mark"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni032B" format="1">
+  <advance width="0"/>
+  <unicode hex="032B"/>
+  <outline>
+    <contour>
+      <point x="-514.5" y="-372.974" type="qcurve"/>
+      <point x="-574.069" y="-455"/>
+      <point x="-690.25" y="-455" type="qcurve" smooth="yes"/>
+      <point x="-907.886" y="-455"/>
+      <point x="-924.706" y="-173.247" type="qcurve" smooth="yes"/>
+      <point x="-924.862" y="-170.636"/>
+      <point x="-925" y="-168" type="qcurve" smooth="yes"/>
+      <point x="-807.5" y="-168" type="line"/>
+      <point x="-794.301" y="-318"/>
+      <point x="-690.5" y="-318" type="qcurve" smooth="yes"/>
+      <point x="-588.894" y="-318"/>
+      <point x="-573.5" y="-168" type="qcurve"/>
+      <point x="-455.5" y="-168" type="line"/>
+      <point x="-443.642" y="-317.302"/>
+      <point x="-339" y="-318" type="qcurve" smooth="yes"/>
+      <point x="-237.394" y="-318"/>
+      <point x="-222" y="-168" type="qcurve"/>
+      <point x="-104" y="-168" type="line"/>
+      <point x="-118.983" y="-453.68"/>
+      <point x="-338.75" y="-455" type="qcurve" smooth="yes"/>
+      <point x="-454.931" y="-455"/>
+    </contour>
+    <contour>
+      <point x="-512" y="-1" type="move" name="_Ligature below"/>
+    </contour>
+    <contour>
+      <point x="-512" y="-1" type="move" name="_below"/>
+    </contour>
+    <contour>
+      <point x="-512" y="0" type="move" name="_below-mark"/>
+    </contour>
+    <contour>
+      <point x="-512" y="-453" type="move" name="below-mark"/>
+    </contour>
+  </outline>
+</glyph>

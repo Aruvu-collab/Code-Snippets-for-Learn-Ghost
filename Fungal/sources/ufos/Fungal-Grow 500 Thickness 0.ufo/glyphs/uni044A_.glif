@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni044A" format="1">
+  <advance width="1447"/>
+  <unicode hex="044A"/>
+  <outline>
+    <contour>
+      <point x="881" y="663" type="line" smooth="yes"/>
+      <point x="1095" y="663"/>
+      <point x="1326" y="500"/>
+      <point x="1326" y="332" type="qcurve" smooth="yes"/>
+      <point x="1326" y="164"/>
+      <point x="1095" y="0"/>
+      <point x="881" y="0" type="qcurve" smooth="yes"/>
+      <point x="425" y="0" type="line"/>
+      <point x="425" y="973" type="line"/>
+      <point x="62" y="973" type="line"/>
+      <point x="62" y="1120" type="line"/>
+      <point x="610" y="1120" type="line"/>
+      <point x="610" y="663" type="line"/>
+    </contour>
+    <contour>
+      <point x="873" y="516" type="qcurve" smooth="yes"/>
+      <point x="610" y="516" type="line"/>
+      <point x="610" y="147" type="line"/>
+      <point x="873" y="147" type="line" smooth="yes"/>
+      <point x="999" y="147"/>
+      <point x="1130" y="242"/>
+      <point x="1130" y="332" type="qcurve" smooth="yes"/>
+      <point x="1130" y="422"/>
+      <point x="999" y="516"/>
+    </contour>
+    <contour>
+      <point x="518" y="1147" type="move" name="above"/>
+    </contour>
+  </outline>
+</glyph>

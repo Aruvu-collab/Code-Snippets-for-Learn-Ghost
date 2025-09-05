@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Iacute" format="1">
+  <advance width="604"/>
+  <unicode hex="00CD"/>
+  <outline>
+    <component base="I"/>
+    <component base="Acute" xOffset="815" yOffset="373"/>
+    <contour>
+      <point x="303" y="0" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="303" y="0" type="move" name="cedilla"/>
+    </contour>
+  </outline>
+</glyph>

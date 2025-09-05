@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFBAA" format="1">
+  <advance width="1430"/>
+  <unicode hex="FBAA"/>
+  <outline>
+    <component base="uni06BE"/>
+    <contour>
+      <point x="850" y="1100" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="800" y="-150" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+</glyph>

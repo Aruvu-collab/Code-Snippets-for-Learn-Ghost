@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni05BC" format="1">
+  <advance width="0"/>
+  <unicode hex="05BC"/>
+  <outline>
+    <contour>
+      <point x="590" y="635" type="line"/>
+      <point x="740" y="635" type="line"/>
+      <point x="740" y="485" type="line"/>
+      <point x="590" y="485" type="line"/>
+    </contour>
+    <contour>
+      <point x="665" y="560" type="move" name="_rtl-inside"/>
+    </contour>
+  </outline>
+</glyph>

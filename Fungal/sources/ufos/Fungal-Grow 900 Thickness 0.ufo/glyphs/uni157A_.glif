@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni157A" format="1">
+  <advance width="1701"/>
+  <unicode hex="157A"/>
+  <outline>
+    <component base="Dotaccent" xOffset="1235" yOffset="372"/>
+    <component base="uni1579"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>Dotaccent</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>uni1579</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

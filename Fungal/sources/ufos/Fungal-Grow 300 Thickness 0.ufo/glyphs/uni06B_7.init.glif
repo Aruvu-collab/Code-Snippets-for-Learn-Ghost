@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni06B7.init" format="1">
+  <advance width="624"/>
+  <outline>
+    <component base="uniFEDF"/>
+    <component base="arabic_3dots" xOffset="127" yOffset="1700"/>
+    <contour>
+      <point x="339" y="2150" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="339" y="-100" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uniFEDF</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_3dots</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

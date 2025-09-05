@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni1E0B" format="1">
+  <advance width="1300"/>
+  <unicode hex="1E0B"/>
+  <outline>
+    <component base="uni0307" xOffset="1534" yOffset="373"/>
+    <component base="d"/>
+    <contour>
+      <point x="1022" y="1929" type="move" name="above-legacy"/>
+    </contour>
+    <contour>
+      <point x="614" y="0" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="0" y="1520" type="move" name="half"/>
+    </contour>
+  </outline>
+</glyph>

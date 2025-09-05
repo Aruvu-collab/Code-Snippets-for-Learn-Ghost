@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Dcaron" format="1">
+  <advance width="1577"/>
+  <unicode hex="010E"/>
+  <outline>
+    <component base="Caron" xOffset="1260" yOffset="373"/>
+    <component base="D"/>
+    <contour>
+      <point x="748" y="1901" type="move" name="above-legacy"/>
+    </contour>
+    <contour>
+      <point x="748" y="0" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="0" y="1520" type="move" name="half"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>Caron</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>D</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

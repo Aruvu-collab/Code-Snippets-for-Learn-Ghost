@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni279D" format="1">
+  <advance width="1716"/>
+  <unicode hex="279D"/>
+  <outline>
+    <contour>
+      <point x="1178" y="602" type="line"/>
+      <point x="117" y="602" type="line"/>
+      <point x="117" y="682" type="line"/>
+      <point x="1178" y="682" type="line"/>
+      <point x="1178" y="1080" type="line"/>
+      <point x="1616" y="642" type="line"/>
+      <point x="1178" y="204" type="line"/>
+    </contour>
+  </outline>
+</glyph>

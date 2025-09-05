@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni2824" format="1">
+  <advance width="1500"/>
+  <unicode hex="2824"/>
+  <outline>
+    <component base="brailledot" xOffset="300" yOffset="167"/>
+    <component base="brailledot" xOffset="900" yOffset="167"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>brailledot</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>brailledot</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

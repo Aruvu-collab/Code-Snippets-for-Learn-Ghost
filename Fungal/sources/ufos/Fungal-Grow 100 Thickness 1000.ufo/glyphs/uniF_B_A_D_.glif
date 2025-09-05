@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFBAD" format="1">
+  <advance width="944"/>
+  <unicode hex="FBAD"/>
+  <outline>
+    <component base="uniFEEC"/>
+    <contour>
+      <point x="500" y="800" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="500" y="-600" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni068B.fina" format="1">
+  <advance width="1075"/>
+  <outline>
+    <component base="uni0615" xOffset="-62" yOffset="-250"/>
+    <component base="arabic_dot" xOffset="425" yOffset="-350"/>
+    <component base="uniFEAA"/>
+    <contour>
+      <point x="450" y="1600" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="500" y="-400" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFEA4" format="1">
+  <advance width="1322"/>
+  <unicode hex="FEA4"/>
+  <outline>
+    <contour>
+      <point x="638" y="780" type="qcurve" smooth="yes"/>
+      <point x="896" y="728"/>
+      <point x="1116" y="630" type="qcurve"/>
+      <point x="1116" y="476" type="line"/>
+      <point x="1051" y="456"/>
+      <point x="978" y="415" type="qcurve"/>
+      <point x="1028" y="337"/>
+      <point x="1058" y="303" type="qcurve" smooth="yes"/>
+      <point x="1162" y="184"/>
+      <point x="1276" y="184" type="qcurve" smooth="yes"/>
+      <point x="1342" y="184" type="line"/>
+      <point x="1342" y="0" type="line"/>
+      <point x="1256" y="0" type="line" smooth="yes"/>
+      <point x="1047" y="0"/>
+      <point x="921" y="168" type="qcurve" smooth="yes"/>
+      <point x="881" y="222"/>
+      <point x="822" y="319" type="qcurve"/>
+      <point x="753" y="273"/>
+      <point x="712" y="236" type="qcurve" smooth="yes"/>
+      <point x="567" y="107"/>
+      <point x="492" y="80" type="qcurve" smooth="yes"/>
+      <point x="271" y="0"/>
+      <point x="108" y="0" type="qcurve" smooth="yes"/>
+      <point x="-20" y="0" type="line"/>
+      <point x="-20" y="184" type="line"/>
+      <point x="80" y="184" type="line" smooth="yes"/>
+      <point x="307" y="184"/>
+      <point x="436" y="256" type="qcurve" smooth="yes"/>
+      <point x="540" y="314"/>
+      <point x="656" y="420" type="qcurve" smooth="yes"/>
+      <point x="750" y="506"/>
+      <point x="851" y="541" type="qcurve"/>
+      <point x="768" y="564"/>
+      <point x="665" y="587" type="qcurve" smooth="yes"/>
+      <point x="580" y="606"/>
+      <point x="400" y="622" type="qcurve" smooth="yes"/>
+      <point x="318" y="629"/>
+      <point x="157" y="623" type="qcurve"/>
+      <point x="157" y="807" type="line"/>
+      <point x="229" y="814"/>
+      <point x="304" y="815" type="qcurve" smooth="yes"/>
+      <point x="466" y="815"/>
+    </contour>
+    <contour>
+      <point x="600" y="1000" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="600" y="-100" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+</glyph>

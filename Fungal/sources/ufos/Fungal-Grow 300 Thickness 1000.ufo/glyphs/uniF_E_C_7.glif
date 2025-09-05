@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFEC7" format="1">
+  <advance width="1630"/>
+  <unicode hex="FEC7"/>
+  <outline>
+    <component base="uniFEC3"/>
+    <component base="arabic_dot" xOffset="711" yOffset="850"/>
+    <contour>
+      <point x="339" y="1650" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="339" y="-150" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uniFEC3</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_dot</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

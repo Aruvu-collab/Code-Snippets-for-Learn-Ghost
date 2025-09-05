@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="H" format="1">
+  <advance width="1540"/>
+  <unicode hex="0048"/>
+  <outline>
+    <contour>
+      <point x="201" y="1493" type="line"/>
+      <point x="403" y="1493" type="line"/>
+      <point x="403" y="881" type="line"/>
+      <point x="1137" y="881" type="line"/>
+      <point x="1137" y="1493" type="line"/>
+      <point x="1339" y="1493" type="line"/>
+      <point x="1339" y="0" type="line"/>
+      <point x="1137" y="0" type="line"/>
+      <point x="1137" y="711" type="line"/>
+      <point x="403" y="711" type="line"/>
+      <point x="403" y="0" type="line"/>
+      <point x="201" y="0" type="line"/>
+      <point x="201" y="1493" type="line"/>
+    </contour>
+    <component base="blob1" xScale="0" xyScale="1.2886" yScale="0" yxScale="1.2886" xOffset="635" yOffset="832"/>
+    <component base="blob2" xScale="0" xyScale="1" yScale="0" yxScale="1" xOffset="1124" yOffset="630"/>
+    <component base="blob3" xScale="0" xyScale="1" yScale="0" yxScale="1" xOffset="1538" yOffset="395"/>
+    <component base="blob4" xScale="0" xyScale="0.8783" yScale="0" yxScale="0.8783" xOffset="1905" yOffset="199"/>
+    <component base="blob5" xScale="0" xyScale="1" yScale="0" yxScale="1" xOffset="2316" yOffset="234"/>
+    <component base="blob6" xScale="0" xyScale="1.1539" yScale="0" yxScale="1.1539" xOffset="2768" yOffset="354"/>
+    <component base="blob7" xScale="0" xyScale="0.9753" yScale="0" yxScale="0.9753" xOffset="3147" yOffset="648"/>
+    <component base="blob8" xScale="0" xyScale="0.7047" yScale="0" yxScale="0.7047" xOffset="3475" yOffset="879"/>
+    <component base="blob9" xScale="0" xyScale="0.4869" yScale="0" yxScale="0.4869" xOffset="3761" yOffset="867"/>
+    <contour>
+      <point x="770" y="1520" type="move" name="above"/>
+    </contour>
+    <contour>
+      <point x="770" y="0" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="302" y="0" type="move" name="cedilla"/>
+    </contour>
+    <contour>
+      <point x="0" y="1520" type="move" name="half"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni06AE.fina" format="1">
+  <advance width="1726"/>
+  <outline>
+    <component base="uniFEDA"/>
+    <component base="arabic_3dots_a" xOffset="600" yOffset="-350"/>
+    <contour>
+      <point x="700" y="1500" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="800" y="-650" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uniFEDA</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_3dots_a</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

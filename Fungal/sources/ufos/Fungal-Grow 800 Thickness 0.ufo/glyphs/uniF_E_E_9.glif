@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFEE9" format="1">
+  <advance width="1073"/>
+  <unicode hex="FEE9"/>
+  <outline>
+    <component base="uni0647"/>
+    <contour>
+      <point x="450" y="850" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="500" y="-150" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+</glyph>

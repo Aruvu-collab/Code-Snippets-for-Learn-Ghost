@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni03060303" format="1">
+  <advance width="1400"/>
+  <outline>
+    <component base="Breve" xOffset="1212" yOffset="336"/>
+    <component base="Tilde" xOffset="1216" yOffset="624"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>Breve</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>Tilde</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

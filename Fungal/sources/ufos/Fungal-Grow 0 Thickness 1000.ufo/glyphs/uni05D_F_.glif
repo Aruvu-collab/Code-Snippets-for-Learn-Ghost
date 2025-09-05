@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni05DF" format="1">
+  <advance width="558"/>
+  <unicode hex="05DF"/>
+  <outline>
+    <contour>
+      <point x="372" y="1120" type="line"/>
+      <point x="372" y="-426" type="line"/>
+      <point x="186" y="-426" type="line"/>
+      <point x="186" y="1120" type="line"/>
+    </contour>
+    <contour>
+      <point x="56" y="0" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+</glyph>

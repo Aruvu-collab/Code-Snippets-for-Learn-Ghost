@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Upsilondieresis" format="1">
+  <advance width="1251"/>
+  <unicode hex="03AB"/>
+  <outline>
+    <component base="Dieresis" xOffset="1137" yOffset="373"/>
+    <component base="Upsilon"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>Dieresis</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>Upsilon</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

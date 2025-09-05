@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFE88" format="1">
+  <advance width="624"/>
+  <unicode hex="FE88"/>
+  <outline>
+    <component base="uniFE8E"/>
+    <component base="uni0655" xOffset="-227"/>
+    <contour>
+      <point x="285" y="1650" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="285" y="-600" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uniFE8E</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>uni0655</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

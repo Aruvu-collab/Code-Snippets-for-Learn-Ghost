@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni05D4" format="1">
+  <advance width="1338"/>
+  <unicode hex="05D4"/>
+  <outline>
+    <contour>
+      <point x="392" y="684" type="line"/>
+      <point x="392" y="0" type="line"/>
+      <point x="207" y="0" type="line"/>
+      <point x="207" y="608" type="line"/>
+    </contour>
+    <contour>
+      <point x="1152" y="570" type="qcurve" smooth="yes"/>
+      <point x="1152" y="0" type="line"/>
+      <point x="967" y="0" type="line"/>
+      <point x="967" y="608" type="line" smooth="yes"/>
+      <point x="967" y="824"/>
+      <point x="838" y="977"/>
+      <point x="652" y="977" type="qcurve" smooth="yes"/>
+      <point x="186" y="977" type="line"/>
+      <point x="186" y="1120" type="line"/>
+      <point x="650" y="1120" type="line" smooth="yes"/>
+      <point x="927" y="1120"/>
+      <point x="1152" y="870"/>
+    </contour>
+    <contour>
+      <point x="683" y="0" type="move" name="rtl-below"/>
+    </contour>
+    <contour>
+      <point x="665" y="560" type="move" name="rtl-inside"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniA4DB" format="1">
+  <advance width="1440"/>
+  <unicode hex="A4DB"/>
+  <outline>
+    <component base="uni0186"/>
+  </outline>
+</glyph>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni0695.fina" format="1">
+  <advance width="1250"/>
+  <outline>
+    <component base="uniFEAE.fina.longstart"/>
+    <component base="uni065A" xOffset="518" yOffset="-1762"/>
+    <contour>
+      <point x="700" y="750" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="500" y="-500" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uniFEAE.fina.longstart</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>uni065A</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

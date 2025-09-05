@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni06A2.medi" format="1">
+  <advance width="1036"/>
+  <outline>
+    <component base="uni06A1.medi"/>
+    <component base="arabic_dot" xOffset="424" yOffset="-300"/>
+    <contour>
+      <point x="518" y="950" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="499" y="-350" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uni06A1.medi</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_dot</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

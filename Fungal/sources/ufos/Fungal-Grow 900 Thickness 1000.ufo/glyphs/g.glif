@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="g" format="1">
+  <advance width="1300"/>
+  <unicode hex="0067"/>
+  <outline>
+    <contour>
+      <point x="930" y="573" type="curve"/>
+      <point x="930" y="573" type="line"/>
+      <point x="930" y="839.667"/>
+      <point x="814.667" y="993"/>
+      <point x="616" y="993" type="curve" smooth="yes"/>
+      <point x="418.667" y="993"/>
+      <point x="303" y="839.667"/>
+      <point x="303" y="573" type="curve" smooth="yes"/>
+      <point x="303" y="307.667"/>
+      <point x="418.667" y="154"/>
+      <point x="616" y="154" type="curve" smooth="yes"/>
+      <point x="814.667" y="154"/>
+      <point x="930" y="307.667"/>
+    </contour>
+    <contour>
+      <point x="1114" y="139" type="line"/>
+      <point x="1114" y="-242.333"/>
+      <point x="947.333" y="-426"/>
+      <point x="598" y="-426" type="curve" smooth="yes"/>
+      <point x="468.667" y="-426"/>
+      <point x="356" y="-407"/>
+      <point x="248" y="-367" type="curve"/>
+      <point x="248" y="-188" type="line"/>
+      <point x="356" y="-246.667"/>
+      <point x="459.667" y="-274"/>
+      <point x="569" y="-274" type="curve" smooth="yes"/>
+      <point x="810.333" y="-274"/>
+      <point x="930" y="-148.667"/>
+      <point x="930" y="106" type="curve" smooth="yes"/>
+      <point x="930" y="197" type="line"/>
+      <point x="854" y="65"/>
+      <point x="736.333" y="0"/>
+      <point x="571" y="0" type="curve" smooth="yes"/>
+      <point x="296.333" y="0"/>
+      <point x="113" y="227.667"/>
+      <point x="113" y="573" type="curve" smooth="yes"/>
+      <point x="113" y="919.667"/>
+      <point x="296.333" y="1147"/>
+      <point x="571" y="1147" type="curve" smooth="yes"/>
+      <point x="736.333" y="1147"/>
+      <point x="854" y="1082"/>
+      <point x="930" y="950" type="curve"/>
+      <point x="930" y="1120" type="line"/>
+      <point x="1114" y="1120" type="line"/>
+      <point x="1114" y="139" type="line"/>
+    </contour>
+    <component base="blob1" xScale="1.2886" yScale="1.2886" xOffset="216" yOffset="474"/>
+    <component base="blob2" xOffset="128" yOffset="877"/>
+    <component base="blob3" xOffset="294" yOffset="1177"/>
+    <component base="blob4" xScale="0.6152" yScale="0.6152" xOffset="508" yOffset="1359"/>
+    <component base="blob5" xOffset="811" yOffset="1457"/>
+    <component base="blob6" xScale="1.1539" yScale="1.1539" xOffset="891" yOffset="1918"/>
+    <component base="blob7" xScale="0.5898" yScale="0.5898" xOffset="667" yOffset="2188"/>
+    <component base="blob8" xScale="0.7047" yScale="0.7047" xOffset="482" yOffset="2160"/>
+    <component base="blob9" xScale="0.4869" yScale="0.4869" xOffset="222" yOffset="2143"/>
+    <contour>
+      <point x="618" y="1147" type="move" name="above"/>
+    </contour>
+    <contour>
+      <point x="678" y="-430" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="0" y="1520" type="move" name="half"/>
+    </contour>
+  </outline>
+</glyph>

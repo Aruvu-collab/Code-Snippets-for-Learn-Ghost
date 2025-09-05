@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni2306" format="1">
+  <advance width="1716"/>
+  <unicode hex="2306"/>
+  <outline>
+    <component base="arrow.base" yOffset="220"/>
+    <component base="arrow.base" yOffset="-41"/>
+    <component base="uni2303" yOffset="-986"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>arrow.base</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arrow.base</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>2</integer>
+          <key>name</key>
+          <string>uni2303</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniA699" format="1">
+  <advance width="2086"/>
+  <unicode hex="A699"/>
+  <outline>
+    <component base="uniA74F"/>
+    <contour>
+      <point x="1043" y="1147" type="move" name="above"/>
+    </contour>
+    <contour>
+      <point x="1043" y="0" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="0" y="1520" type="move" name="half"/>
+    </contour>
+  </outline>
+</glyph>

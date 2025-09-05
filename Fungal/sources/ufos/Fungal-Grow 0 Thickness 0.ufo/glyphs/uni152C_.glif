@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni152C" format="1">
+  <advance width="1284"/>
+  <unicode hex="152C"/>
+  <outline>
+    <component base="Dieresis" xOffset="1498" yOffset="373"/>
+    <component base="uni152A"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>Dieresis</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>uni152A</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

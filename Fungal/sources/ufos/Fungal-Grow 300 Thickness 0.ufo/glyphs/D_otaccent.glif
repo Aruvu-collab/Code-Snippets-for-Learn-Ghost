@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Dotaccent" format="1">
+  <advance width="0"/>
+  <outline>
+    <contour>
+      <point x="-614" y="1499" type="line"/>
+      <point x="-410" y="1499" type="line"/>
+      <point x="-410" y="1294" type="line"/>
+      <point x="-614" y="1294" type="line"/>
+    </contour>
+    <contour>
+      <point x="-512" y="1147" type="move" name="_above"/>
+    </contour>
+    <contour>
+      <point x="-512" y="1147" type="move" name="_above-mark"/>
+    </contour>
+    <contour>
+      <point x="-512" y="1499" type="move" name="above-mark"/>
+    </contour>
+  </outline>
+</glyph>

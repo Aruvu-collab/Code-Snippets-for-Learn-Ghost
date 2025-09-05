@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni0269" format="1">
+  <advance width="693"/>
+  <unicode hex="0269"/>
+  <outline>
+    <component base="iota"/>
+    <contour>
+      <point x="263" y="1147" type="move" name="above"/>
+    </contour>
+    <contour>
+      <point x="263" y="0" type="move" name="below"/>
+    </contour>
+  </outline>
+</glyph>

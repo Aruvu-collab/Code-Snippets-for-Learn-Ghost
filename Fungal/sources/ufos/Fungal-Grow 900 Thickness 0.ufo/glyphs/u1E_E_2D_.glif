@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="u1EE2D" format="1">
+  <advance width="820"/>
+  <unicode hex="1EE2D"/>
+  <outline>
+    <component base="uni066E.init.math"/>
+    <component base="arabic_dot" xOffset="474" yOffset="850"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uni066E.init.math</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_dot</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

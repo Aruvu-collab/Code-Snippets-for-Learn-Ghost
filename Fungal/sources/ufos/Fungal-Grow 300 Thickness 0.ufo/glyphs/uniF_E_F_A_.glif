@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFEFA" format="1">
+  <advance width="1222"/>
+  <unicode hex="FEFA"/>
+  <outline>
+    <component base="uniFEFC"/>
+    <component base="uni0655" xOffset="-312"/>
+    <contour>
+      <point x="150" y="1500" type="move" name="Ligature rtl-above"/>
+    </contour>
+    <contour>
+      <point x="200" y="-550" type="move" name="Ligature rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uniFEFC</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>uni0655</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

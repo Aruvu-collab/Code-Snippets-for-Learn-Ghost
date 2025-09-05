@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniA7A3" format="1">
+  <advance width="1186"/>
+  <unicode hex="A7A3"/>
+  <outline>
+    <contour>
+      <point x="186" y="1556" type="line"/>
+      <point x="371" y="1556" type="line"/>
+      <point x="371" y="637" type="line"/>
+      <point x="920" y="1120" type="line"/>
+      <point x="1155" y="1120" type="line"/>
+      <point x="561" y="596" type="line"/>
+      <point x="655" y="505" type="line"/>
+      <point x="1149" y="669" type="line"/>
+      <point x="1182" y="571" type="line"/>
+      <point x="740" y="424" type="line"/>
+      <point x="1180" y="0" type="line"/>
+      <point x="940" y="0" type="line"/>
+      <point x="561" y="364" type="line"/>
+      <point x="371" y="301" type="line"/>
+      <point x="371" y="0" type="line"/>
+      <point x="186" y="0" type="line"/>
+      <point x="186" y="240" type="line"/>
+      <point x="37" y="190" type="line"/>
+      <point x="4" y="289" type="line"/>
+      <point x="186" y="349" type="line"/>
+    </contour>
+    <contour>
+      <point x="476" y="446" type="line"/>
+      <point x="371" y="547" type="line"/>
+      <point x="371" y="411" type="line"/>
+    </contour>
+    <contour>
+      <point x="278" y="1520" type="move" name="above"/>
+    </contour>
+    <contour>
+      <point x="678" y="0" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="0" y="1520" type="move" name="half"/>
+    </contour>
+  </outline>
+</glyph>

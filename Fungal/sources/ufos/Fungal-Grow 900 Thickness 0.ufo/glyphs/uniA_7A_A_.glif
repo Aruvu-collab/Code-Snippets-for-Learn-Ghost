@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniA7AA" format="1">
+  <advance width="1640"/>
+  <unicode hex="A7AA"/>
+  <outline>
+    <contour>
+      <point x="301" y="1327.52" type="line"/>
+      <point x="169.319" y="1327.46"/>
+      <point x="51" y="1232.99"/>
+      <point x="51" y="1128" type="qcurve" smooth="yes"/>
+      <point x="51" y="1079" type="line"/>
+      <point x="-105" y="1079" type="line"/>
+      <point x="-105" y="1149" type="line" smooth="yes"/>
+      <point x="-105" y="1330.01"/>
+      <point x="87.008" y="1493"/>
+      <point x="301" y="1493" type="qcurve" smooth="yes"/>
+      <point x="503" y="1493" type="line"/>
+      <point x="503" y="881" type="line"/>
+      <point x="1237" y="881" type="line"/>
+      <point x="1237" y="1493" type="line"/>
+      <point x="1439" y="1493" type="line"/>
+      <point x="1439" y="0" type="line"/>
+      <point x="1237" y="0" type="line"/>
+      <point x="1237" y="711" type="line"/>
+      <point x="503" y="711" type="line"/>
+      <point x="503" y="0" type="line"/>
+      <point x="301" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="870" y="1520" type="move" name="above"/>
+    </contour>
+    <contour>
+      <point x="870" y="0" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="402" y="0" type="move" name="cedilla"/>
+    </contour>
+    <contour>
+      <point x="0" y="1520" type="move" name="half"/>
+    </contour>
+  </outline>
+</glyph>

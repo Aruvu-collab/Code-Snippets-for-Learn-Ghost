@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniA66D" format="1">
+  <advance width="2086"/>
+  <unicode hex="A66D"/>
+  <outline>
+    <component base="periodcentered" xOffset="1135" yOffset="-124"/>
+    <component base="periodcentered" xOffset="302" yOffset="-124"/>
+    <component base="uniA74F"/>
+    <contour>
+      <point x="1043" y="1147" type="move" name="above"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni03D3" format="1">
+  <advance width="1725"/>
+  <unicode hex="03D3"/>
+  <outline>
+    <component base="tonos" xOffset="-402"/>
+    <component base="Upsilon1" xOffset="336"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>tonos</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>Upsilon1</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

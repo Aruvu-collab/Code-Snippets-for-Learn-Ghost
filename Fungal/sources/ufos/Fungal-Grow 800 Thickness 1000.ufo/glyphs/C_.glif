@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="C" format="1">
+  <advance width="1430"/>
+  <unicode hex="0043"/>
+  <outline>
+    <contour>
+      <point x="1319" y="1378" type="curve"/>
+      <point x="1319" y="1378" type="line"/>
+      <point x="1319" y="1165" type="line"/>
+      <point x="1183" y="1291.667"/>
+      <point x="1029.333" y="1354"/>
+      <point x="856" y="1354" type="curve" smooth="yes"/>
+      <point x="514.667" y="1354"/>
+      <point x="328" y="1139.667"/>
+      <point x="328" y="745" type="curve" smooth="yes"/>
+      <point x="328" y="351.667"/>
+      <point x="514.667" y="137"/>
+      <point x="856" y="137" type="curve" smooth="yes"/>
+      <point x="1029.333" y="137"/>
+      <point x="1183" y="199.333"/>
+      <point x="1319" y="326" type="curve"/>
+      <point x="1319" y="115" type="line"/>
+      <point x="1177.667" y="19"/>
+      <point x="1020" y="-29"/>
+      <point x="844" y="-29" type="curve" smooth="yes"/>
+      <point x="392" y="-29"/>
+      <point x="115" y="266.333"/>
+      <point x="115" y="745" type="curve" smooth="yes"/>
+      <point x="115" y="1225"/>
+      <point x="392" y="1520"/>
+      <point x="844" y="1520" type="curve" smooth="yes"/>
+      <point x="1022.667" y="1520"/>
+      <point x="1180.333" y="1472.667"/>
+    </contour>
+    <component base="blob1" xScale="0" xyScale="1.2886" yScale="0" yxScale="1.2886" xOffset="1332" yOffset="1275"/>
+    <component base="blob2" xScale="0" xyScale="1" yScale="0" yxScale="1" xOffset="1859" yOffset="1230"/>
+    <component base="blob3" xScale="0" xyScale="1" yScale="0" yxScale="1" xOffset="2255" yOffset="1057"/>
+    <component base="blob4" xScale="0" xyScale="0.8783" yScale="0" yxScale="0.8783" xOffset="2677" yOffset="1203"/>
+    <component base="blob5" xScale="0" xyScale="1" yScale="0" yxScale="1" xOffset="2835" yOffset="1590"/>
+    <component base="blob6" xScale="0" xyScale="1.1539" yScale="0" yxScale="1.1539" xOffset="2636" yOffset="2108"/>
+    <component base="blob7" xScale="0" xyScale="0.9753" yScale="0" yxScale="0.9753" xOffset="2130" yOffset="2269"/>
+    <component base="blob8" xScale="0" xyScale="0.7047" yScale="0" yxScale="0.7047" xOffset="1768" yOffset="2249"/>
+    <component base="blob9" xScale="0" xyScale="0.4869" yScale="0" yxScale="0.4869" xOffset="1522" yOffset="2423"/>
+    <component base="blob2" xScale="0" xyScale="1" yScale="0" yxScale="1" xOffset="823" yOffset="1160"/>
+    <component base="blob3" xScale="0" xyScale="1" yScale="0" yxScale="1" xOffset="455" yOffset="989"/>
+    <component base="blob4" xScale="0" xyScale="0.8783" yScale="0" yxScale="0.8783" xOffset="415" yOffset="580"/>
+    <component base="blob5" xScale="0" xyScale="1" yScale="0" yxScale="1" xOffset="557" yOffset="220"/>
+    <component base="blob5" xScale="0" xyScale="1" yScale="0" yxScale="1" xOffset="956" yOffset="74"/>
+    <component base="blob6" xScale="0" xyScale="0.9034" yScale="0" yxScale="0.9034" xOffset="1267" yOffset="-235"/>
+    <component base="blob7" xScale="0" xyScale="0.6593" yScale="0" yxScale="0.6593" xOffset="1448" yOffset="-524"/>
+    <contour>
+      <point x="844" y="1520" type="move" name="above"/>
+    </contour>
+    <contour>
+      <point x="844" y="0" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="844" y="0" type="move" name="cedilla"/>
+    </contour>
+    <contour>
+      <point x="0" y="1520" type="move" name="half"/>
+    </contour>
+  </outline>
+</glyph>

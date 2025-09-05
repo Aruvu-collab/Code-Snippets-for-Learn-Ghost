@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni01F0" format="1">
+  <advance width="569"/>
+  <unicode hex="01F0"/>
+  <outline>
+    <component base="caron" xOffset="-219"/>
+    <component base="dotlessj"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>caron</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>dotlessj</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

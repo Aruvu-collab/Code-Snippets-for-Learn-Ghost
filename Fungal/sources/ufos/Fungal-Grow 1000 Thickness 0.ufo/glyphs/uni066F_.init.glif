@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni066F.init" format="1">
+  <advance width="979"/>
+  <outline>
+    <component base="uni06A1.init"/>
+    <contour>
+      <point x="500" y="1100" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="500" y="-150" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+</glyph>

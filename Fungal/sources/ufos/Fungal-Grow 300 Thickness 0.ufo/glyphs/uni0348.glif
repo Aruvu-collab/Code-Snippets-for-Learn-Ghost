@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni0348" format="1">
+  <advance width="0"/>
+  <unicode hex="0348"/>
+  <outline>
+    <contour>
+      <point x="-747" y="-96" type="line"/>
+      <point x="-597" y="-96" type="line"/>
+      <point x="-597" y="-492" type="line"/>
+      <point x="-747" y="-492" type="line"/>
+    </contour>
+    <contour>
+      <point x="-427" y="-96" type="line"/>
+      <point x="-277" y="-96" type="line"/>
+      <point x="-277" y="-492" type="line"/>
+      <point x="-427" y="-492" type="line"/>
+    </contour>
+    <contour>
+      <point x="-512" y="-1" type="move" name="_Ligature below"/>
+    </contour>
+    <contour>
+      <point x="-512" y="-1" type="move" name="_below"/>
+    </contour>
+    <contour>
+      <point x="-512" y="0" type="move" name="_below-mark"/>
+    </contour>
+    <contour>
+      <point x="-512" y="-498" type="move" name="below-mark"/>
+    </contour>
+  </outline>
+</glyph>

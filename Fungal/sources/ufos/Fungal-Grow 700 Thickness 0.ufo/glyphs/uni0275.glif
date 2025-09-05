@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni0275" format="1">
+  <advance width="1253"/>
+  <unicode hex="0275"/>
+  <outline>
+    <contour>
+      <point x="625" y="991" type="qcurve" smooth="yes"/>
+      <point x="477.862" y="991"/>
+      <point x="329" y="798"/>
+      <point x="311.492" y="670.85" type="qcurve"/>
+      <point x="938.508" y="670.85" type="line"/>
+      <point x="921" y="798"/>
+      <point x="772.138" y="991"/>
+    </contour>
+    <contour>
+      <point x="626" y="127" type="qcurve" smooth="yes"/>
+      <point x="775" y="127"/>
+      <point x="943.477" y="359"/>
+      <point x="943.477" y="507" type="qcurve"/>
+      <point x="308.523" y="507" type="line"/>
+      <point x="308.523" y="359"/>
+      <point x="477" y="127"/>
+    </contour>
+    <contour>
+      <point x="627" y="1147" type="qcurve" smooth="yes"/>
+      <point x="867" y="1147"/>
+      <point x="1141" y="835"/>
+      <point x="1141" y="559" type="qcurve" smooth="yes"/>
+      <point x="1141" y="284"/>
+      <point x="867" y="-29"/>
+      <point x="627" y="-29" type="qcurve" smooth="yes"/>
+      <point x="386" y="-29"/>
+      <point x="113" y="284"/>
+      <point x="113" y="559" type="qcurve" smooth="yes"/>
+      <point x="113" y="835"/>
+      <point x="386" y="1147"/>
+    </contour>
+    <contour>
+      <point x="627" y="1147" type="move" name="above"/>
+    </contour>
+    <contour>
+      <point x="627" y="0" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="627" y="0" type="move" name="cedilla"/>
+    </contour>
+    <contour>
+      <point x="0" y="1520" type="move" name="half"/>
+    </contour>
+    <contour>
+      <point x="628" y="0" type="move" name="ogonek"/>
+    </contour>
+  </outline>
+</glyph>

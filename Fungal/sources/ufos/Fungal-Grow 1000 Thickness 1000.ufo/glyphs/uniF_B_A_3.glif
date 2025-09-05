@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFBA3" format="1">
+  <advance width="618"/>
+  <unicode hex="FBA3"/>
+  <outline>
+    <component base="uni066E.medi"/>
+    <component base="uni0615" xOffset="-213" yOffset="-400"/>
+    <contour>
+      <point x="299" y="1450" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="299" y="-100" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uni066E.medi</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>uni0615</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

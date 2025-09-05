@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFBAC" format="1">
+  <advance width="1080"/>
+  <unicode hex="FBAC"/>
+  <outline>
+    <component base="uniFEEB"/>
+    <contour>
+      <point x="500" y="1100" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="450" y="-150" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+</glyph>

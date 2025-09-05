@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni1E2D.dotless" format="1">
+  <advance width="569"/>
+  <outline>
+    <component base="uni02F7" xOffset="-227"/>
+    <component base="dotlessi"/>
+    <contour>
+      <point x="287" y="1147" type="move" name="above"/>
+    </contour>
+  </outline>
+</glyph>

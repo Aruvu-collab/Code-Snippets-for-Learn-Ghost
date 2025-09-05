@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="comma" format="1">
+  <advance width="651"/>
+  <unicode hex="002C"/>
+  <outline>
+    <contour>
+      <point x="240" y="254" type="line"/>
+      <point x="451" y="254" type="line"/>
+      <point x="451" y="82" type="line"/>
+      <point x="287" y="-238" type="line"/>
+      <point x="158" y="-238" type="line"/>
+      <point x="240" y="82" type="line"/>
+    </contour>
+    <component base="blob1" xScale="-1.2886" yScale="1.2886" xOffset="119" yOffset="-337"/>
+    <component base="blob2" xScale="-1" xOffset="-295" yOffset="-581"/>
+    <component base="blob3" xScale="-1" xOffset="-720" yOffset="-454"/>
+    <component base="blob4" xScale="-0.6152" yScale="0.6152" xOffset="-1044" yOffset="-635"/>
+    <component base="blob5" xScale="-1" xOffset="-1200" yOffset="-978"/>
+    <component base="blob6" xScale="-1.1539" yScale="1.1539" xOffset="-1265" yOffset="-1480"/>
+    <component base="blob7" xScale="-0.5898" yScale="0.5898" xOffset="-1086" yOffset="-1865"/>
+    <component base="blob8" xScale="-0.7047" yScale="0.7047" xOffset="-1040" yOffset="-2133"/>
+    <component base="blob9" xScale="-0.4869" yScale="0.4869" xOffset="-1099" yOffset="-2411"/>
+  </outline>
+</glyph>

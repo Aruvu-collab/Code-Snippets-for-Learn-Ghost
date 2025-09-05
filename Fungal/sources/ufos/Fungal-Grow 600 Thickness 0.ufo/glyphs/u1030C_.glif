@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="u1030C" format="1">
+  <advance width="2922"/>
+  <unicode hex="1030C"/>
+  <outline>
+    <contour>
+      <point x="200" y="1493" type="line"/>
+      <point x="316" y="1493" type="line"/>
+      <point x="959" y="954" type="line"/>
+      <point x="1527" y="1523" type="line"/>
+      <point x="2086" y="964" type="line"/>
+      <point x="2644" y="1523" type="line"/>
+      <point x="2772" y="1395" type="line"/>
+      <point x="2086" y="710" type="line"/>
+      <point x="1528" y="1268" type="line"/>
+      <point x="969" y="710" type="line"/>
+      <point x="380" y="1204" type="line"/>
+      <point x="380" y="0" type="line"/>
+      <point x="200" y="0" type="line"/>
+    </contour>
+  </outline>
+</glyph>

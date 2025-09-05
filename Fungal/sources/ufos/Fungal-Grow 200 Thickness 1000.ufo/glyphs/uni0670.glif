@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni0670" format="1">
+  <advance width="0"/>
+  <unicode hex="0670"/>
+  <outline>
+    <contour>
+      <point x="457" y="1233" type="line"/>
+      <point x="457" y="1817" type="line"/>
+      <point x="567" y="1817" type="line"/>
+      <point x="567" y="1233" type="line"/>
+    </contour>
+    <contour>
+      <point x="512" y="1200" type="move" name="_Ligature rtl-above"/>
+    </contour>
+    <contour>
+      <point x="512" y="1200" type="move" name="_rtl-above"/>
+    </contour>
+    <contour>
+      <point x="512" y="1200" type="move" name="_rtl-above-mark"/>
+    </contour>
+    <contour>
+      <point x="512" y="1850" type="move" name="rtl-above-mark"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni0332" format="1">
+  <advance width="0"/>
+  <unicode hex="0332"/>
+  <outline>
+    <component base="underscore" xOffset="-1024"/>
+    <contour>
+      <point x="-512" y="-1" type="move" name="_Ligature below"/>
+    </contour>
+    <contour>
+      <point x="-512" y="-1" type="move" name="_below"/>
+    </contour>
+    <contour>
+      <point x="-512" y="-1" type="move" name="_below-mark"/>
+    </contour>
+  </outline>
+</glyph>

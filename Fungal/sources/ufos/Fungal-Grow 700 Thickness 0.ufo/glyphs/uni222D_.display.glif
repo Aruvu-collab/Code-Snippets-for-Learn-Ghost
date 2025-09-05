@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni222D.display" format="1">
+  <advance width="3061"/>
+  <outline>
+    <component base="integral.display" xOffset="1553"/>
+    <component base="integral.display" xOffset="776"/>
+    <component base="integral.display"/>
+  </outline>
+</glyph>

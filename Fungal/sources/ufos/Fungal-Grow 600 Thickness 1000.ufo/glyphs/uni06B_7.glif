@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni06B7" format="1">
+  <advance width="1488"/>
+  <unicode hex="06B7"/>
+  <outline>
+    <component base="uni0644"/>
+    <component base="arabic_3dots" xOffset="1000" yOffset="1700"/>
+    <contour>
+      <point x="1212" y="2150" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="700" y="-450" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uni0644</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_3dots</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

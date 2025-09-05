@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni069C.init" format="1">
+  <advance width="1716"/>
+  <outline>
+    <component base="uniFEB3"/>
+    <component base="arabic_3dots" xOffset="650" yOffset="800"/>
+    <component base="arabic_3dots_a" xOffset="800" yOffset="-250"/>
+    <contour>
+      <point x="850" y="1250" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="1000" y="-550" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uniFEB3</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_3dots</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>2</integer>
+          <key>name</key>
+          <string>arabic_3dots_a</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

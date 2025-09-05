@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni06B8.medi" format="1">
+  <advance width="678"/>
+  <outline>
+    <component base="uniFEE0"/>
+    <component base="arabic_3dots_a" xOffset="129" yOffset="-250"/>
+    <contour>
+      <point x="339" y="1650" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="329" y="-550" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uniFEE0</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_3dots_a</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

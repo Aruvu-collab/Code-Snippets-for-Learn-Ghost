@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFB5C" format="1">
+  <advance width="570"/>
+  <unicode hex="FB5C"/>
+  <outline>
+    <component base="uni066E.init"/>
+    <component base="arabic_4dots" xOffset="99" yOffset="-250"/>
+    <contour>
+      <point x="299" y="1000" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="299" y="-550" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uni066E.init</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_4dots</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

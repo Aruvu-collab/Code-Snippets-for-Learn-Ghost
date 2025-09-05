@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="amacron" format="1">
+  <advance width="1255"/>
+  <unicode hex="0101"/>
+  <outline>
+    <component base="macron" xOffset="74"/>
+    <component base="a"/>
+    <contour>
+      <point x="586" y="1556" type="move" name="above-legacy"/>
+    </contour>
+    <contour>
+      <point x="586" y="0" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="977" y="0" type="move" name="cedilla"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>macron</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>a</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

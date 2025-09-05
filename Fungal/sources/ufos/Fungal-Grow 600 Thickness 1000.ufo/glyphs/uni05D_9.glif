@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni05D9" format="1">
+  <advance width="458"/>
+  <unicode hex="05D9"/>
+  <outline>
+    <contour>
+      <point x="322" y="1120" type="line"/>
+      <point x="322" y="494" type="line"/>
+      <point x="136" y="418" type="line"/>
+      <point x="136" y="1120" type="line"/>
+    </contour>
+    <contour>
+      <point x="229" y="0" type="move" name="rtl-below"/>
+    </contour>
+    <contour>
+      <point x="6" y="795" type="move" name="rtl-inside"/>
+    </contour>
+  </outline>
+</glyph>

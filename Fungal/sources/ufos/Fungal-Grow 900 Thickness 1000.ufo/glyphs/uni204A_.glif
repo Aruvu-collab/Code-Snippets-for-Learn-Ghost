@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni204A" format="1">
+  <advance width="1018"/>
+  <unicode hex="204A"/>
+  <outline>
+    <contour>
+      <point x="100" y="1117" type="line"/>
+      <point x="254" y="1101"/>
+      <point x="488" y="1101" type="qcurve" smooth="yes"/>
+      <point x="739" y="1101"/>
+      <point x="918" y="1117" type="qcurve"/>
+      <point x="910" y="989" type="line"/>
+      <point x="622" y="-251" type="line"/>
+      <point x="470" y="-251" type="line"/>
+      <point x="734" y="947" type="line"/>
+      <point x="617" y="932"/>
+      <point x="300" y="932"/>
+      <point x="100" y="947" type="qcurve"/>
+    </contour>
+  </outline>
+</glyph>

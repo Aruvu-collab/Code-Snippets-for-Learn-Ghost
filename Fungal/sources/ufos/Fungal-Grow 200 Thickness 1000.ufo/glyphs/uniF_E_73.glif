@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFE73" format="1">
+  <advance width="536"/>
+  <unicode hex="FE73"/>
+  <outline>
+    <contour>
+      <point x="289" y="332" type="line" smooth="yes"/>
+      <point x="289" y="277"/>
+      <point x="338" y="228" type="qcurve" smooth="yes"/>
+      <point x="382" y="184"/>
+      <point x="481" y="184" type="qcurve" smooth="yes"/>
+      <point x="556" y="184" type="line"/>
+      <point x="556" y="0" type="line"/>
+      <point x="426" y="0" type="line" smooth="yes"/>
+      <point x="284" y="0"/>
+      <point x="192" y="92" type="qcurve" smooth="yes"/>
+      <point x="105" y="179"/>
+      <point x="105" y="320" type="qcurve" smooth="yes"/>
+      <point x="105" y="363" type="line"/>
+      <point x="289" y="363" type="line"/>
+    </contour>
+    <contour>
+      <point x="197" y="1200" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="197" y="-100" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+</glyph>

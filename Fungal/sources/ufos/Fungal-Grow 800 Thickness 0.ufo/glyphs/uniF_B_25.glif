@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFB25" format="1">
+  <advance width="1727"/>
+  <unicode hex="FB25"/>
+  <outline>
+    <contour>
+      <point x="672" y="0" type="line"/>
+      <point x="1276" y="977" type="line"/>
+      <point x="88" y="977" type="line"/>
+      <point x="88" y="1556" type="line"/>
+      <point x="275" y="1556" type="line"/>
+      <point x="275" y="1120" type="line"/>
+      <point x="1467" y="1120" type="line"/>
+      <point x="1467" y="988" type="line"/>
+      <point x="863" y="0" type="line"/>
+    </contour>
+  </outline>
+</glyph>

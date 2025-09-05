@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="nine" format="1">
+  <advance width="1303"/>
+  <unicode hex="0039"/>
+  <outline>
+    <contour>
+      <point x="225" y="31" type="qcurve"/>
+      <point x="225" y="215" type="line"/>
+      <point x="301" y="179"/>
+      <point x="457" y="141"/>
+      <point x="532" y="141" type="qcurve" smooth="yes"/>
+      <point x="732" y="141"/>
+      <point x="943" y="410"/>
+      <point x="958" y="684" type="qcurve"/>
+      <point x="900" y="598"/>
+      <point x="722" y="506"/>
+      <point x="614" y="506" type="qcurve" smooth="yes"/>
+      <point x="390" y="506"/>
+      <point x="129" y="777"/>
+      <point x="129" y="1012" type="qcurve" smooth="yes"/>
+      <point x="129" y="1242"/>
+      <point x="401" y="1520"/>
+      <point x="627" y="1520" type="qcurve" smooth="yes"/>
+      <point x="886" y="1520"/>
+      <point x="1159" y="1123"/>
+      <point x="1159" y="745" type="qcurve" smooth="yes"/>
+      <point x="1159" y="392"/>
+      <point x="824" y="-29"/>
+      <point x="541" y="-29" type="qcurve" smooth="yes"/>
+      <point x="465" y="-29"/>
+      <point x="309" y="1"/>
+    </contour>
+    <contour>
+      <point x="627" y="664" type="qcurve" smooth="yes"/>
+      <point x="763" y="664"/>
+      <point x="922" y="850"/>
+      <point x="922" y="1012" type="qcurve" smooth="yes"/>
+      <point x="922" y="1173"/>
+      <point x="763" y="1360"/>
+      <point x="627" y="1360" type="qcurve" smooth="yes"/>
+      <point x="491" y="1360"/>
+      <point x="332" y="1173"/>
+      <point x="332" y="1012" type="qcurve" smooth="yes"/>
+      <point x="332" y="850"/>
+      <point x="491" y="664"/>
+    </contour>
+    <component base="blob1" xScale="0" xyScale="-1.2886" yScale="0" yxScale="-1.2886" xOffset="-39" yOffset="211"/>
+    <component base="blob2" xScale="0" xyScale="-1" yScale="0" yxScale="-1" xOffset="-561" yOffset="329"/>
+    <component base="blob3" xScale="0" xyScale="-1" yScale="0" yxScale="-1" xOffset="-833" yOffset="686"/>
+    <component base="blob4" xScale="0" xyScale="-0.8783" yScale="0" yxScale="-0.8783" xOffset="-802" yOffset="1128"/>
+    <component base="blob5" xScale="0" xyScale="-1" yScale="0" yxScale="-1" xOffset="-822" yOffset="1565"/>
+    <component base="blob6" xScale="0" xyScale="-1.1539" yScale="0" yxScale="-1.1539" xOffset="-916" yOffset="2039"/>
+    <component base="blob7" xScale="0" xyScale="-0.9753" yScale="0" yxScale="-0.9753" xOffset="-1375" yOffset="2278"/>
+    <component base="blob8" xScale="0" xyScale="-0.7047" yScale="0" yxScale="-0.7047" xOffset="-1682" yOffset="2482"/>
+    <component base="blob9" xScale="0" xyScale="-0.4869" yScale="0" yxScale="-0.4869" xOffset="-1917" yOffset="2543"/>
+    <component base="blob2" xScale="0" xyScale="-1" yScale="0" yxScale="-1" xOffset="480" yOffset="90"/>
+    <component base="blob3" xScale="0" xyScale="-1" yScale="0" yxScale="-1" xOffset="914" yOffset="250"/>
+    <component base="blob3" xScale="0" xyScale="-1" yScale="0" yxScale="-1" xOffset="1054" yOffset="706"/>
+    <component base="blob4" xScale="0" xyScale="-0.8783" yScale="0" yxScale="-0.8783" xOffset="913" yOffset="1111"/>
+    <component base="blob5" xScale="0" xyScale="-1" yScale="0" yxScale="-1" xOffset="527" yOffset="1411"/>
+    <component base="blob6" xScale="0" xyScale="-0.9303" yScale="0" yxScale="-0.9303" xOffset="396" yOffset="996"/>
+    <component base="blob7" xScale="0" xyScale="-0.9753" yScale="0" yxScale="-0.9753" xOffset="675" yOffset="777"/>
+    <component base="blob8" xScale="0" xyScale="-0.7047" yScale="0" yxScale="-0.7047" xOffset="728" yOffset="474"/>
+    <component base="blob9" xScale="0" xyScale="-0.4869" yScale="0" yxScale="-0.4869" xOffset="605" yOffset="287"/>
+    <contour>
+      <point x="651" y="1520" type="move" name="above"/>
+    </contour>
+    <contour>
+      <point x="651" y="0" type="move" name="below"/>
+    </contour>
+  </outline>
+</glyph>

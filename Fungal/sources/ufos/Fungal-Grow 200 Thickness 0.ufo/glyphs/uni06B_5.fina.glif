@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni06B5.fina" format="1">
+  <advance width="1551"/>
+  <outline>
+    <component base="uni065A" xOffset="700" yOffset="400"/>
+    <component base="uniFEDE"/>
+    <contour>
+      <point x="1212" y="2100" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="700" y="-450" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+</glyph>

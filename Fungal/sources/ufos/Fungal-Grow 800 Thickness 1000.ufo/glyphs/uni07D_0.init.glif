@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni07D0.init" format="1">
+  <advance width="1216"/>
+  <outline>
+    <contour>
+      <point x="-20" y="0" type="line"/>
+      <point x="-20" y="147" type="line"/>
+      <point x="516" y="147" type="line"/>
+      <point x="516" y="782" type="line"/>
+      <point x="434" y="793"/>
+      <point x="360" y="825" type="qcurve" smooth="yes"/>
+      <point x="246" y="874"/>
+      <point x="113" y="1042"/>
+      <point x="113" y="1239"/>
+      <point x="246" y="1408"/>
+      <point x="474" y="1506"/>
+      <point x="742" y="1506"/>
+      <point x="972" y="1408"/>
+      <point x="1103" y="1239"/>
+      <point x="1103" y="1042"/>
+      <point x="972" y="874"/>
+      <point x="857" y="825" type="qcurve" smooth="yes"/>
+      <point x="782" y="793"/>
+      <point x="700" y="782" type="qcurve"/>
+      <point x="700" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="269" y="1085"/>
+      <point x="360" y="989"/>
+      <point x="516" y="933"/>
+      <point x="700" y="933"/>
+      <point x="857" y="989"/>
+      <point x="947" y="1085"/>
+      <point x="947" y="1197"/>
+      <point x="857" y="1293"/>
+      <point x="700" y="1349"/>
+      <point x="516" y="1349"/>
+      <point x="360" y="1293"/>
+      <point x="269" y="1197"/>
+    </contour>
+    <contour>
+      <point x="608" y="1520" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="608" y="0" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+</glyph>

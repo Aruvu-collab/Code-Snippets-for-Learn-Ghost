@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFE71" format="1">
+  <advance width="600"/>
+  <unicode hex="FE71"/>
+  <outline>
+    <component base="uni0640"/>
+    <component base="uni064B" xOffset="-212"/>
+    <contour>
+      <point x="300" y="1700" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="300" y="-100" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+</glyph>

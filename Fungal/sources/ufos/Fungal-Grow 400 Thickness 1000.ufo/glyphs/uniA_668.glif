@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniA668" format="1">
+  <advance width="1612"/>
+  <unicode hex="A668"/>
+  <outline>
+    <component base="periodcentered" xOffset="481.500"/>
+    <component base="O"/>
+    <contour>
+      <point x="807" y="1520" type="move" name="above"/>
+    </contour>
+  </outline>
+</glyph>

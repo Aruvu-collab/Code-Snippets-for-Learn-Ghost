@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni07CD.medi" format="1">
+  <advance width="1212"/>
+  <outline>
+    <contour>
+      <point x="256" y="0" type="line"/>
+      <point x="-20" y="0" type="line"/>
+      <point x="-20" y="147" type="line"/>
+      <point x="116" y="147" type="line"/>
+      <point x="481" y="881" type="line"/>
+      <point x="731" y="881" type="line"/>
+      <point x="1096" y="147" type="line"/>
+      <point x="1232" y="147" type="line"/>
+      <point x="1232" y="0" type="line"/>
+      <point x="956" y="0" type="line"/>
+      <point x="606" y="701" type="line"/>
+    </contour>
+    <contour>
+      <point x="606" y="1520" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="606" y="0" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+</glyph>

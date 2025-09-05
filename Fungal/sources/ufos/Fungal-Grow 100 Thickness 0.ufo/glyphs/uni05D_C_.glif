@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni05DC" format="1">
+  <advance width="1164"/>
+  <unicode hex="05DC"/>
+  <outline>
+    <contour>
+      <point x="385" y="0" type="line"/>
+      <point x="789" y="977" type="line"/>
+      <point x="88" y="977" type="line"/>
+      <point x="88" y="1493" type="line"/>
+      <point x="275" y="1493" type="line"/>
+      <point x="275" y="1120" type="line"/>
+      <point x="1008" y="1119" type="line"/>
+      <point x="1005" y="1009" type="line"/>
+      <point x="580" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="492" y="0" type="move" name="rtl-below"/>
+    </contour>
+    <contour>
+      <point x="361" y="560" type="move" name="rtl-inside"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni05D1" format="1">
+  <advance width="1184"/>
+  <unicode hex="05D1"/>
+  <outline>
+    <contour>
+      <point x="744" y="143" type="line"/>
+      <point x="744" y="606" type="line" smooth="yes"/>
+      <point x="744" y="681"/>
+      <point x="733" y="780"/>
+      <point x="695" y="882"/>
+      <point x="626" y="940"/>
+      <point x="505" y="977"/>
+      <point x="418" y="977" type="qcurve" smooth="yes"/>
+      <point x="88" y="977" type="line"/>
+      <point x="88" y="1120" type="line"/>
+      <point x="418" y="1120" type="line" smooth="yes"/>
+      <point x="541" y="1120"/>
+      <point x="718" y="1074"/>
+      <point x="834" y="989"/>
+      <point x="903" y="850"/>
+      <point x="930" y="684"/>
+      <point x="930" y="570" type="qcurve" smooth="yes"/>
+      <point x="930" y="143" type="line"/>
+      <point x="1096" y="143" type="line"/>
+      <point x="1096" y="0" type="line"/>
+      <point x="88" y="0" type="line"/>
+      <point x="88" y="143" type="line"/>
+    </contour>
+    <contour>
+      <point x="594" y="1120" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="597" y="0" type="move" name="rtl-below"/>
+    </contour>
+    <contour>
+      <point x="465" y="560" type="move" name="rtl-inside"/>
+    </contour>
+  </outline>
+</glyph>

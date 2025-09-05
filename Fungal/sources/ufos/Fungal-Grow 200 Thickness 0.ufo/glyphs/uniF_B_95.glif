@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFB95" format="1">
+  <advance width="1131"/>
+  <unicode hex="FB95"/>
+  <outline>
+    <component base="uniFB91"/>
+    <component base="arabic_gaf_bar" xOffset="112"/>
+    <contour>
+      <point x="250" y="1700" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="300" y="-150" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uniFB91</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_gaf_bar</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

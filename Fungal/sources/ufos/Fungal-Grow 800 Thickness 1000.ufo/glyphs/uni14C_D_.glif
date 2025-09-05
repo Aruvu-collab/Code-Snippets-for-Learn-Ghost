@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni14CD" format="1">
+  <advance width="2169"/>
+  <unicode hex="14CD"/>
+  <outline>
+    <component base="uni14C8" xOffset="474"/>
+    <component base="uni1427"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uni14C8</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>uni1427</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFE94" format="1">
+  <advance width="1098"/>
+  <unicode hex="FE94"/>
+  <outline>
+    <component base="uniFEEA"/>
+    <component base="arabic_2dots" xOffset="350" yOffset="900"/>
+    <contour>
+      <point x="550" y="1100" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="500" y="-150" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uniFEEA</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_2dots</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

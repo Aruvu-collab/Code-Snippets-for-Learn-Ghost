@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFB27" format="1">
+  <advance width="1653"/>
+  <unicode hex="FB27"/>
+  <outline>
+    <contour>
+      <point x="1467" y="532" type="qcurve" smooth="yes"/>
+      <point x="1467" y="0" type="line"/>
+      <point x="1281" y="0" type="line"/>
+      <point x="1281" y="532" type="line" smooth="yes"/>
+      <point x="1281" y="666"/>
+      <point x="1252" y="827"/>
+      <point x="1168" y="936"/>
+      <point x="1028" y="977"/>
+      <point x="912" y="977" type="qcurve" smooth="yes"/>
+      <point x="88" y="977" type="line"/>
+      <point x="88" y="1120" type="line"/>
+      <point x="911" y="1120" type="line" smooth="yes"/>
+      <point x="1073" y="1120"/>
+      <point x="1284" y="1060"/>
+      <point x="1414" y="916"/>
+      <point x="1467" y="699"/>
+    </contour>
+  </outline>
+</glyph>

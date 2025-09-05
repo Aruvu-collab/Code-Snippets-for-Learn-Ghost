@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni06A8.fina" format="1">
+  <advance width="1708"/>
+  <outline>
+    <component base="uni066F.fina"/>
+    <component base="arabic_3dots" xOffset="900" yOffset="875"/>
+    <contour>
+      <point x="500" y="850" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="700" y="-615" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uni066F.fina</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_3dots</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

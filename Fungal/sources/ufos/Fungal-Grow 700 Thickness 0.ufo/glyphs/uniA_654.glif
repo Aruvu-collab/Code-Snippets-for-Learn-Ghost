@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniA654" format="1">
+  <advance width="2211"/>
+  <unicode hex="A654"/>
+  <outline>
+    <contour>
+      <point x="805" y="1356" type="qcurve" smooth="yes"/>
+      <point x="585" y="1356"/>
+      <point x="456.5" y="1192" type="qcurve" smooth="yes"/>
+      <point x="328" y="1028"/>
+      <point x="328" y="745" type="qcurve" smooth="yes"/>
+      <point x="328" y="463"/>
+      <point x="456.5" y="299" type="qcurve" smooth="yes"/>
+      <point x="585" y="135"/>
+      <point x="805" y="135" type="qcurve" smooth="yes"/>
+      <point x="1025" y="135"/>
+      <point x="1154.5" y="299" type="qcurve" smooth="yes"/>
+      <point x="1284" y="463"/>
+      <point x="1284" y="745" type="qcurve" smooth="yes"/>
+      <point x="1284" y="1028"/>
+      <point x="1154.5" y="1192" type="qcurve" smooth="yes"/>
+      <point x="1025" y="1356"/>
+    </contour>
+    <contour>
+      <point x="1494" y="831" type="qcurve"/>
+      <point x="1798" y="831" type="line"/>
+      <point x="1798" y="1493" type="line"/>
+      <point x="2000" y="1493" type="line"/>
+      <point x="2000" y="0" type="line"/>
+      <point x="1798" y="0" type="line"/>
+      <point x="1798" y="661" type="line"/>
+      <point x="1494" y="661" type="line"/>
+      <point x="1480" y="381"/>
+      <point x="1300" y="176" type="qcurve" smooth="yes"/>
+      <point x="1120" y="-29"/>
+      <point x="805" y="-29" type="qcurve" smooth="yes"/>
+      <point x="491" y="-29"/>
+      <point x="303" y="181.5" type="qcurve" smooth="yes"/>
+      <point x="115" y="392"/>
+      <point x="115" y="745" type="qcurve" smooth="yes"/>
+      <point x="115" y="1099"/>
+      <point x="303" y="1309.5" type="qcurve" smooth="yes"/>
+      <point x="491" y="1520"/>
+      <point x="805" y="1520" type="qcurve" smooth="yes"/>
+      <point x="1120" y="1520"/>
+      <point x="1300" y="1315.5" type="qcurve" smooth="yes"/>
+      <point x="1480" y="1111"/>
+    </contour>
+    <contour>
+      <point x="1328" y="1520" type="move" name="above"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni223A" format="1">
+  <advance width="1716"/>
+  <unicode hex="223A"/>
+  <outline>
+    <component base="minus"/>
+    <component base="dotmath" xOffset="-3" yOffset="-425"/>
+    <component base="dotmath" xOffset="-2" yOffset="292"/>
+    <component base="dotmath" xOffset="1069" yOffset="-425"/>
+    <component base="dotmath" xOffset="1070" yOffset="292"/>
+  </outline>
+</glyph>

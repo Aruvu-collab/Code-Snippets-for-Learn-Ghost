@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni04F4" format="1">
+  <advance width="1404"/>
+  <unicode hex="04F4"/>
+  <outline>
+    <component base="Dieresis" xOffset="1228" yOffset="373"/>
+    <component base="uni0427"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>Dieresis</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>uni0427</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

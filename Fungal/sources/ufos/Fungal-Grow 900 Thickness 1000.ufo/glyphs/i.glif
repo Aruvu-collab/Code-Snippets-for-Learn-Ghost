@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="i" format="1">
+  <advance width="569"/>
+  <unicode hex="0069"/>
+  <outline>
+    <contour>
+      <point x="193" y="1120" type="line"/>
+      <point x="377" y="1120" type="line"/>
+      <point x="377" y="0" type="line"/>
+      <point x="193" y="0" type="line"/>
+      <point x="193" y="1120" type="line"/>
+    </contour>
+    <contour>
+      <point x="193" y="1556" type="line"/>
+      <point x="377" y="1556" type="line"/>
+      <point x="377" y="1323" type="line"/>
+      <point x="193" y="1323" type="line"/>
+      <point x="193" y="1556" type="line"/>
+    </contour>
+    <component base="blob1" xScale="1.2886" yScale="1.2886" xOffset="271" yOffset="1735"/>
+    <component base="blob2" xOffset="183" yOffset="1977"/>
+    <component base="blob3" xOffset="324" yOffset="2204"/>
+    <component base="blob4" xScale="0.6152" yScale="0.6152" xOffset="563" yOffset="2346"/>
+    <component base="blob5" xOffset="723" yOffset="2509"/>
+    <component base="blob6" xScale="1.1539" yScale="1.1539" xOffset="823" yOffset="2874"/>
+    <component base="blob7" xScale="0.9167" yScale="0.9167" xOffset="785" yOffset="3189"/>
+    <component base="blob8" xScale="0.7047" yScale="0.7047" xOffset="582" yOffset="3374"/>
+    <component base="blob9" xScale="0.4869" yScale="0.4869" xOffset="589" yOffset="3580"/>
+    <component base="blob1" xScale="0.7049" yScale="0.7049" xOffset="383" yOffset="1311"/>
+    <component base="blob2" xScale="0.5766" yScale="0.5766" xOffset="420" yOffset="1143"/>
+    <component base="blob3" xScale="0.7281" yScale="0.7281" xOffset="530" yOffset="985"/>
+    <component base="blob4" xScale="0.6152" yScale="0.6152" xOffset="417" yOffset="825"/>
+    <component base="blob5" xScale="0.6944" yScale="0.6944" xOffset="339" yOffset="665"/>
+    <contour>
+      <point x="287" y="1583" type="move" name="above"/>
+    </contour>
+    <contour>
+      <point x="287" y="0" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="287" y="0" type="move" name="cedilla"/>
+    </contour>
+    <contour>
+      <point x="0" y="1520" type="move" name="half"/>
+    </contour>
+    <contour>
+      <point x="318" y="0" type="move" name="ogonek"/>
+    </contour>
+  </outline>
+</glyph>

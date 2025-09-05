@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni05F0" format="1">
+  <advance width="964"/>
+  <unicode hex="05F0"/>
+  <outline>
+    <component base="uni05D5" xOffset="406"/>
+    <component base="uni05D5"/>
+    <contour>
+      <point x="482" y="0" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uni05D5</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>uni05D5</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

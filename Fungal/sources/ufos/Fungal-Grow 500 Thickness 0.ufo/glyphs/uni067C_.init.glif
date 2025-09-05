@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni067C.init" format="1">
+  <advance width="570"/>
+  <outline>
+    <component base="uni066E.init"/>
+    <component base="arabic_2dots" xOffset="99" yOffset="850"/>
+    <component base="arabic_ring" xOffset="80" yOffset="-268"/>
+    <contour>
+      <point x="299" y="1050" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="299" y="-318" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uni066E.init</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_2dots</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>2</integer>
+          <key>name</key>
+          <string>arabic_ring</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

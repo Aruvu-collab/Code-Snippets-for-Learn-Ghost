@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni0292" format="1">
+  <advance width="1183"/>
+  <unicode hex="0292"/>
+  <outline>
+    <contour>
+      <point x="572" y="476" type="line"/>
+      <point x="678" y="476"/>
+      <point x="806" y="420" type="qcurve" smooth="yes"/>
+      <point x="904" y="378"/>
+      <point x="990" y="269" type="qcurve" smooth="yes"/>
+      <point x="1071" y="165"/>
+      <point x="1071" y="27" type="qcurve" smooth="yes"/>
+      <point x="1071" y="-194"/>
+      <point x="767" y="-436"/>
+      <point x="487" y="-436" type="qcurve" smooth="yes"/>
+      <point x="393" y="-436"/>
+      <point x="294" y="-418" type="qcurve" smooth="yes"/>
+      <point x="194" y="-399"/>
+      <point x="88" y="-362" type="qcurve"/>
+      <point x="88" y="-167" type="line"/>
+      <point x="172" y="-216"/>
+      <point x="372" y="-266"/>
+      <point x="481" y="-266" type="qcurve" smooth="yes"/>
+      <point x="671" y="-266"/>
+      <point x="770" y="-191" type="qcurve" smooth="yes"/>
+      <point x="870" y="-116"/>
+      <point x="870" y="27" type="qcurve" smooth="yes"/>
+      <point x="870" y="159"/>
+      <point x="778" y="234" type="qcurve" smooth="yes"/>
+      <point x="685" y="308"/>
+      <point x="520" y="308" type="qcurve" smooth="yes"/>
+      <point x="346" y="308" type="line"/>
+      <point x="346" y="474" type="line"/>
+      <point x="776" y="973" type="line"/>
+      <point x="109" y="973" type="line"/>
+      <point x="109" y="1120" type="line"/>
+      <point x="983" y="1120" type="line"/>
+      <point x="983" y="952" type="line"/>
+    </contour>
+    <contour>
+      <point x="535" y="1147" type="move" name="above"/>
+    </contour>
+    <contour>
+      <point x="535" y="-430" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="535" y="-430" type="move" name="cedilla"/>
+    </contour>
+    <contour>
+      <point x="0" y="1520" type="move" name="half"/>
+    </contour>
+    <contour>
+      <point x="535" y="-430" type="move" name="ogonek"/>
+    </contour>
+  </outline>
+</glyph>

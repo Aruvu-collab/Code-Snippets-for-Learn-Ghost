@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="onedotenleader" format="1">
+  <advance width="685"/>
+  <unicode hex="2024"/>
+  <outline>
+    <contour>
+      <point x="236" y="254" type="line"/>
+      <point x="449" y="254" type="line"/>
+      <point x="449" y="0" type="line"/>
+      <point x="236" y="0" type="line"/>
+    </contour>
+  </outline>
+</glyph>

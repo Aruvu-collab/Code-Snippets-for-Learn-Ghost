@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni042B" format="1">
+  <advance width="1807"/>
+  <unicode hex="042B"/>
+  <outline>
+    <component base="uni042C"/>
+    <component base="I" xOffset="1203"/>
+    <contour>
+      <point x="903" y="1520" type="move" name="above"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uni042C</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>I</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

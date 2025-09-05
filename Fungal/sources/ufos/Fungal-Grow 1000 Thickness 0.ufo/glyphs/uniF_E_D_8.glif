@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFED8" format="1">
+  <advance width="1036"/>
+  <unicode hex="FED8"/>
+  <outline>
+    <component base="uni066F.medi"/>
+    <component base="arabic_2dots" xOffset="312" yOffset="1000"/>
+    <contour>
+      <point x="518" y="1200" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="518" y="-150" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uni066F.medi</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_2dots</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

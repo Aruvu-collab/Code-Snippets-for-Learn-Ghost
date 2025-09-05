@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni0697.fina" format="1">
+  <advance width="1130"/>
+  <outline>
+    <component base="arabic_2dots" xOffset="500" yOffset="800"/>
+    <component base="uniFEAE"/>
+    <contour>
+      <point x="700" y="1000" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="500" y="-500" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>arabic_2dots</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>uniFEAE</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

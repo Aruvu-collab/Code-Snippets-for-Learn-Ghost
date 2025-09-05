@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni2092" format="1">
+  <advance width="847"/>
+  <unicode hex="2092"/>
+  <outline>
+    <component base="uni1D52" yOffset="-668"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uni1D52</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

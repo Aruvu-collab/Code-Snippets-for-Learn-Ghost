@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni22C2.display" format="1">
+  <advance width="2375"/>
+  <outline>
+    <contour>
+      <point x="1188" y="1851" type="qcurve" smooth="yes"/>
+      <point x="879" y="1851"/>
+      <point x="442" y="1531"/>
+      <point x="442" y="1174" type="qcurve" smooth="yes"/>
+      <point x="442" y="-556" type="line"/>
+      <point x="198" y="-556" type="line"/>
+      <point x="198" y="1209" type="line" smooth="yes"/>
+      <point x="198" y="1665"/>
+      <point x="827" y="2083"/>
+      <point x="1549" y="2083"/>
+      <point x="2178" y="1665"/>
+      <point x="2178" y="1209" type="qcurve" smooth="yes"/>
+      <point x="2178" y="-556" type="line"/>
+      <point x="1934" y="-556" type="line"/>
+      <point x="1934" y="1174" type="line" smooth="yes"/>
+      <point x="1934" y="1528"/>
+      <point x="1501" y="1851"/>
+    </contour>
+  </outline>
+</glyph>

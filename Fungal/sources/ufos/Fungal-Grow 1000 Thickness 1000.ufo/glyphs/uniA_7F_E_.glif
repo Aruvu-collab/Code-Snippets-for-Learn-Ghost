@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniA7FE" format="1">
+  <advance width="604"/>
+  <unicode hex="A7FE"/>
+  <outline>
+    <contour>
+      <point x="201" y="1901" type="line"/>
+      <point x="403" y="1901" type="line"/>
+      <point x="403" y="0" type="line"/>
+      <point x="201" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="303" y="1928" type="move" name="above"/>
+    </contour>
+    <contour>
+      <point x="303" y="0" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="303" y="0" type="move" name="cedilla"/>
+    </contour>
+    <contour>
+      <point x="0" y="1520" type="move" name="half"/>
+    </contour>
+  </outline>
+</glyph>

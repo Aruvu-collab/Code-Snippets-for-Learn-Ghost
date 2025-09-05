@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFECE" format="1">
+  <advance width="1090"/>
+  <unicode hex="FECE"/>
+  <outline>
+    <component base="uniFECA"/>
+    <component base="arabic_dot" xOffset="425" yOffset="950"/>
+    <contour>
+      <point x="500" y="1150" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="727" y="-600" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>0</integer>
+          <key>name</key>
+          <string>uniFECA</string>
+        </dict>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>arabic_dot</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

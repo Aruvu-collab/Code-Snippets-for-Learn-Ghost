@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni064D" format="1">
+  <advance width="0"/>
+  <unicode hex="064D"/>
+  <outline>
+    <contour>
+      <point x="220" y="-490" type="line"/>
+      <point x="220" y="-380" type="line"/>
+      <point x="804" y="-250" type="line"/>
+      <point x="804" y="-360" type="line"/>
+    </contour>
+    <contour>
+      <point x="220" y="-250" type="line"/>
+      <point x="220" y="-140" type="line"/>
+      <point x="804" y="-10" type="line"/>
+      <point x="804" y="-120" type="line"/>
+    </contour>
+    <contour>
+      <point x="512" y="0" type="move" name="_Ligature rtl-below"/>
+    </contour>
+    <contour>
+      <point x="512" y="0" type="move" name="_rtl-below"/>
+    </contour>
+    <contour>
+      <point x="512" y="0" type="move" name="_rtl-below-mark"/>
+    </contour>
+    <contour>
+      <point x="512" y="-500" type="move" name="rtl-below-mark"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni020B" format="1">
+  <advance width="569"/>
+  <unicode hex="020B"/>
+  <outline>
+    <component base="uni0311" xOffset="804"/>
+    <component base="dotlessi" xOffset="-0.500"/>
+    <contour>
+      <point x="287" y="0" type="move" name="below"/>
+    </contour>
+    <contour>
+      <point x="287" y="0" type="move" name="cedilla"/>
+    </contour>
+  </outline>
+</glyph>

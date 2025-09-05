@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFB89" format="1">
+  <advance width="1075"/>
+  <unicode hex="FB89"/>
+  <outline>
+    <component base="uni0615" xOffset="-62" yOffset="-250"/>
+    <component base="uniFEAA"/>
+    <contour>
+      <point x="450" y="1600" type="move" name="rtl-above"/>
+    </contour>
+    <contour>
+      <point x="450" y="-150" type="move" name="rtl-below"/>
+    </contour>
+  </outline>
+</glyph>
