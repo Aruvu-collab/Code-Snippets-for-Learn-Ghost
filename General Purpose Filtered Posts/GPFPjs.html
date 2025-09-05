@@ -1,0 +1,172 @@
+   <script>
+    (function() {
+        // Find the active filter config element
+        const filterConfigs = document.querySelectorAll('[id^="filter-config"]');
+        let filterConfig = null;
+        
+        for (const config of filterConfigs) {
+            if (config.style.display !== 'none') {
+                filterConfig = config;
+                break;
+            }
+        }
+        
+        // If no visible config found, use the first one
+        if (!filterConfig && filterConfigs.length > 0) {
+            filterConfig = filterConfigs[0];
+        }
+        
+        if (!filterConfig) return;
+
+        const CONFIG = {
+            GHOST_URL: 'https://learn.livinglabs.network',
+            API_KEY: 'd43ba92c8b1434af08d837c579',
+            API_VERSION: 'v3'
+        };
+
+        let currentPage = 1;
+        let hasMore = true;
+        let filterQuery = '';
+
+        function buildFilterQuery() {
+            const tags = filterConfig.getAttribute('data-tags');
+            const requiredTags = filterConfig.getAttribute('data-required-tags');
+            const optionalTags = filterConfig.getAttribute('data-optional-tags');
+            const logic = filterConfig.getAttribute('data-logic') || 'and';
+
+            let filters = [];
+
+            if (tags) {
+                const tagList = tags.split(',').map(tag => tag.trim()).filter(tag => tag);
+
+                if (logic === 'and') {
+                    // All tags must be present (use + for AND)
+                    filters.push(tagList.map(tag => `tag:${tag}`).join('+'));
+                } else if (logic === 'or') {
+                    // Any tag can be present (use , for OR)
+                    filters.push(tagList.map(tag => `tag:${tag}`).join(','));
+                }
+            }
+
+            if (requiredTags && optionalTags) {
+                const required = requiredTags.split(',').map(tag => tag.trim()).filter(tag => tag);
+                const optional = optionalTags.split(',').map(tag => tag.trim()).filter(tag => tag);
+                
+                // Required tags (AND) + any of the optional tags (OR)
+                const requiredFilter = required.map(tag => `tag:${tag}`).join('+');
+                const optionalFilter = optional.map(tag => `tag:${tag}`).join(',');
+                
+                if (requiredFilter && optionalFilter) {
+                    filters.push(`${requiredFilter}+(${optionalFilter})`);
+                } else if (requiredFilter) {
+                    filters.push(requiredFilter);
+                } else if (optionalFilter) {
+                    filters.push(optionalFilter);
+                }
+            }
+
+            return filters.join('+');
+        }
+
+        async function fetchPosts(page = 1) {
+            const baseUrl = CONFIG.GHOST_URL.endsWith('/') ? CONFIG.GHOST_URL.slice(0, -1) : CONFIG.GHOST_URL;
+            const url = `${baseUrl}/ghost/api/${CONFIG.API_VERSION}/content/posts/?key=${CONFIG.API_KEY}&filter=${encodeURIComponent(filterQuery)}&limit=15&page=${page}&fields=id,title,url,excerpt,feature_image,published_at&include=tags,authors`;
+            
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            return response.json();
+        }
+
+        function createPostCard(post) {
+            const card = document.createElement('article');
+            card.className = 'gh-card';
+            card.onclick = () => window.open(post.url, '_blank');
+
+            const imageHtml = post.feature_image 
+                ? `<div class="gh-card-image"><img src="${post.feature_image}" alt="${post.title}"></div>`
+                : '';
+
+            card.innerHTML = `
+                ${imageHtml}
+                <div class="gh-card-content">
+                    <h3 class="gh-card-title">${post.title}</h3>
+                    <p class="gh-card-excerpt">${post.excerpt || ''}</p>
+                </div>
+            `;
+
+            return card;
+        }
+
+        function displayPosts(posts, append = false) {
+            const container = document.getElementById('posts-container');
+            
+            if (!append) {
+                container.innerHTML = '';
+            }
+
+            if (posts.length === 0 && !append) {
+                container.innerHTML = '<div class="loading">No posts found matching the specified tags.</div>';
+                return;
+            }
+
+            posts.forEach(post => {
+                const card = createPostCard(post);
+                container.appendChild(card);
+            });
+        }
+
+        async function loadMore() {
+            if (!hasMore) return;
+            
+            try {
+                currentPage++;
+                const data = await fetchPosts(currentPage);
+                displayPosts(data.posts, true);
+                
+                hasMore = currentPage < data.meta.pagination.pages;
+                document.getElementById('load-more').style.display = hasMore ? 'block' : 'none';
+            } catch (error) {
+                console.error('Error loading more posts:', error);
+            }
+        }
+
+        async function init() {
+            try {
+                // Build filter query based on configuration
+                filterQuery = buildFilterQuery();
+                
+                if (!filterQuery) {
+                    throw new Error('No tags specified in filter configuration');
+                }
+
+                console.log('Filter query:', filterQuery);
+                
+                // Load initial posts
+                const data = await fetchPosts(1);
+                displayPosts(data.posts);
+                
+                // Setup load more button
+                hasMore = data.meta.pagination.pages > 1;
+                const loadMoreBtn = document.getElementById('load-more');
+                if (loadMoreBtn) {
+                    loadMoreBtn.style.display = hasMore ? 'block' : 'none';
+                    loadMoreBtn.onclick = loadMore;
+                }
+                
+            } catch (error) {
+                console.error('Error initializing:', error);
+                const container = document.getElementById('posts-container');
+                if (container) {
+                    container.innerHTML = '<div class="error">Error loading posts. Please check the console for details.</div>';
+                }
+            }
+        }
+
+        // Initialize when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    })();
+    </script>
