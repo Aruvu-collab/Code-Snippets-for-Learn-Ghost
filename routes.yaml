@@ -1,0 +1,22 @@
+routes:
+  /:
+    data: page.home
+    template: page
+
+collections:
+  /courses/:
+    permalink: /course/{slug}/
+    filter: tag:course
+    template: index
+  /school/:
+    permalink: /school/{slug}/
+    filter: tag:school
+    template: index
+  # /:
+  #   permalink: /{slug}/
+  #   template: index
+
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
