@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Filter System</title>
+<style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            min-width:400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            min-width:40%;
+        }
+
+        .filters-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-size: 0.9rem;
+        }
+
+        .filter-select {
+            padding: 0.75rem;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            background: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .filter-select:hover {
+            border-color: #bdc3c7;
+        }
+
+        /* Active Filters */
+        .active-filters-display {
+            display: none;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            padding-top: 1rem;
+            border-top: 1px solid #ecf0f1;
+        }
+
+        .filter-tag {
+            background: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .filter-tag .remove {
+            cursor: pointer;
+            background: rgba(255,255,255,0.3);
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .filter-tag .remove:hover {
+            background: rgba(255,255,255,0.5);
+        }
+
+        .clear-filters {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            display: none;
+        }
+
+        .clear-filters:hover {
+            background: #c0392b;
+        }
+
+        /* Status Messages */
+        .status-message {
+            text-align: center;
+            padding: 3rem;
+            font-size: 1.2rem;
+        }
+
+        .loading {
+            color: #3498db;
+        }
+
+        .error {
+            color: #e74c3c;
+            background: #ffeaea;
+            border-radius: 8px;
+            border: 1px solid #ffcccc;
+        }
+
+        .no-results {
+            color: #7f8c8d;
+        }
+
+        /* Posts Grid */
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .post-image {
+            height: 200px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #3498db 0%, #9b59b6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .post-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .post-title {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .post-excerpt {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-tag {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .post-meta {
+            border-top: 1px solid #ecf0f1;
+            padding-top: 1rem;
+        }
+
+        .read-more {
+            background: #f8f9fa;
+            color: #333;
+            border: 1px solid #dee2e6;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            background: #e9ecef;
+            border-color: #adb5bd;
+        }
+
+        /* Debug Info */
+        .debug-info {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #6c757d;
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .filters-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Course Catalog</h1>
+            <p>Discover courses by filtering by attributes</p>
+        </header>
+
+        <div class="filter-section">
+            <div class="filters-row">
+                <div class="filter-group">
+                    <label class="filter-label" for="duration-filter">Duration</label>
+                    <select id="duration-filter" class="filter-select" data-filter="duration">
+                        <option value="">Any Duration</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="concentration-filter">School of Concentration</label>
+                    <select id="concentration-filter" class="filter-select" data-filter="concentration">
+                        <option value="">Any School</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="module-filter">Learning Module</label>
+                    <select id="module-filter" class="filter-select" data-filter="module">
+                        <option value="">Any Module</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="year-filter">Year Offered</label>
+                    <select id="year-filter" class="filter-select" data-filter="year">
+                        <option value="">Any Year</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="place-filter">Place</label>
+                    <select id="place-filter" class="filter-select" data-filter="place">
+                        <option value="">Any Place</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="context-filter">Micro-Context</label>
+                    <select id="context-filter" class="filter-select" data-filter="context">
+                        <option value="">Any Context</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="active-filters" class="active-filters-display"></div>
+            <button id="clear-filters" class="clear-filters">Clear All Filters</button>
+        </div>
+
+        <div id="posts-container" class="posts-grid">
+            <div class="status-message loading">Loading courses...</div>
+        </div>
+
+        <div id="debug-info" class="debug-info"></div>
+    </div>
+
+// Performance-Optimized Course Filter System
+<script>
+(() => {
+    'use strict';
+    
+    // Configuration
+    const CONFIG = {
+        GHOST_URL: 'https://learn.livinglabs.network',
+        API_KEY: 'd43ba92c8b1434af08d837c579',
+        API_VERSION: 'v3',
+        COURSE_TAGS: ['course', 'hash-course'],
+        REQUIRED_TAGS: ['active'],
+        FILTER_KEYWORDS: ['duration', 'concentration', 'module', 'year', 'place', 'context'],
+        DEBUG_MODE: false // Set to true for debugging
+    };
+
+    // Optimized state management
+    let allCourses = [];
+    let activeFilters = {};
+    let courseTag = null;
+    let isInitialized = false;
+
+    // Pre-compiled filter data for instant filtering
+    let filterMap = new Map(); // course_id -> filter_values
+    let availableOptions = {};
+
+    // Utility functions
+    const formatDisplayName = str => str.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    const debugLog = (msg, data) => CONFIG.DEBUG_MODE && console.log(`[DEBUG] ${msg}`, data || '');
+
+    // Single API call to load everything at once
+    async function loadAllData() {
+        const container = document.getElementById('posts-container');
+        container.innerHTML = '<div class="status-message loading">Loading courses...</div>';
+        
+        try {
+            // Load tags and posts in parallel
+            const [tagsResponse, postsResponse] = await Promise.all([
+                fetch(`${CONFIG.GHOST_URL}/ghost/api/${CONFIG.API_VERSION}/content/tags/?key=${CONFIG.API_KEY}&limit=all`),
+                fetch(`${CONFIG.GHOST_URL}/ghost/api/${CONFIG.API_VERSION}/content/posts/?key=${CONFIG.API_KEY}&limit=all&fields=id,title,url,excerpt,feature_image&include=tags&filter=${encodeURIComponent('tag:course+tag:active,tag:hash-course+tag:active')}`)
+            ]);
+
+            if (!tagsResponse.ok || !postsResponse.ok) {
+                throw new Error('Failed to fetch data');
+            }
+
+            const [{ tags }, { posts }] = await Promise.all([
+                tagsResponse.json(),
+                postsResponse.json()
+            ]);
+
+            return { tags, posts };
+        } catch (error) {
+            container.innerHTML = '<div class="status-message error">Failed to load courses. Please refresh the page.</div>';
+            throw error;
+        }
+    }
+
+    // Optimized filter parsing and indexing
+    function buildFilterIndex(tags, posts) {
+        // Find course tag
+        courseTag = tags.find(tag => CONFIG.COURSE_TAGS.includes(tag.slug));
+        
+        // Build available options from tags
+        const options = {};
+        tags.forEach(tag => {
+            if (tag.slug.startsWith('hash-')) {
+                const withoutHash = tag.slug.replace('hash-', '');
+                const parts = withoutHash.split('-');
+                
+                if (parts.length >= 2) {
+                    const keyword = parts[0];
+                    const value = parts.slice(1).join('-');
+                    
+                    if (CONFIG.FILTER_KEYWORDS.includes(keyword)) {
+                        if (!options[keyword]) options[keyword] = new Set();
+                        options[keyword].add(value);
+                    }
+                }
+            }
+        });
+
+        // Convert to sorted arrays
+        Object.keys(options).forEach(key => {
+            availableOptions[key] = Array.from(options[key]).sort();
+        });
+
+        // Build filter map for instant filtering
+        filterMap.clear();
+        posts.forEach(post => {
+            const filters = {};
+            if (post.tags) {
+                post.tags.forEach(tag => {
+                    if (tag.slug.startsWith('hash-')) {
+                        const withoutHash = tag.slug.replace('hash-', '');
+                        const parts = withoutHash.split('-');
+                        
+                        if (parts.length >= 2) {
+                            const keyword = parts[0];
+                            const value = parts.slice(1).join('-');
+                            
+                            if (CONFIG.FILTER_KEYWORDS.includes(keyword)) {
+                                filters[keyword] = value;
+                            }
+                        }
+                    }
+                });
+            }
+            filterMap.set(post.id, filters);
+        });
+
+        allCourses = posts;
+        debugLog(`Indexed ${posts.length} courses with ${Object.keys(availableOptions).length} filter types`);
+    }
+
+    // Instant client-side filtering
+    function filterCourses() {
+        if (Object.keys(activeFilters).length === 0) {
+            return allCourses;
+        }
+
+        return allCourses.filter(course => {
+            const courseFilters = filterMap.get(course.id) || {};
+            
+            return Object.entries(activeFilters).every(([key, value]) => 
+                courseFilters[key] === value
+            );
+        });
+    }
+
+    // Optimized template rendering with document fragments
+    function displayPosts(posts) {
+        const container = document.getElementById('posts-container');
+        
+        if (!posts.length) {
+            const message = Object.keys(activeFilters).length > 0 
+                ? 'No courses match the selected filters.' 
+                : 'No courses available.';
+            container.innerHTML = `<div class="status-message no-results">${message}</div>`;
+            return;
+        }
+
+        // Use template string for better performance than createElement
+        const template = posts.map(post => {
+            const imageHtml = post.feature_image 
+                ? `<img src="${post.feature_image}" alt="${post.title}" loading="lazy" onerror="this.parentNode.innerHTML='${post.title.charAt(0).toUpperCase()}'">`
+                : post.title.charAt(0).toUpperCase();
+
+            const courseFilters = filterMap.get(post.id) || {};
+            const tags = Object.entries(courseFilters)
+                .filter(([key]) => CONFIG.FILTER_KEYWORDS.includes(key))
+                .map(([key, value]) => `${formatDisplayName(key)}: ${formatDisplayName(value)}`);
+
+            const tagsHtml = tags.length > 0 
+                ? `<div class="post-tags">${tags.map(tag => `<span class="post-tag">${tag}</span>`).join('')}</div>`
+                : '';
+
+            return `
+                <article class="post-card" onclick="window.open('${post.url}', '_blank')">
+                    <div class="post-image">${imageHtml}</div>
+                    <div class="post-content">
+                        <h3 class="post-title">${post.title}</h3>
+                        <p class="post-excerpt">${post.excerpt || 'Explore this course to learn more.'}</p>
+                        ${tagsHtml}
+                        <div class="post-meta">
+                            <a href="${post.url}" class="read-more" target="_blank" onclick="event.stopPropagation()">View Course</a>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }).join('');
+        
+        container.innerHTML = template;
+        debugLog(`Rendered ${posts.length} courses`);
+    }
+
+    // Optimized filter population
+    function populateFilters() {
+        CONFIG.FILTER_KEYWORDS.forEach(keyword => {
+            const select = document.getElementById(`${keyword}-filter`);
+            const options = availableOptions[keyword] || [];
+            
+            if (options.length > 0) {
+                // Use innerHTML with template for better performance
+                const optionsHtml = options.map(value => 
+                    `<option value="${value}">${formatDisplayName(value)}</option>`
+                ).join('');
+                
+                select.innerHTML = select.children[0].outerHTML + optionsHtml;
+            }
+        });
+    }
+
+    // Debounced filter updates for better UX
+    let filterTimeout;
+    function debouncedFilterUpdate() {
+        clearTimeout(filterTimeout);
+        filterTimeout = setTimeout(() => {
+            const filteredCourses = filterCourses();
+            displayPosts(filteredCourses);
+        }, 100); // Small delay to batch multiple filter changes
+    }
+
+    // Simplified active filters display
+    function updateActiveFiltersDisplay() {
+        const container = document.getElementById('active-filters');
+        const clearBtn = document.getElementById('clear-filters');
+        const hasFilters = Object.keys(activeFilters).length > 0;
+        
+        container.style.display = hasFilters ? 'flex' : 'none';
+        clearBtn.style.display = hasFilters ? 'block' : 'none';
+        
+        if (hasFilters) {
+            container.innerHTML = Object.entries(activeFilters).map(([key, value]) => `
+                <span class="filter-tag">
+                    ${formatDisplayName(key)}: ${formatDisplayName(value)}
+                    <button class="remove" data-filter="${key}">×</button>
+                </span>
+            `).join('');
+        }
+    }
+
+    // Event handlers
+    function handleFilterChange(event) {
+        const keyword = event.target.dataset.filter;
+        const value = event.target.value;
+        
+        if (value) {
+            activeFilters[keyword] = value;
+        } else {
+            delete activeFilters[keyword];
+        }
+        
+        updateActiveFiltersDisplay();
+        debouncedFilterUpdate();
+    }
+
+    function removeFilter(keyword) {
+        delete activeFilters[keyword];
+        document.getElementById(`${keyword}-filter`).value = '';
+        updateActiveFiltersDisplay();
+        debouncedFilterUpdate();
+    }
+
+    function clearAllFilters() {
+        activeFilters = {};
+        CONFIG.FILTER_KEYWORDS.forEach(keyword => {
+            document.getElementById(`${keyword}-filter`).value = '';
+        });
+        updateActiveFiltersDisplay();
+        debouncedFilterUpdate();
+    }
+
+    // Optimized event listener setup
+    function setupEventListeners() {
+        // Use event delegation for better performance
+        document.addEventListener('change', (e) => {
+            if (e.target.classList.contains('filter-select')) {
+                handleFilterChange(e);
+            }
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('remove') && e.target.dataset.filter) {
+                removeFilter(e.target.dataset.filter);
+            } else if (e.target.id === 'clear-filters') {
+                clearAllFilters();
+            }
+        });
+    }
+
+    // Main initialization function
+    async function init() {
+        if (isInitialized) return;
+        
+        try {
+            debugLog('Starting initialization...');
+            
+            // Load all data in one go
+            const { tags, posts } = await loadAllData();
+            
+            // Build filter index for instant filtering
+            buildFilterIndex(tags, posts);
+            
+            if (!courseTag) {
+                throw new Error('Course tag not found');
+            }
+            
+            // Setup UI
+            populateFilters();
+            setupEventListeners();
+            
+            // Display initial courses
+            displayPosts(allCourses);
+            
+            isInitialized = true;
+            debugLog(`Initialization complete. ${allCourses.length} courses loaded.`);
+            
+        } catch (error) {
+            console.error('Initialization failed:', error);
+            document.getElementById('posts-container').innerHTML = 
+                '<div class="status-message error">Failed to initialize course system.</div>';
+        }
+    }
+
+    // Make functions globally available
+    window.removeFilter = removeFilter;
+    window.clearAllFilters = clearAllFilters;
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
+    // Debug helpers
+    if (CONFIG.DEBUG_MODE) {
+        window.courseDebug = {
+            activeFilters: () => activeFilters,
+            allCourses: () => allCourses,
+            filterMap: () => filterMap,
+            availableOptions: () => availableOptions,
+            refilter: () => displayPosts(filterCourses())
+        };
+    }
+})();
+</script>
+</body>
+</html>

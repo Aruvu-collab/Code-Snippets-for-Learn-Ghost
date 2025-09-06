@@ -1,0 +1,85 @@
+<!-- Fungal -->
+<script>
+    
+document.addEventListener('DOMContentLoaded', function() {
+    const titles = document.querySelectorAll('h1, .gh-article-title');
+    
+    titles.forEach(title => {
+        const text = title.textContent;
+        
+        // Store original styles before modification
+        const computedStyle = window.getComputedStyle(title);
+        
+        title.innerHTML = `
+            <span class="layered-title">
+                <span class="fungal-layer">${text}</span>
+                <span class="main-title">${text}</span>
+            </span>
+        `;
+    });
+});
+</script>
+
+
+<!-- Fungal -->
+<style>
+@font-face {
+    font-family: 'Fungal';
+    src: url('https://cdn.jsdelivr.net/gh/Aruvu-collab/Code-Snippets-for-Learn-Ghost@main/Fungal/fonts/_variable/FungalVF.woff2') format('woff2');
+    font-weight: 100 1000;
+    font-display: swap;
+}
+
+.layered-title {
+    position: relative;
+    display: inline-block;
+    /* Ensure container doesn't collapse */
+    width: 100%;
+}
+
+.fungal-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Fungal', sans-serif;
+    font-variation-settings: 'grow' 80, 'thickness' 1000;
+    color: rgba(255, 255, 0, 0.7);
+    z-index: -1;
+    pointer-events: none;
+    
+    /* Critical: inherit ALL sizing properties */
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    word-spacing: inherit;
+    
+    /* Ensure same text wrapping behavior */
+    white-space: inherit;
+    word-break: inherit;
+    overflow-wrap: inherit;
+    
+    /* Match exact dimensions */
+    width: 100%;
+    height: auto;
+}
+
+.main-title {
+    position: relative;
+    z-index: 1;
+    
+    /* Ensure it also inherits properly */
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    word-spacing: inherit;
+    
+    /* Ensure same text wrapping behavior */
+    white-space: inherit;
+    word-break: inherit;
+    overflow-wrap: inherit;
+}
+</style>

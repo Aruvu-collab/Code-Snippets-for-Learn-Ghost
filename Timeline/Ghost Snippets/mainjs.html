@@ -1,13 +1,302 @@
-   <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" language="javascript" src="https://raw.githubusercontent.com/Aruvu-collab/Code-Snippets-for-Learn-Ghost/refs/heads/main/2025-2026_timeline.json"></script>
-    <script type="text/javascript">
-        $.getJSON("https://raw.githubusercontent.com/Aruvu-collab/Code-Snippets-for-Learn-Ghost/refs/heads/main/2025-2026_timeline.json", function (data) {
-            var timeline_json = data;
-        window.timeline = new TL.Timeline('timeline-embed', timeline_json, {
-            zoom_sequence: [2, 3, 5, 8]
-        });
+<script type="text/javascript">
+$.getJSON("https://raw.githubusercontent.com/Aruvu-collab/Code-Snippets-for-Learn-Ghost/refs/heads/main/2025-2026_timeline.json", function (data) {
+    var timeline_json = data;
+    
+    // Create the timeline
+    window.timeline = new TL.Timeline('timeline-embed', timeline_json, {
+        zoom_sequence: [1, 2, 3, 5, 8],
+        start_at_slide: 0,
+        hash_bookmark: false,
+        duration: 500
     });
-    </script>
+    
+    // Auto-scroll state management
+    let autoScrollInterval;
+    let currentSlide = 0; // Always keep this as a number
+    let isAutoScrollActive = false;
+    let userInteractionTimeout;
+    let timelineReady = false;
+    
+    // Calculate total slides safely
+    const totalSlides = (timeline_json.events ? timeline_json.events.length : 0) + 
+                       (timeline_json.title ? 1 : 0);
+    const autoScrollDelay = 10000; // 10 seconds between slides
+    const inactivityDelay = 10000; // Resume after 10 seconds
+    
+    console.log(`Timeline loaded: ${totalSlides} total slides`);
+    
+    // Utility function to ensure currentSlide is always valid
+    function validateCurrentSlide(slide) {
+        const validSlide = parseInt(slide);
+        if (isNaN(validSlide) || validSlide < 0 || validSlide >= totalSlides) {
+            console.warn(`Invalid slide ${slide}, resetting to 0`);
+            return 0;
+        }
+        return validSlide;
+    }
+    
+    // Safe navigation function
+    function navigateToSlide(slideIndex) {
+        const safeSlide = validateCurrentSlide(slideIndex);
+        
+        if (!timelineReady) {
+            console.warn('Timeline not ready, skipping navigation');
+            return false;
+        }
+        
+        try {
+            console.log(`Navigating to slide ${safeSlide}`);
+            window.timeline.goTo(safeSlide);
+            currentSlide = safeSlide;
+            return true;
+        } catch (error) {
+            console.error('Navigation error:', error);
+            return false;
+        }
+    }
+    
+    // Function to start auto-scroll
+    function startAutoScroll() {
+        if (isAutoScrollActive || !timelineReady) {
+            console.log('Auto-scroll already active or timeline not ready');
+            return;
+        }
+        
+        isAutoScrollActive = true;
+        console.log('Auto-scroll started');
+        
+        autoScrollInterval = setInterval(() => {
+            // Ensure currentSlide is valid
+            currentSlide = validateCurrentSlide(currentSlide);
+            
+            // Move to next slide with wrap-around
+            const nextSlide = (currentSlide + 1) % totalSlides;
+            
+            console.log(`Auto-scrolling from ${currentSlide} to ${nextSlide}`);
+            
+            if (navigateToSlide(nextSlide)) {
+                currentSlide = nextSlide;
+            }
+        }, autoScrollDelay);
+    }
+    
+    // Function to stop auto-scroll
+    function stopAutoScroll() {
+        if (autoScrollInterval) {
+            clearInterval(autoScrollInterval);
+            autoScrollInterval = null;
+        }
+        isAutoScrollActive = false;
+        console.log('Auto-scroll stopped');
+    }
+    
+    // Function to handle user interaction
+    function handleUserInteraction() {
+        console.log('User interaction detected');
+        
+        // Stop auto-scroll immediately
+        stopAutoScroll();
+        
+        // Clear any pending restart timeout
+        if (userInteractionTimeout) {
+            clearTimeout(userInteractionTimeout);
+        }
+        
+        // Try to get current slide from timeline
+        try {
+            // Different ways to get current slide depending on Timeline.js version
+            const timelineCurrentSlide = window.timeline.current_id || 
+                                        window.timeline.getCurrentSlide && window.timeline.getCurrentSlide() ||
+                                        0;
+            
+            currentSlide = validateCurrentSlide(timelineCurrentSlide);
+        } catch (error) {
+        }
+        
+        // Set timeout to resume auto-scroll after inactivity
+        userInteractionTimeout = setTimeout(() => {
+            startAutoScroll();
+        }, inactivityDelay);
+    }
+    
+    // Initialize when timeline is ready
+    window.timeline.on('ready', function() {
+        timelineReady = true;
+        currentSlide = 0; // Start fresh
+        
+        setTimeout(() => {
+            startAutoScroll();
+        }, 2000);
+    });
+    
+    // Track slide changes (Timeline.js fires various events)
+    const slideChangeEvents = ['change', 'nav_next', 'nav_previous', 'nav_date'];
+    
+    slideChangeEvents.forEach(eventName => {
+        try {
+            window.timeline.on(eventName, function(data) {
+                // Only update if not auto-scrolling (user initiated)
+                if (!isAutoScrollActive) {
+                    // Try multiple ways to get slide index
+                    let newSlide = data?.current_slide || 
+                                  data?.slide || 
+                                  data?.slideIndex ||
+                                  currentSlide;
+                    
+                    currentSlide = validateCurrentSlide(newSlide);
+                    console.log(`Slide changed to: ${currentSlide} (via ${eventName})`);
+                }
+            });
+        } catch (error) {
+            console.warn(`Could not bind to ${eventName} event:`, error);
+        }
+    });
+    
+    // Event listeners for user interaction
+    const timelineContainer = document.getElementById('timeline-embed');
+    
+    if (timelineContainer) {
+        // Mouse events
+        ['click', 'mousedown'].forEach(event => {
+            timelineContainer.addEventListener(event, handleUserInteraction);
+        });
+        
+        // Touch events for mobile
+        ['touchstart', 'touchend'].forEach(event => {
+            timelineContainer.addEventListener(event, handleUserInteraction);
+        });
+    }
+    
+    // Keyboard events (global)
+    document.addEventListener('keydown', function(e) {
+        const navigationKeys = ['ArrowLeft', 'ArrowRight', 'Space', 'Home', 'End'];
+        if (navigationKeys.includes(e.code)) {
+            handleUserInteraction();
+        }
+    });
+    
+    // Global control functions with error handling
+    window.timelineControls = {
+        start: function() {
+            console.log('Manual start requested');
+            if (userInteractionTimeout) {
+                clearTimeout(userInteractionTimeout);
+                userInteractionTimeout = null;
+            }
+            startAutoScroll();
+            return this.isActive();
+        },
+        
+        stop: function() {
+            console.log('Manual stop requested');
+            stopAutoScroll();
+            if (userInteractionTimeout) {
+                clearTimeout(userInteractionTimeout);
+                userInteractionTimeout = null;
+            }
+            return !this.isActive();
+        },
+        
+        reset: function() {
+            console.log('Manual reset requested');
+            stopAutoScroll();
+            currentSlide = 0;
+            navigateToSlide(0);
+            setTimeout(() => startAutoScroll(), 1000);
+            return currentSlide;
+        },
+        
+        pause: function() {
+            console.log('Manual pause requested (no auto-resume)');
+            this.stop();
+            return !this.isActive();
+        },
+        
+        goToSlide: function(slideIndex) {
+            const targetSlide = validateCurrentSlide(slideIndex);
+            this.stop();
+            if (navigateToSlide(targetSlide)) {
+                currentSlide = targetSlide;
+                return targetSlide;
+            }
+            return false;
+        },
+        
+        getCurrentSlide: function() {
+            return currentSlide;
+        },
+        
+        getTotalSlides: function() {
+            return totalSlides;
+        },
+        
+        isActive: function() {
+            return isAutoScrollActive;
+        },
+        
+        isReady: function() {
+            return timelineReady;
+        },
+        
+        getStatus: function() {
+            return {
+                active: isAutoScrollActive,
+                ready: timelineReady,
+                currentSlide: currentSlide,
+                totalSlides: totalSlides,
+                hasTimeout: !!userInteractionTimeout
+            };
+        }
+    };
+    
+    // Debug helper
+    window.debugTimeline = {
+        status: () => {
+            console.log('=== Timeline Status ===');
+            const status = window.timelineControls.getStatus();
+            console.table(status);
+            return status;
+        },
+        
+        fix: () => {
+            console.log('Attempting to fix timeline...');
+            window.timelineControls.reset();
+            return 'Reset completed';
+        },
+        
+        test: () => {
+            console.log('Testing navigation...');
+            for (let i = 0; i < Math.min(3, totalSlides); i++) {
+                setTimeout(() => {
+                    console.log(`Test navigation to slide ${i}`);
+                    navigateToSlide(i);
+                }, i * 1000);
+            }
+        }
+    };
+    
+    // Handle page visibility changes (pause when tab is hidden)
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            console.log('Page hidden, pausing auto-scroll');
+            stopAutoScroll();
+        } else if (timelineReady && !isAutoScrollActive) {
+            console.log('Page visible, resuming auto-scroll');
+            setTimeout(startAutoScroll, 1000);
+        }
+    });
+    
+    console.log('Timeline auto-scroll initialized successfully');
+});
+
+// Global error handler for debugging
+window.addEventListener('error', function(e) {
+    if (e.message.includes('timeline') || e.filename.includes('timeline')) {
+        console.error('Timeline error:', e.message, e.filename, e.lineno);
+    }
+});
+</script>
