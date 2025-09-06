@@ -9,17 +9,24 @@
       "start_date": {
         "year": 2025,
         "month": 10,
-        "day": 6
+        "day": 20
       },
       "end_date": {
         "year": 2025,
-        "month": 11,
-        "day": 2
+        "month": 10,
+        "day": 31
       },
       "group": "Wellbeing of Craft Practices",
       "unique_id": "maternal-archives-of-songs",
+      "media": {
+        "url": "https://photos.livinglabs.network/api/v1/t/2a19317a9862b44ec1fa8c08d05b98f896dc2792/qi93zku4/fit_1280",
+        "caption": "test",
+        "credit": "asdasdasd",
+        "alt": "asdasdasd",
+        "link_target": "_blank"
+      },
       "background": {
-        "color": "#d9ead3"
+        "color": "#f6b26b"
       }
     },
     {
@@ -39,8 +46,17 @@
       },
       "group": "Community Wellbeing",
       "unique_id": "artefact-as-method",
+      "media": {
+        "url": "https://photos.livinglabs.network/api/v1/t/4bd28afb77a7525242abf3e613d4d2800aba3645/qi93zku4/tile_224",
+        "caption": "vzvzxc",
+        "credit": "asxdaz",
+        "alt": "asdasdasd",
+        "link": "https://photos.livinglabs.network/library/browse",
+        "link_target": "_blank"
+      },
       "background": {
-        "color": "#d9ead3"
+        "color": "#f6b26b",
+        "url": "https://photos.livinglabs.network/api/v1/t/d7f40b34aa001878910d14060660020c1fc61cd4/qi93zku4/fit_1280"
       }
     },
     {
@@ -51,17 +67,17 @@
       "start_date": {
         "year": 2025,
         "month": 10,
-        "day": 27
+        "day": 26
       },
       "end_date": {
         "year": 2025,
         "month": 11,
-        "day": 9
+        "day": 1
       },
       "group": "Sensitive Ecologies",
       "unique_id": "map-as-a-tool-to-understand-socioecological-phenomena-in-the-place",
       "background": {
-        "color": "#c9daf8"
+        "color": "#f6b26b"
       }
     },
     {
@@ -72,22 +88,22 @@
       "start_date": {
         "year": 2025,
         "month": 10,
-        "day": 27
+        "day": 6
       },
       "end_date": {
         "year": 2025,
-        "month": 11,
-        "day": 9
+        "month": 10,
+        "day": 13
       },
       "group": "Wellbeing of Craft Practices",
       "unique_id": "interaction-between-craft-communities",
       "background": {
-        "color": "#c9daf8"
+        "color": "#f6b26b"
       }
     },
     {
       "text": {
-        "headline": "Assembling narratives in the plural world",
+        "headline": "Assembling the plural world",
         "text": "This elective course by Archit & Shreyas will explore how artefacts embedded in a place are containers of shared narratives among communities. In this unit we will assemble narratives through cultural artefacts to initiate a public dialogue."
       },
       "start_date": {
@@ -98,12 +114,12 @@
       "end_date": {
         "year": 2025,
         "month": 11,
-        "day": 16
+        "day": 7
       },
       "group": "Syncretic Cultures & Practices",
-      "unique_id": "assembling-narratives-in-the-plural-world",
+      "unique_id": "assembling-the-plural-world",
       "background": {
-        "color": "#d9d2e9"
+        "color": "#f6b26b"
       }
     },
     {
@@ -124,28 +140,28 @@
       "group": "Syncretic Cultures & Practices",
       "unique_id": "sacred-sites:-culture-and-environment",
       "background": {
-        "color": "#d9d2e9"
+        "color": "#f6b26b"
       }
     },
     {
       "text": {
-        "headline": "Culinary practices, nutrition and wellbeing",
+        "headline": "Local culinary practices, nutrition and wellbeing",
         "text": "This travelling studio by Sangeetha & Vidya will explore multiple sites of food production situated in Kundapura, like the agricultural fields, fish markets and ports, cashew & areca orchards. Being from a place which produces diverse food, how are food practices in different communities and how the production and consumption has a impact on the wellbeing of the communities"
       },
       "start_date": {
         "year": 2025,
         "month": 10,
-        "day": 6
+        "day": 11
       },
       "end_date": {
         "year": 2025,
         "month": 10,
-        "day": 26
+        "day": 16
       },
       "group": "Community Wellbeing",
-      "unique_id": "culinary-practices,-nutrition-and-wellbeing",
+      "unique_id": "local-culinary-practices,-nutrition-and-wellbeing",
       "background": {
-        "color": "#46bdc6"
+        "color": "#f6b26b"
       }
     },
     {
@@ -156,7 +172,7 @@
       "start_date": {
         "year": 2025,
         "month": 11,
-        "day": 10
+        "day": 14
       },
       "end_date": {
         "year": 2025,
@@ -171,13 +187,13 @@
     },
     {
       "text": {
-        "headline": "Rhythms of the place",
+        "headline": "Listening to the rhythms of a place",
         "text": "This makeathon by Archit, Eeshita & Shreyas will be about listening to a place, recording it and sampling it. This will also be an introduction to sampling as a method."
       },
       "start_date": {
         "year": 2025,
         "month": 11,
-        "day": 10
+        "day": 13
       },
       "end_date": {
         "year": 2025,
@@ -185,7 +201,7 @@
         "day": 16
       },
       "group": "Sensitive Ecologies",
-      "unique_id": "rhythms-of-the-place",
+      "unique_id": "listening-to-the-rhythms-of-a-place",
       "background": {
         "color": "#f6b26b"
       }
@@ -208,7 +224,7 @@
       "group": "Community Wellbeing",
       "unique_id": "community-health-systems",
       "background": {
-        "color": "#d9ead3"
+        "color": "#f6b26b"
       }
     },
     {
@@ -229,7 +245,7 @@
       "group": "Reimagining Technology",
       "unique_id": "human-digital-histories",
       "background": {
-        "color": "#d9ead3"
+        "color": "#f6b26b"
       }
     },
     {
@@ -250,7 +266,7 @@
       "group": "Community Wellbeing",
       "unique_id": "understanding-women’s-collective,-labour-and-participation-in-local-governance-systems",
       "background": {
-        "color": "#c9daf8"
+        "color": "#f6b26b"
       }
     },
     {
@@ -271,7 +287,7 @@
       "group": "Wellbeing of Craft Practices",
       "unique_id": "calligraphy-and-correspondence",
       "background": {
-        "color": "#c9daf8"
+        "color": "#f6b26b"
       }
     },
     {
@@ -292,7 +308,7 @@
       "group": "Reimagining Technology",
       "unique_id": "speculative-design:-anticipating-consequences-",
       "background": {
-        "color": "#d9d2e9"
+        "color": "#f6b26b"
       }
     },
     {
@@ -313,7 +329,7 @@
       "group": "Reimagining Technology",
       "unique_id": "participatory-mapping-with-people,-bidar-and-the-internet:-tools-and-technologies",
       "background": {
-        "color": "#d9d2e9"
+        "color": "#f6b26b"
       }
     },
     {
@@ -334,7 +350,7 @@
       "group": "Syncretic Cultures & Practices",
       "unique_id": "place-as-archive---syncretic-cultures",
       "background": {
-        "color": "#46bdc6"
+        "color": "#f6b26b"
       }
     },
     {
@@ -418,7 +434,7 @@
       "group": "Reimagining Technology",
       "unique_id": "data-politics",
       "background": {
-        "color": "#d9ead3"
+        "color": "#f6b26b"
       }
     },
     {
@@ -439,7 +455,7 @@
       "group": "Reimagining Technology",
       "unique_id": "sketching-interactions",
       "background": {
-        "color": "#d9ead3"
+        "color": "#f6b26b"
       }
     },
     {
@@ -460,7 +476,7 @@
       "group": "Reimagining Technology",
       "unique_id": "experimenting-with-interactivity",
       "background": {
-        "color": "#c9daf8"
+        "color": "#f6b26b"
       }
     },
     {
@@ -481,7 +497,7 @@
       "group": "Syncretic Cultures & Practices",
       "unique_id": "syncretic-cultures-in-dakkhani-architectural-heritage",
       "background": {
-        "color": "#c9daf8"
+        "color": "#f6b26b"
       }
     },
     {
@@ -502,7 +518,7 @@
       "group": "Community Wellbeing",
       "unique_id": "mapping-community-systems-of-wellbeing",
       "background": {
-        "color": "#d9d2e9"
+        "color": "#f6b26b"
       }
     },
     {
@@ -523,7 +539,7 @@
       "group": "Syncretic Cultures & Practices",
       "unique_id": "rural-series:-pastoralism-and-land",
       "background": {
-        "color": "#d9d2e9"
+        "color": "#f6b26b"
       }
     },
     {
@@ -583,7 +599,10 @@
         "month": 7,
         "day": 16
       },
-      "group": "Reimagining Technology"
+      "group": "Reimagining Technology",
+      "background": {
+        "color": "#f6b26b"
+      }
     }
   ],
   "eras": [
@@ -644,11 +663,9 @@
       "headline": "Living Labs Institute Course Calendar",
       "text": "This timeline contains our course calendar over the next year divided into trimesters"
     },
-    "media": {
-      "url": "https://photos.livinglabs.network/api/v1/t/2a19317a9862b44ec1fa8c08d05b98f896dc2792/qi93zku4/fit_1280"
-    },
     "background": {
-      "color": "#04223f"
+      "color": "#f6b26b",
+      "url": "https://photos.livinglabs.network/api/v1/t/2a19317a9862b44ec1fa8c08d05b98f896dc2792/qi93zku4/fit_1280"
     },
     "unique_id": "timeline-title"
   }
