@@ -1,0 +1,49 @@
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const content = document.querySelector('.gh-content');
+          const article = content?.closest('article');
+        
+        if (!article?.classList.contains('tag-course')) return;
+        const elements = [...content.children];
+        let section;
+        
+        content.innerHTML = '';
+        
+        elements.forEach(el => {
+            if (/^H[1-6]$/.test(el.tagName)) {
+                if (section) content.appendChild(section);
+                section = document.createElement('div');
+                section.id = el.id + '-section';
+            }
+            if (section) section.appendChild(el);
+        });
+        
+        if (section) content.appendChild(section);
+    });
+    </script>
+    <style>
+    article.tag-course [id$="-section"] { 
+        background: white; 
+        border: 1px solid #e0e0e0; 
+        padding: 1.5rem; 
+        margin: 1rem 0; 
+        border-radius: 8px; 
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    }
+    article.tag-course #coursework-section { background: #9f7aea; color: white; border-color: #805ad5; }
+    article.tag-course [id*="week"][id$="-section"] { background: #fbbf24; color: #92400e; border-color: #f59e0b; }
+    article.tag-course #course-abstract-section { background: #ede9fe; border-color: #c4b5fd; }
+    article.tag-course #keywords-section { background: #fef3c7; border-color: #fcd34d; }
+    article.tag-course #course-objective-section { background: #ddd6fe; border-color: #c4b5fd; }
+    article.tag-course #learning-outcomes-section { background: #fefce8; border-color: #fde047; }
+    article.tag-course #what-you-bring-section { background: #f3e8ff; border-color: #d8b4fe; }
+    article.tag-course #what-will-you-make-section { background: #fef9c3; border-color: #facc15; }
+    article.tag-course #learning-modes-section { background: #ede9fe; border-color: #c4b5fd; }
+    article.tag-course #session-plan-section { background: #fbbf24; color: #92400e; border-color: #f59e0b; }
+    article.tag-course #before-the-class-section { background: #f3e8ff; border-color: #d8b4fe; }
+    article.tag-course #communication-channels-section { background: #fef3c7; border-color: #fcd34d; }
+    article.tag-course #assignment-section { background: #ddd6fe; border-color: #c4b5fd; }
+    article.tag-course #review-section { background: #fefce8; border-color: #fde047; }
+    article.tag-course #references-section { background: #f3e8ff; border-color: #d8b4fe; }
+    article.tag-course #about-the-facilitators-section { background: #fef9c3; border-color: #facc15; }
+    </style>

@@ -12,7 +12,8 @@ Mainly handled through Code Injection - Active Filters are "course"/"#course" an
 1. Data in '2025-2026_timeline.json'
 2. Csv to json convertor in the timeline folder
 3. Csv export from Course Calendar Sheet
-4. Ghost Code Snippets
+4. Ghost Code Snippets contains injection code
+5. Additional Auto scroll functions added
 
 ### To-Do
 1. Visual separation for courses in the same School that run for the same duration
